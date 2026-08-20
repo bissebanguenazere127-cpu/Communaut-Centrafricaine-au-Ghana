@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Galerie photos de la Communauté centrafricaine au Ghana" />
+		<title>Galerie photos | Communauté centrafricaine au Ghana</title>
+		<link rel="stylesheet" href="gallery.css" />
+	</head>
+	<body>
+		<main class="gallery-page">
+			<header class="gallery-hero">
+				<a class="back-link" href="index.html">← Accueil</a>
+				<p class="eyebrow">Communauté centrafricaine au Ghana</p>
+				<h1>Nos moments en images</h1>
+				<p class="gallery-intro">Retrouvez les rencontres, célébrations et souvenirs qui font vivre notre communauté.</p>
+				<div class="gallery-stats" aria-label="Informations sur la galerie">
+					<strong><span id="photoCount">200</span> photos</strong>
+					<span>Souvenirs partagés</span>
+				</div>
+			</header>
+
+			<section class="gallery-section" aria-labelledby="gallery-title">
+				<div class="section-heading">
+					<div>
+						<p class="eyebrow">Album communautaire</p>
+						<h2 id="gallery-title">Galerie photo</h2>
+					</div>
+					<p class="gallery-hint">Cliquez sur une image pour l’agrandir</p>
+				</div>
+				<div class="photo-grid" id="photoGrid" aria-live="polite"></div>
+			</section>
+		</main>
+
+		<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
+			<button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fermer">×</button>
+			<button class="lightbox-arrow lightbox-arrow--previous" id="previousPhoto" type="button" aria-label="Photo précédente">‹</button>
+			<figure class="lightbox-figure">
+				<img id="lightboxImage" src="" alt="" />
+				<figcaption id="lightboxCaption"></figcaption>
+			</figure>
+			<button class="lightbox-arrow lightbox-arrow--next" id="nextPhoto" type="button" aria-label="Photo suivante">›</button>
+		</div>
+
+		<script src="gallery.js"></script>
+	</body>
+</html>

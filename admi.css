@@ -1,0 +1,775 @@
+/* =====================================
+   CCG ADMIN DASHBOARD STYLE
+===================================== */
+
+
+.admin-body{
+
+    background:#f5f7fb;
+    display:flex;
+    min-height:100vh;
+    font-family:'Inter',sans-serif;
+
+}
+
+
+
+/* =====================================
+SIDEBAR
+===================================== */
+
+
+.sidebar{
+
+    width:280px;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #003893,
+    #001b45
+    );
+
+    color:white;
+
+    min-height:100vh;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    padding:30px 20px;
+
+    z-index:100;
+
+}
+
+
+
+
+.admin-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.admin-logo img{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:contain;
+
+}
+
+
+
+.admin-logo h2{
+
+    font-size:22px;
+
+    color:#FFD700;
+
+}
+
+
+
+
+
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+
+
+.sidebar ul li{
+
+    margin:20px 0;
+
+}
+
+
+
+.sidebar ul li a{
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+
+
+.sidebar ul li a:hover{
+
+    background:#D52B1E;
+
+    transform:translateX(8px);
+
+}
+
+
+
+.sidebar i{
+
+    font-size:20px;
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+MAIN CONTENT
+===================================== */
+
+
+.admin-main{
+
+    margin-left:280px;
+
+    width:calc(100% - 280px);
+
+    padding:30px;
+
+}
+
+
+
+
+
+/* HEADER */
+
+
+.admin-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+
+
+.admin-header h1{
+
+    color:#003893;
+
+    font-size:32px;
+
+}
+
+
+
+.admin-header p{
+
+    color:#777;
+
+}
+
+
+
+
+.admin-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    font-weight:bold;
+
+}
+
+
+
+.admin-profile img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+STATISTICS CARDS
+===================================== */
+
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.stat-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.stat-card i{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#003893;
+
+    color:white;
+
+    font-size:25px;
+
+}
+
+
+
+.stat-card h2{
+
+    font-size:30px;
+
+    color:#D52B1E;
+
+}
+
+
+
+.stat-card p{
+
+    color:#777;
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+ACTIONS
+===================================== */
+
+
+.admin-actions{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.admin-actions h2,
+.admin-table h2,
+.news-admin h2{
+
+    color:#003893;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.action-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.action-card{
+
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:#f5f7fa;
+
+    transition:.4s;
+
+}
+
+
+
+.action-card:hover{
+
+    background:#003893;
+
+    color:white;
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.action-card i{
+
+    font-size:45px;
+
+    color:#FFD700;
+
+}
+
+
+
+.action-card button{
+
+    margin-top:20px;
+
+    padding:12px 25px;
+
+    border:none;
+
+    background:#D52B1E;
+
+    color:white;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+TABLE
+===================================== */
+
+
+.admin-table{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+th{
+
+    background:#003893;
+
+    color:white;
+
+    padding:15px;
+
+}
+
+
+
+td{
+
+    padding:15px;
+
+    text-align:center;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+td img{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+.edit,
+.delete{
+
+    border:none;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    color:white;
+
+}
+
+
+
+.edit{
+
+    background:#00853F;
+
+}
+
+
+
+.delete{
+
+    background:#D52B1E;
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+NEWS ADMIN
+===================================== */
+
+
+.new-section{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:40px;
+}
+
+.new-section h2{
+    color:#003893;
+    margin-bottom:25px;
+}
+
+.new-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.new-card{
+    background:#f5f7fa;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    transition:.4s;
+}
+
+.new-card:hover{
+    background:#003893;
+    color:white;
+    transform:translateY(-8px);
+}
+
+.new-card i{
+    font-size:32px;
+    color:#D52B1E;
+    margin-bottom:15px;
+}
+
+.new-card h3{
+    margin-bottom:10px;
+}
+
+.new-card p{
+    color:#777;
+}
+
+
+.news-admin{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+}
+
+
+
+.news-item{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:center;
+
+    padding:20px 0;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+.news-item img{
+
+    width:100px;
+
+    height:80px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+
+
+
+
+footer{
+
+    margin-top:40px;
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+RESPONSIVE
+===================================== */
+
+
+@media(max-width:1200px){
+
+
+.stats{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+
+.action-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+
+
+.sidebar{
+
+position:relative;
+
+width:100%;
+
+min-height:auto;
+
+}
+
+
+
+.admin-body{
+
+display:block;
+
+}
+
+
+
+.admin-main{
+
+margin-left:0;
+
+width:100%;
+
+padding:15px;
+
+}
+
+
+
+.admin-header{
+
+flex-direction:column;
+
+gap:20px;
+
+text-align:center;
+
+}
+
+
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.action-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+table{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+

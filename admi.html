@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CCG Admin Dashboard</title>
+
+<link rel="stylesheet" href="admi.css">
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+
+<body class="admin-body">
+
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+
+<div class="admin-logo">
+
+<img src="image/CCG L.jpeg">
+
+<h2>CCG ADMIN</h2>
+
+</div>
+
+
+
+<ul>
+
+
+<li>
+<a href="#">
+<i class="fas fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+
+<li>
+<a href="#">
+<i class="fas fa-users"></i>
+Membres
+</a>
+</li>
+
+
+<li>
+<a href="#">
+<i class="fas fa-newspaper"></i>
+Actualités
+</a>
+</li>
+
+
+<li>
+<a href="events.html">
+<i class="fas fa-calendar"></i>
+Événements
+</a>
+</li>
+
+
+<li>
+
+<a href="gallery.html">
+<i class="fas fa-images"></i>
+Galerie
+</a>
+</li>
+
+
+
+<li>
+<a href="#">
+<i class="fas fa-envelope"></i>
+Messages
+</a>
+</li>
+
+
+
+<li>
+<a href="#">
+<i class="fas fa-cog"></i>
+Paramètres
+</a>
+</li>
+
+
+
+<li>
+
+<a href="login.html" class="logout-link">
+
+<i class="fas fa-sign-out-alt"></i>
+
+Déconnexion
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+
+
+
+
+
+
+<!-- MAIN CONTENT -->
+
+
+<main class="admin-main">
+
+
+
+<header class="admin-header">
+
+
+<div>
+
+<h1>
+Tableau de bord CCG
+</h1>
+
+<p>
+Bienvenue dans l'espace administration
+</p>
+
+</div>
+
+
+
+<div class="admin-profile">
+
+<img src="image/President.jpeg">
+
+<span>
+Président CCG
+</span>
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+<!-- STATISTICS -->
+
+
+<section class="stats">
+
+
+<div class="stat-card">
+
+<i class="fas fa-users"></i>
+
+<div>
+
+<h2>
+2000
+</h2>
+
+<p>
+Membres 
+</p>
+<h2>
+500
+</h2>
+
+<p>
+Membres actifs
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="stat-card">
+
+<i class="fas fa-calendar-check"></i>
+
+<div>
+
+<h2>
+25
+</h2>
+
+<p>
+Événements
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="stat-card">
+
+
+<i class="fas fa-newspaper"></i>
+
+
+<div>
+
+<h2>
+48
+</h2>
+
+<p>
+Actualités publiées
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="stat-card">
+
+
+<i class="fas fa-handshake"></i>
+
+
+<div>
+
+<h2>
+15
+</h2>
+
+<p>
+Partenaires
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- GESTION RAPIDE -->
+
+
+<section class="admin-actions">
+
+
+<h2>
+Gestion rapide
+</h2>
+
+
+
+<div class="action-grid">
+
+
+
+<div class="action-card">
+
+
+<i class="fas fa-user-plus"></i>
+
+
+<h3>
+Ajouter membre
+</h3>
+
+
+<button>
+Ajouter
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="action-card">
+
+
+<i class="fas fa-pen"></i>
+
+
+<h3>
+Créer actualité
+</h3>
+
+
+<button>
+Publier
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="action-card">
+
+
+<i class="fas fa-calendar-plus"></i>
+
+
+<h3>
+Nouvel événement
+</h3>
+
+
+<button>
+Créer
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="action-card">
+
+
+<i class="fas fa-camera"></i>
+
+
+<h3>
+Ajouter photo
+</h3>
+
+
+<button>
+Télécharger
+</button>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+<!-- TABLE MEMBRES -->
+
+<section class="admin-table">
+
+
+<h2>
+Derniers membres inscrits
+</h2>
+
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Photo
+</th>
+
+
+<th>
+Nom
+</th>
+
+
+<th>
+Ville
+</th>
+
+
+<th>
+Statut
+</th>
+
+
+<th>
+Action
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody>
+
+
+
+<tr>
+
+<td>
+<img src="image/image.png">
+</td>
+
+
+<td>
+Jean Dupont
+</td>
+
+
+<td>
+Accra
+</td>
+
+
+<td>
+Actif
+</td>
+
+
+<td>
+
+
+<button class="edit">
+Modifier
+</button>
+
+
+<button class="delete">
+Supprimer
+</button>
+
+
+</td>
+
+
+</tr>
+<tr>
+
+<td>
+<img src="image/image.png">
+</td>
+
+
+<td>
+Jean Dupont
+</td>
+
+
+<td>
+Accra
+</td>
+
+
+<td>
+Actif
+</td>
+
+
+<td>
+
+
+<button class="edit">
+Modifier
+</button>
+
+
+<button class="delete">
+Supprimer
+</button>
+
+
+</td>
+
+
+</tr>
+<tr>
+
+<td>
+<img src="image/image.png">
+</td>
+
+
+<td>
+Jean Dupont
+</td>
+
+
+<td>
+Accra
+</td>
+
+
+<td>
+Actif
+</td>
+
+
+<td>
+
+
+<button class="edit">
+Modifier
+</button>
+
+
+<button class="delete">
+Supprimer
+</button>
+
+
+</td>
+
+
+</tr>
+<tr>
+
+<td>
+<img src="image/image.png">
+</td>
+
+
+<td>
+Jean Dupont
+</td>
+
+
+<td>
+Accra
+</td>
+
+
+<td>
+Actif
+</td>
+
+
+<td>
+
+
+<button class="edit">
+Modifier
+</button>
+
+
+<button class="delete">
+Supprimer
+</button>
+
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+<td>
+<img src="images/members/user2.jpg">
+</td>
+
+
+<td>
+Marie K.
+</td>
+
+
+<td>
+Kumasi
+</td>
+
+
+<td>
+Actif
+</td>
+
+
+<td>
+
+
+<button class="edit">
+Modifier
+</button>
+
+
+<button class="delete">
+Supprimer
+</button>
+
+
+</td>
+
+
+</tr>
+
+
+
+</tbody>
+
+
+</table>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- RECENTS NEWS -->
+
+
+<section class="news-admin">
+
+
+<h2>
+Dernières actualités
+</h2>
+
+
+
+<div class="news-list">
+
+
+<div class="news-item">
+
+<img src="images/gallery/news1.jpg">
+
+
+<div>
+
+<h3>
+Grande réunion CCG Ghana
+</h3>
+
+<p>
+Publié le 30 Juillet 2026
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="news-item">
+
+<img src="images/gallery/news2.jpg">
+
+
+<div>
+
+<h3>
+Activité culturelle
+</h3>
+
+<p>
+Publié le 15 Août 2026
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Communauté de Centrafrique du Ghana (CCG)
+</p>
+
+
+</footer>
+
+
+
+<script src="js/admin.js"></script>
+
+
+</body>
+
+</html>
