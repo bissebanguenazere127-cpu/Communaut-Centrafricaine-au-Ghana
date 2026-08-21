@@ -1268,3 +1268,394 @@ revealElements.forEach(element => {
 generatePhotos();
 
 filterPhotos();
+
+
+
+/* =========================================
+   GALERIE COMMUNAUTÉ 🇨🇫
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ================================
+       FILTRES
+    ================================= */
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const categories =
+        document.querySelectorAll(".gallery-category");
+
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const target =
+                button.dataset.filter;
+
+
+            /* Bouton actif */
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+
+            /* Cacher les catégories */
+
+            categories.forEach(category => {
+                category.classList.remove("active");
+            });
+
+
+            /* Afficher la catégorie */
+
+            const selected =
+                document.getElementById(target);
+
+            if (selected) {
+
+                selected.classList.add("active");
+
+                animatePhotos(selected);
+
+            }
+
+        });
+
+    });
+
+
+    /* ================================
+       ANIMATION DES PHOTOS
+    ================================= */
+
+    function animatePhotos(category) {
+
+        const photos =
+            category.querySelectorAll(".gallery-item");
+
+
+        photos.forEach((photo, index) => {
+
+            photo.style.animation = "none";
+
+            /* Force le navigateur à recalculer */
+
+            void photo.offsetWidth;
+
+            photo.style.animation =
+                `photoAppear .6s ease forwards`;
+
+            photo.style.animationDelay =
+                `${Math.min(index * 0.04, 0.8)}s`;
+
+        });
+
+    }
+
+
+    /* ================================
+       LIGHTBOX
+    ================================= */
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const lightboxImage =
+        document.getElementById("lightboxImage");
+
+    const lightboxCaption =
+        document.getElementById("lightboxCaption");
+
+    const closeButton =
+        document.getElementById("lightboxClose");
+
+    const previousButton =
+        document.getElementById("lightboxPrev");
+
+    const nextButton =
+        document.getElementById("lightboxNext");
+
+
+    let currentPhotos = [];
+
+    let currentIndex = 0;
+
+
+    /* ================================
+       RÉCUPÉRER LES PHOTOS
+    ================================= */
+
+    function getCurrentPhotos() {
+
+        const activeCategory =
+            document.querySelector(
+                ".gallery-category.active"
+            );
+
+        if (!activeCategory) {
+            return [];
+        }
+
+        return Array.from(
+            activeCategory.querySelectorAll(
+                ".gallery-item"
+            )
+        );
+
+    }
+
+
+    /* ================================
+       OUVRIR LIGHTBOX
+    ================================= */
+
+    function openLightbox(photo, index) {
+
+        const image =
+            photo.querySelector("img");
+
+        const title =
+            photo.querySelector("h4");
+
+
+        if (!image) return;
+
+
+        lightboxImage.src =
+            image.src;
+
+        lightboxImage.alt =
+            image.alt;
+
+
+        lightboxCaption.textContent =
+            title
+                ? title.textContent
+                : image.alt;
+
+
+        currentIndex = index;
+
+
+        lightbox.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+
+    /* ================================
+       CLIQUER PHOTO
+    ================================= */
+
+    document.addEventListener("click", event => {
+
+        const photo =
+            event.target.closest(".gallery-item");
+
+
+        if (!photo) return;
+
+
+        currentPhotos =
+            getCurrentPhotos();
+
+
+        const index =
+            currentPhotos.indexOf(photo);
+
+
+        openLightbox(photo, index);
+
+    });
+
+
+    /* ================================
+       FERMER
+    ================================= */
+
+    function closeLightbox() {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    closeButton.addEventListener(
+        "click",
+        closeLightbox
+    );
+
+
+    /* ================================
+       PHOTO SUIVANTE
+    ================================= */
+
+    function showNext() {
+
+        if (!currentPhotos.length) return;
+
+
+        currentIndex =
+            (currentIndex + 1) %
+            currentPhotos.length;
+
+
+        openLightbox(
+            currentPhotos[currentIndex],
+            currentIndex
+        );
+
+    }
+
+
+    /* ================================
+       PHOTO PRÉCÉDENTE
+    ================================= */
+
+    function showPrevious() {
+
+        if (!currentPhotos.length) return;
+
+
+        currentIndex =
+            (currentIndex - 1 +
+            currentPhotos.length) %
+            currentPhotos.length;
+
+
+        openLightbox(
+            currentPhotos[currentIndex],
+            currentIndex
+        );
+
+    }
+
+
+    nextButton.addEventListener(
+        "click",
+        showNext
+    );
+
+
+    previousButton.addEventListener(
+        "click",
+        showPrevious
+    );
+
+
+    /* ================================
+       FERMER EN CLIQUANT À L'EXTÉRIEUR
+    ================================= */
+
+    lightbox.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target === lightbox
+            ) {
+
+                closeLightbox();
+
+            }
+
+        }
+    );
+
+
+    /* ================================
+       CLAVIER
+    ================================= */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                !lightbox.classList.contains(
+                    "active"
+                )
+            ) {
+                return;
+            }
+
+
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+
+
+            if (event.key === "ArrowRight") {
+                showNext();
+            }
+
+
+            if (event.key === "ArrowLeft") {
+                showPrevious();
+            }
+
+        }
+    );
+
+
+    /* ================================
+       SWIPE MOBILE
+    ================================= */
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+
+    lightbox.addEventListener(
+        "touchstart",
+        event => {
+
+            touchStartX =
+                event.changedTouches[0].screenX;
+
+        }
+    );
+
+
+    lightbox.addEventListener(
+        "touchend",
+        event => {
+
+            touchEndX =
+                event.changedTouches[0].screenX;
+
+            handleSwipe();
+
+        }
+    );
+
+
+    function handleSwipe() {
+
+        const distance =
+            touchEndX - touchStartX;
+
+
+        if (Math.abs(distance) < 50) {
+            return;
+        }
+
+
+        if (distance < 0) {
+            showNext();
+        } else {
+            showPrevious();
+        }
+
+    }
+
+});

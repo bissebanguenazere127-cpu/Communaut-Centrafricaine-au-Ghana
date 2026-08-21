@@ -1,48 +1,556 @@
+<section class="community-gallery" id="galerie">
 
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Galerie photos de la Communauté centrafricaine au Ghana" />
-		<title>Galerie photos | Communauté centrafricaine au Ghana</title>
-		<link rel="stylesheet" href="gallery.css" />
-	</head>
-	<body>
-		<main class="gallery-page">
-			<header class="gallery-hero">
-				<a class="back-link" href="index.html">← Accueil</a>
-				<p class="eyebrow">Communauté centrafricaine au Ghana</p>
-				<h1>Nos moments en images</h1>
-				<p class="gallery-intro">Retrouvez les rencontres, célébrations et souvenirs qui font vivre notre communauté.</p>
-				<div class="gallery-stats" aria-label="Informations sur la galerie">
-					<strong><span id="photoCount">200</span> photos</strong>
-					<span>Souvenirs partagés</span>
-				</div>
-			</header>
+    <div class="gallery-header">
+        <span class="gallery-badge">🇨🇫 COMMUNAUTÉ CENTRAFRICAINE AU GHANA</span>
 
-			<section class="gallery-section" aria-labelledby="gallery-title">
-				<div class="section-heading">
-					<div>
-						<p class="eyebrow">Album communautaire</p>
-						<h2 id="gallery-title">Galerie photo</h2>
-					</div>
-					<p class="gallery-hint">Cliquez sur une image pour l’agrandir</p>
-				</div>
-				<div class="photo-grid" id="photoGrid" aria-live="polite"></div>
-			</section>
-		</main>
+        <h2>Galerie de la Communauté</h2>
 
-		<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
-			<button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fermer">×</button>
-			<button class="lightbox-arrow lightbox-arrow--previous" id="previousPhoto" type="button" aria-label="Photo précédente">‹</button>
-			<figure class="lightbox-figure">
-				<img id="lightboxImage" src="" alt="" />
-				<figcaption id="lightboxCaption"></figcaption>
-			</figure>
-			<button class="lightbox-arrow lightbox-arrow--next" id="nextPhoto" type="button" aria-label="Photo suivante">›</button>
-		</div>
+        <p>
+            Retrouvez les moments forts de notre communauté :
+            événements, sport, culture, rencontres et cérémonies.
+        </p>
+    </div>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="gallery.css">
 
-		<script src="gallery.js"></script>
-	</body>
-</html>
+    <!-- =========================
+         FILTRES
+    ========================== -->
+
+    <div class="gallery-filters">
+
+        <button class="filter-btn active" data-filter="evenements">
+            🎉 Événements
+        </button>
+
+        <button class="filter-btn" data-filter="sport">
+            ⚽ Sport
+        </button>
+
+        <button class="filter-btn" data-filter="culture">
+            🎭 Culture
+        </button>
+
+        <button class="filter-btn" data-filter="communaute">
+            👥 Communauté
+        </button>
+
+        <button class="filter-btn" data-filter="ceremonies">
+            🙏 Cérémonies
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         1. ÉVÉNEMENTS — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category active" id="evenements">
+
+        <h3>🎉 Événements communautaires</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="image/WhatsApp Image 2026-07-09 at 1.46.42 PM (1).jpeg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/WhatsApp Image 2026-07-09 at 2.14.53 PM.jpeg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/WhatsApp Image 2026-07-31 at 10.21.45 AM (1).jpeg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/WhatsApp Image 2026-07-31 at 11.02.55 AM (1).jpeg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/WhatsApp Image 2026-07-31 at 11.02.56 AM (1).jpeg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/WhatsApp Image 2026-07-31 at 11.02.56 AM (4).jpeg"
+                     alt="Événement communautaire">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         2. SPORT — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category" id="sport">
+
+        <h3>⚽ Activités sportives</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo1.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo2.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo3.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo4.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo5.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo6.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         3. CULTURE — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category" id="culture">
+
+        <h3>🎭 Culture centrafricaine</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo1.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo2.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo3.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo4.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo5.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo6.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         4. COMMUNAUTÉ — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category" id="communaute">
+
+        <h3>👥 Vie de la communauté</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo1.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo2.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo3.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo4.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo5.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo6.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         5. CÉRÉMONIES — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category" id="ceremonies">
+
+        <h3>🙏 Cérémonies</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo1.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo2.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo3.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo4.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo5.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo6.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+
+</section><section class="community-gallery" id="galerie">
+
+    <div class="gallery-header">
+        <span class="gallery-badge">🇨🇫 COMMUNAUTÉ CENTRAFRICAINE AU GHANA</span>
+
+        <h2>Galerie de la Communauté</h2>
+
+        <p>
+            Retrouvez les moments forts de notre communauté :
+            événements, sport, culture, rencontres et cérémonies.
+        </p>
+    </div>
+
+
+    <!-- =========================
+         FILTRES
+    ========================== -->
+
+    <div class="gallery-filters">
+
+        <button class="filter-btn active" data-filter="evenements">
+            🎉 Événements
+        </button>
+
+        <button class="filter-btn" data-filter="sport">
+            ⚽ Sport
+        </button>
+
+        <button class="filter-btn" data-filter="culture">
+            🎭 Culture
+        </button>
+
+        <button class="filter-btn" data-filter="communaute">
+            👥 Communauté
+        </button>
+
+        <button class="filter-btn" data-filter="ceremonies">
+            🙏 Cérémonies
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         1. ÉVÉNEMENTS — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category active" id="evenements">
+
+        <h3>🎉 Événements communautaires</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="demd.jpg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="demd.jpg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/evenements/photo3.jpg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/evenements/photo4.jpg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/evenements/photo5.jpg"
+                     alt="Événement communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/evenements/photo6.jpg"
+                     alt="Événement communautaire">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         2. SPORT — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category" id="sport">
+
+        <h3>⚽ Activités sportives</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo1.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo2.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo3.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo4.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo5.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/sport/photo6.jpg"
+                     alt="Sport communautaire">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         3. CULTURE — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category" id="culture">
+
+        <h3>🎭 Culture centrafricaine</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo1.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo2.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo3.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo4.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo5.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/culture/photo6.jpg"
+                     alt="Culture centrafricaine">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         4. COMMUNAUTÉ — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category" id="communaute">
+
+        <h3>👥 Vie de la communauté</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo1.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo2.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo3.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo4.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo5.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/communaute/photo6.jpg"
+                     alt="Communauté centrafricaine">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         5. CÉRÉMONIES — 40 ESPACES PHOTO
+    =================================================== -->
+
+    <div class="gallery-category" id="ceremonies">
+
+        <h3>🙏 Cérémonies</h3>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo1.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo2.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo3.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo4.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo5.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/gallery/ceremonies/photo6.jpg"
+                     alt="Cérémonie communautaire">
+            </div>
+
+            <!-- Continue jusqu'à photo40 -->
+
+        </div>
+
+    </div>
+<script src="gallery.js"></script>
+</section>
