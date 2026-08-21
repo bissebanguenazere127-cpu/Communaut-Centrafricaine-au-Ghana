@@ -1,165 +1,284 @@
-
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta name="google-site-verification" content="XRCN0KBEIxoCXv8Ehqx9aEG8GWFJR_vBB8C87mNNsIE" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Communauté de Centrafrique du Ghana (CCG)</title>
+    <title>Communauté Centrafricaine au Ghana | CCG</title>
 
-<meta name="description" content="Site officiel de la Communauté de Centrafrique du Ghana - Unité Solidarité Fraternité">
+    <meta name="description"
+        content="Communauté Centrafricaine au Ghana — unité, solidarité, culture et accompagnement des Centrafricains au Ghana.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet" href="style.css">
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
+<!-- =====================================================
+     LOADER
+===================================================== -->
+
+<div id="loader" class="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+            🇨🇫
+        </div>
+
+        <h2>CCG</h2>
+
+        <p>Communauté Centrafricaine au Ghana</p>
+
+        <div class="loader-spinner"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
 <header class="navbar" id="navbar">
+
     <div class="nav-container">
 
         <!-- LOGO -->
+
         <a href="#home" class="logo">
-            <img src="image/CCG L.jpeg" alt="">
-            
+
+            <img src="image/CCG L.jpeg"
+                 alt="Logo CCG">
+
             <div class="logo-text">
+
                 <strong>CCG</strong>
-                <span>Communauté Centrafricaine Ghana</span>
+
+                <span>
+                    Communauté Centrafricaine Ghana
+                </span>
+
             </div>
+
         </a>
 
+
         <!-- MENU -->
+
         <nav class="nav-menu" id="navMenu">
 
-            <a href="#home" class="nav-link active">
+            <a href="#home"
+               class="nav-link active">
+
                 <i class="fas fa-home"></i>
                 Accueil
+
             </a>
 
-            <a href="#about" class="nav-link">
+
+            <a href="#about"
+               class="nav-link">
+
                 <i class="fas fa-users"></i>
                 À propos
+
             </a>
 
-            <a href="members.html" class="nav-link">
-                <i class="fas fa-user-friends"></i>
-                Membres
+
+            <a href="#bureau"
+               class="nav-link">
+
+                <i class="fas fa-user-tie"></i>
+                Bureau
+
             </a>
 
-            <a href="new.html" class="nav-link">
-                <i class="fas fa-newspaper"></i>
-                Actualités
-            </a>
 
-            <a href="gallery.html" class="nav-link">
-                <i class="fas fa-images"></i>
-                Galerie
-            </a>
+            <a href="#events"
+               class="nav-link">
 
-            <a href="events.html" class="nav-link">
                 <i class="fas fa-calendar-alt"></i>
                 Événements
+
             </a>
 
-            <a href="#contact" class="nav-link">
+
+            <a href="#testimonials"
+               class="nav-link">
+
+                <i class="fas fa-comments"></i>
+                Témoignages
+
+            </a>
+
+
+            <a href="#membership"
+               class="nav-link">
+
+                <i class="fas fa-user-plus"></i>
+                Membres
+
+            </a>
+
+
+            <a href="#contact"
+               class="nav-link">
+
                 <i class="fas fa-phone"></i>
                 Contact
+
             </a>
 
-            <a href="login.html" class="member-btn">
+
+            <a href="login.html"
+               class="member-btn">
+
                 <i class="fas fa-lock"></i>
                 Espace membre
+
             </a>
 
         </nav>
 
+
         <!-- MOBILE BUTTON -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false">
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
 
     </div>
+
 </header>
 
-<!-- Font Awesome -->
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<main>
+
+<section id="home"
+         class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content reveal">
+
+        <p class="eyebrow">
+            🇨🇫 🇬🇭 COMMUNAUTÉ CENTRAFRICAINE AU GHANA
+        </p>
+
+        <h1>
+            Unis par nos racines,
+            <span>forts ensemble.</span>
+        </h1>
+
+        <p class="hero-text">
+
+            Une communauté engagée pour rassembler,
+            accompagner et représenter les Centrafricains
+            vivant au Ghana.
+
+        </p>
 
 
-<!-- HERO SECTION -->
+        <div class="hero-buttons">
 
-<section id="home" class="hero">
+            <a href="#about"
+               class="btn primary">
 
+                Découvrir la CCG
+                <i class="fas fa-arrow-down"></i>
 
-<div class="hero-content">
-
-<div class="hero-emblem" aria-hidden="true">
-<img src="image/CCG L.jpeg" alt="">
-</div>
-
-<p class="hero-kicker">Communaut&eacute; centrafricaine au Ghana</p>
+            </a>
 
 
+            <a href="#membership"
+               class="btn secondary">
+
+                Devenir membre
+                <i class="fas fa-user-plus"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PRESIDENT -->
 
 
+<section class="president section">
 
+
+<h2 class="title">
+Mot du Président
+</h2>
+
+
+<div class="president-card">
+
+
+<img src="image/President.jpeg">
+
+
+<div>
 
 <h3>
-Unité • Solidarité • Fraternité
+M.Telesphore BEBONGO BOTALO
 </h3>
 
 
+<h4>
+Président de la CCG
+</h4>
+
+
 <p>
-Une communauté forte pour rassembler,
-accompagner et valoriser les Centrafricains vivant au Ghana.
+
+Cher(e)s Compatriotes et Ami(e)s de la Communauté Centrafricaine du Ghana, 
+je vous souhaite la bienvenue sur notre site internet, qui vous permettra de
+ suivre nos activités et d'accéder à des informations actualisées sur nos missions 
+ et services. Ce portail est destiné à vous orienter, que vous soyez résident ou en 
+ visite au Ghana, tout en relayant régulièrement l'actualité nationale centrafricaine et
+  des événements locaux. Vos contributions seront appréciées pour améliorer nos rubriques. Bienvenue et bonne navigation !
+  
+  <strong>Singuila</strong>
+
 </p>
 
 
-<div class="hero-buttons">
-
-<a href="#membership" class="btn">
-Rejoindre la communauté
+<img class="signature" src="image/CCG L.jpeg">
 </a>
-
-
-<a href="#contact" class="btn second">
-Nous contacter
-</a>
-
-
-<a href="#" class="btn donate">
-Faire un don
-</a>
-
-
 </div>
 
 
 </div>
-
-<a class="hero-scroll-cue" href="#about" aria-label="D&eacute;couvrir la suite de la page">
-<span>Explorer</span>
-<i class="fas fa-arrow-down"></i>
-</a>
 
 
 </section>
+
+
 
 <!-- VIDEO PRESENTATION -->
 <section class="video-presentation" aria-labelledby="video-title">
@@ -363,339 +482,71 @@ plur d'informations sur la Centrafrique
 </section>
 
 
-<!-- ABOUT -->
 
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-<section id="about" class="section">
+<section id="about"
+         class="section">
 
+    <div class="section-title reveal">
 
-<h2 class="title">
-À propos de la CCG
-</h2>
-
-
-<div class="about-container">
-
-
-<div>
-
-<h3>Notre Histoire</h3>
-
-<p>
-La Communauté de Centrafrique du Ghana rassemble les Centrafricains
-vivant au Ghana afin de promouvoir l'unité, la solidarité et l'entraide.
-</p>
-
-
-<h3>Notre Vision</h3>
-
-<p>
-Construire une communauté forte, organisée et engagée.
-</p>
-
-
-</div>
-
-
-
-<div class="values">
-
-
-<div>
-<i class="fas fa-handshake"></i>
-<h4>Solidarité</h4>
-</div>
-
-
-<div>
-<i class="fas fa-users"></i>
-<h4>Unité</h4>
-</div>
-
-
-<div>
-<i class="fas fa-heart"></i>
-<h4>Fraternité</h4>
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- PRESIDENT -->
-
-
-<section class="president section">
-
-
-<h2 class="title">
-Mot du Président
-</h2>
-
-
-<div class="president-card">
-
-
-<img src="image/President.jpeg">
-
-
-<div>
-
-<h3>
-M.Telesphore BEBONGO BOTALO
-</h3>
-
-
-<h4>
-Président de la CCG
-</h4>
-
-
-<p>
-
-Cher(e)s Compatriotes et Ami(e)s de la Communauté Centrafricaine du Ghana, 
-je vous souhaite la bienvenue sur notre site internet, qui vous permettra de
- suivre nos activités et d'accéder à des informations actualisées sur nos missions 
- et services. Ce portail est destiné à vous orienter, que vous soyez résident ou en 
- visite au Ghana, tout en relayant régulièrement l'actualité nationale centrafricaine et
-  des événements locaux. Vos contributions seront appréciées pour améliorer nos rubriques. Bienvenue et bonne navigation !
-  
-  <strong>Singuila</strong>
-
-</p>
-
-
-<img class="signature" src="image/CCG L.jpeg">
-</a>
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- BUREAU EXECUTIF -->
-
-
-<section id="bureau" class="section">
-
-
-<h2 class="title">
-Bureau Exécutif
-</h2>
-
-
-<div class="team">
-
-
-<div class="member">
-
-<img src="image/President.jpeg">
-
-<h3>M.Telesphore BEBONGO BOTALO</h3>
-
-<p>Président</p>
-
-</div>
-<div class="member">
-
-<img src="VP Amos.png">
-
-<h3>M.Amos SONNY</h3>
-
-<p>Vice-Président</p>
-
-</div>
-
-<div class="member">
-
-<img src="TG.png">
-
-<h3>MLLE.Aifa FEIZOURE</h3>
-
-<p>Trésorier Général</p>
-
-</div>
-
-
-<div class="member">
-
-<img src="SG.png">
-
-<h3>M.Alphonso GUERET</h3>
-
-<p>Secrétaire Général</p>
-
-</div>
-
-
-<div class="member">
-
-<img src="TGA.png">
-
-<h3>M.Evrard YAPELE </h3>
-
-<p>Secrétaire Général Adjoint</p>
- 
-</div>
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-<section class="services-carsc"
-id="service">
-
-    <div class="services-header">
-        <h2>Services aux Centrafricains</h2>
-        <p>
-            Nous accompagnons les Centrafricains vivant au Ghana
-            dans leurs démarches administratives, scolaires,
-            professionnelles et sociales.
+        <p class="eyebrow">
+            QUI SOMMES-NOUS ?
         </p>
+
+        <h2>
+            À propos de la CCG
+        </h2>
+
+        <p>
+            La Communauté Centrafricaine au Ghana
+            œuvre pour l'unité, la solidarité et
+            l'intégration des Centrafricains au Ghana.
+        </p>
+
     </div>
 
 
-    <div class="services-grid">
+    <div class="about-container">
 
+        <div class="about-image reveal">
 
-        <div class="service-card">
-            <div class="service-image">
-                <img src="trs.jpg" alt="Traduction documents">
-            </div>
-            <h3>TRADUCTION & AUTHENTIFICATION</h3>
-            <p>
-                Nous vous aidons à traduire tous vos documents
-                en anglais auprès des entités compétentes afin
-                de faciliter vos différentes admissions.
-            </p>
+            <img src="image/WhatsApp Image 2026-07-31 at 10.21.44 AM.jpeg"
+                 alt="Communauté Centrafricaine au Ghana">
+
         </div>
 
 
-        <div class="service-card">
-            <div class="service-image">
-                <img src="demd.jpg" alt="Laissez passer">
-            </div>
-            <h3>DEMANDE DE LAISSEZ-PASSER</h3>
+        <div class="about-content reveal">
+
+            <h3>
+                Une communauté, une famille
+            </h3>
+
             <p>
-                Vous êtes au Ghana et souhaitez rentrer au pays
-                sans passeport ? Nous pouvons vous accompagner
-                pour obtenir un laissez-passer auprès du consulat.
+                Nous créons un espace où les
+                Centrafricains peuvent se rencontrer,
+                s'entraider, partager leur culture et
+                construire ensemble un avenir meilleur.
             </p>
-        </div>
 
-
-
-        <div class="service-card">
-            <div class="service-image">
-                <img src="or.jpg" alt="Orientation scolaire">
-            </div>
-            <h3>ORIENTATIONS SCOLAIRES & PROFESSIONNELLES</h3>
             <p>
-                Nous vous aidons dans votre orientation après
-                votre arrivée au Ghana et facilitons votre admission
-                dans une université accréditée.
+                Notre objectif est de renforcer les liens
+                entre les membres de la communauté et
+                de favoriser leur intégration au Ghana.
             </p>
+
+
+            <a href="#membership"
+               class="btn primary">
+
+                Rejoindre la communauté
+
+            </a>
+
         </div>
-
-
-
-        <div class="service-card">
-            <div class="service-image">
-                <img src="Ghana.jpg" alt="Visa Ghana">
-            </div>
-            <h3>DEMANDE DE VISA COURT & LONG SÉJOUR</h3>
-            <p>
-                Besoin d’une lettre dinvitation ou d’un accompagnement
-                pour votre visa ? La communauté vous accompagne.
-            </p>
-        </div>
-
-
-
-        <div class="service-card">
-            <div class="service-image">
-                <img src="school.jpg" alt="Cours anglais">
-            </div>
-            <h3>ÉCOLES DE LANGUES ANGLAISES</h3>
-            <p>
-                Nous travaillons avec plusieurs écoles de langues
-                efficaces au Ghana pour vous aider à choisir
-                selon votre budget.
-            </p>
-        </div>
-
-
-
-        <div class="service-card">
-            <div class="service-image">
-                <img src="uni.jpg" alt="Universités Ghana">
-            </div>
-            <h3>UNIVERSITÉS & INSTITUTS PARTENAIRES</h3>
-            <p>
-                Nous vous accompagnons dans les démarches
-                d’admission provisoire ou définitive dans votre
-                domaine d’études.
-            </p>
-        </div>
-
-
-
-        <div class="service-card">
-            <div class="service-image">
-                <img src="rdp.jpg" alt="Resident Permit">
-            </div>
-            <h3>RESIDENT PERMIT</h3>
-            <p>
-                Nous vous aidons pour toutes démarches liées
-                au renouvellement de votre permis de résidence
-                avec des prix abordables.
-            </p>
-        </div>
-
-
-
-        <div class="service-card">
-            <div class="service-image">
-                <img src="logement.jpg" alt="Logement Ghana">
-            </div>
-            <h3>DÉMARCHES & LOGEMENTS</h3>
-            <p>
-                Nos agents peuvent vous aider à trouver un logement
-                adapté à votre durée de séjour et votre budget.
-            </p>
-        </div>
-
 
     </div>
 
@@ -703,247 +554,548 @@ id="service">
 
 
 
+<!-- =====================================================
+     BUREAU EXECUTIF
+===================================================== -->
 
+<section id="bureau"
+         class="section section-light">
 
+    <div class="section-title reveal">
 
+        <p class="eyebrow">
+            NOTRE ÉQUIPE
+        </p>
 
+        <h2>
+            Bureau Exécutif
+        </h2>
 
-<!-- EVENTS -->
+        <p>
+            Une équipe engagée au service de la
+            communauté centrafricaine au Ghana.
+        </p>
 
+    </div>
 
-<section id="events" class="section">
 
+    <div class="team">
 
-<h2 class="title">
-Événements
-</h2>
+        <article class="team-card reveal">
 
+            <div class="team-photo">
+                <img src="image/President.jpeg"
+                     alt="Président">
+            </div>
 
-<div class="cards">
+            <h3>Président</h3>
 
+            <p>
+                Direction générale de la communauté
+                et représentation officielle.
+            </p>
 
-<div class="card">
+        </article>
 
-<img class="event-photo" src="image/WhatsApp Image 2026-07-31 at 10.21.44 AM.jpeg" alt="Assemblée Générale">
 
-<i class="fas fa-calendar"></i>
+        <article class="team-card reveal">
 
-<h3>
-Assemblée Générale
-</h3>
+            <div class="team-photo">
+                <img src="VP Amos.png"
+                     alt="Vice Président">
+            </div>
 
-<p>
-Réunion annuelle de la communauté.
-</p>
+            <h3>Vice-Président</h3>
 
-</div>
+            <p>
+                Assistance à la présidence et
+                coordination des activités.
+            </p>
 
+        </article>
 
-<div class="card">
 
-<img class="event-photo" src="image/WhatsApp Image 2026-07-31 at 10.21.45 AM.jpeg" alt="Tournoi sportif">
+        <article class="team-card reveal">
 
-<i class="fas fa-futbol"></i>
+            <div class="team-photo">
+                <img src="TG.png"
+                     alt="Trésorier">
+            </div>
 
-<h3>
-Tournoi sportif
-</h3>
+            <h3>Trésorier Général</h3>
 
-<p>
-Activités sportives communautaires.
-</p>
+            <p>
+                Gestion et suivi financier
+                de la communauté.
+            </p>
 
-</div>
+        </article>
 
 
-<div class="card">
+        <article class="team-card reveal">
 
-<img class="event-photo" src="image/WhatsApp Image 2026-07-31 at 10.21.45 AM.jpeg" alt="investigation">
+            <div class="team-photo">
+                <img src="SG.png"
+                     alt="Secrétaire Général">
+            </div>
 
-<i class="fas fa-heart"></i>
+            <h3>Secrétaire Général</h3>
 
-<h3>
-investigation 
-</h3>
+            <p>
+                Administration, communication et
+                organisation des réunions.
+            </p>
 
-<p>
-Investigation des membres du bureau exécutif  de la communauté.
-</p>
+        </article>
 
-</div>
 
+        <article class="team-card reveal">
 
-</div>
+            <div class="team-photo">
+                <img src="TGA.png"
+                     alt="Secrétaire Général Adjoint">
+            </div>
 
+            <h3>Secrétaire Général Adjoint</h3>
 
-</section>
+            <p>
+              Assiste le Secrétaire Général
+                dans ses fonctions et le remplace en cas d'absence.
+            </p>
 
+        </article>
 
 
-
- <section class="section" id="testimonials">
-        <div class="section-title reveal">
-          <p class="eyebrow">Témoignages</p>
-          <h2>Ce que nos compatriotes disent de nous</h2>
-        </div>
-        <div class="testimonial-slider reveal">
-          <button class="slider-btn" type="button" id="prevTestimonial" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-          <div class="testimonial-card active">
-            <img src="image/WhatsApp Image 2026-08-01 at 8.14.30 PM (1).jpeg" alt="Témoignage d'Amina" loading="lazy" />
-            <h3>Amina K.</h3>
-            <p>« Les activités de la communauté m'ont donné confiance et m'ont permis de mieux m'intégrer au Ghana. »</p>
-            <div class="rating">★★★★★</div>
-          </div>
-          <div class="testimonial-card">
-            <img src="logement.jpg" alt="Témoignage de Daniel" loading="lazy" />
-            <h3>Daniel R.</h3>
-            <p>« L'accompagnement de la CCG m'a beaucoup aidé dans mes démarches et dans ma vie quotidienne. »</p>
-            <div class="rating">★★★★★</div>
-          </div>
-          <div class="testimonial-card">
-            <img src="profile.png" alt="Témoignage de Leila" loading="lazy" />
-            <h3>Leila S.</h3>
-            <p>« Je me sens entourée et soutenue. La CCG est une véritable famille pour les Centrafricains au Ghana. »</p>
-            <div class="rating">★★★★★</div>
-          </div>
-          <button class="slider-btn" type="button" id="nextTestimonial" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-        </div>
-      </section>
-
-
-
-
-<!-- MEMBERSHIP -->
-
-
-<section id="membership" class="section">
-
-
-<h2 class="title">
-Devenir membre
-</h2>
-
-
-<form class="form">
-
-
-<input type="text" placeholder="Nom">
-
-<input type="text" placeholder="Prénom">
-
-<input type="email" placeholder="Email">
-
-<input type="tel" placeholder="WhatsApp">
-
-
-<input type="text" placeholder="Ville au Ghana">
-
-
-<button>
-S'inscrire
-</button>
-
-
-</form>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- CONTACT -->
-
-
-<section id="contact" class="section contact">
-
-
-<h2 class="title">
-Contact
-</h2>
-
-
-<p>
-Accra, Ghana
-</p>
-
-<p>
-WhatsApp : 233596860669
-</p>
-
-
-<p>
-Email : contact@ccg.org
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- FINANCEMENT -->
-<section class="funding" aria-labelledby="funding-title">
-  
-  </div>
-  <div class="funding-content">
-    <p class="funding-label">Avec le soutien de</p>
-    <h2 id="funding-title">Ministère chargé de la Jeunesse, des Sports et de l’Éducation civique   </h2>
-    <img src="aide.png" alt="Logo du ministère">
-    <p class="funding-name">Mr Herithier Rodolphe Bonheur DONENG WANZOUMAN</p>
-    <p class="funding-name"><strong>Mars 2024</strong></p>
-  </div>
-</section>
-
-<!-- WHATSAPP --><!-- WHATSAPP -->
-
-<a class="whatsapp"
-href="https://chat.whatsapp.com/ETnaLPCGDKUC3eDUQytmyb?s=cl&p=a&mlu=4">
-  <i class="fab fa-whatsapp"></i>
- 
- <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> <div class="main"></div>
        
 
-</a>
+    </div>
+
+</section>
 
 
 
+<!-- =====================================================
+     EVENTS
+===================================================== -->
+
+<section id="events"
+         class="section">
+
+    <div class="section-title reveal">
+
+        <p class="eyebrow">
+            ACTIVITÉS
+        </p>
+
+        <h2>
+            Événements
+        </h2>
+
+        <p>
+            Découvrez les activités et événements
+            organisés par la communauté.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <article class="card reveal">
+
+            <img
+                class="event-photo"
+                src="image/WhatsApp Image 2026-07-31 at 10.21.44 AM.jpeg"
+                alt="Assemblée Générale">
+
+            <div class="card-icon">
+                <i class="fas fa-calendar"></i>
+            </div>
+
+            <h3>
+                Assemblée Générale
+            </h3>
+
+            <p>
+                Réunion annuelle de la communauté.
+            </p>
+
+        </article>
+
+
+        <article class="card reveal">
+
+            <img
+                class="event-photo"
+                src="image/WhatsApp Image 2026-07-31 at 10.21.45 AM.jpeg"
+                alt="Tournoi sportif">
+
+            <div class="card-icon">
+                <i class="fas fa-futbol"></i>
+            </div>
+
+            <h3>
+                Tournoi sportif
+            </h3>
+
+            <p>
+                Activités sportives communautaires.
+            </p>
+
+        </article>
+
+
+        <article class="card reveal">
+
+            <img
+                class="event-photo"
+                src="image/WhatsApp Image 2026-07-31 at 10.21.45 AM.jpeg"
+                alt="Activité communautaire">
+
+            <div class="card-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+
+            <h3>
+                Activités communautaires
+            </h3>
+
+            <p>
+                Activités destinées à renforcer
+                les liens entre les membres.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
 
 
 
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section id="testimonials"
+         class="section section-light">
+
+    <div class="section-title reveal">
+
+        <p class="eyebrow">
+            TÉMOIGNAGES
+        </p>
+
+        <h2>
+            Ce que nos compatriotes disent de nous
+        </h2>
+
+    </div>
 
 
-<footer>
+    <div class="testimonial-slider reveal">
+
+        <button
+            class="slider-btn"
+            id="prevTestimonial"
+            type="button">
+
+            <i class="fas fa-chevron-left"></i>
+
+        </button>
 
 
-<h3>
-CCG
-</h3>
+        <div class="testimonial-card active">
+
+            <img
+                src="image/WhatsApp Image 2026-08-01 at 8.14.30 PM (1).jpeg"
+                alt="Témoignage">
+
+            <h3>
+                Amina K.
+            </h3>
+
+            <p>
+                « Les activités de la communauté
+                m'ont donné confiance et m'ont permis
+                de mieux m'intégrer au Ghana. »
+            </p>
+
+            <div class="rating">
+                ★★★★★
+            </div>
+
+        </div>
 
 
-<p>
-© 2026 Communauté de Centrafrique du Ghana (CCG).
-Tous droits réservés.
-        <p>location :GHANA ACCRA</p>
-        <p>phone :233596860669 | email :ccdughana@gmail.com</p>
-        <p>Made with <i class="fa fa-heart"></i> by BISSEBANGUE NAZERE</p>
-</p>
+        <button
+            class="slider-btn"
+            id="nextTestimonial"
+            type="button">
 
+            <i class="fas fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MEMBERSHIP
+===================================================== -->
+
+<section id="membership"
+         class="section membership">
+
+    <div class="section-title reveal">
+
+        <p class="eyebrow">
+            REJOIGNEZ-NOUS
+        </p>
+
+        <h2>
+            Devenir membre
+        </h2>
+
+        <p>
+            Faites partie de la communauté
+            centrafricaine au Ghana.
+        </p>
+
+    </div>
+
+
+    <form class="form reveal"
+          id="membershipForm">
+
+        <input
+            type="text"
+            placeholder="Nom"
+            required>
+
+
+        <input
+            type="text"
+            placeholder="Prénom"
+            required>
+
+
+        <input
+            type="email"
+            placeholder="Email"
+            required>
+
+
+        <input
+            type="tel"
+            placeholder="WhatsApp"
+            required>
+
+
+        <input
+            type="text"
+            placeholder="Ville au Ghana"
+            required>
+
+
+        <button
+            type="submit"
+            class="btn primary">
+
+            S'inscrire
+            <i class="fas fa-user-plus"></i>
+
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact"
+         class="section contact">
+
+    <div class="section-title reveal">
+
+        <p class="eyebrow">
+            CONTACT
+        </p>
+
+        <h2>
+            Contactez-nous
+        </h2>
+
+        <p>
+            Nous sommes disponibles pour répondre
+            à vos questions.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <div class="contact-info reveal">
+
+            <div class="contact-item">
+
+                <i class="fas fa-location-dot"></i>
+
+                <div>
+                    <h3>Adresse</h3>
+                    <p>Accra, Ghana</p>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fas fa-phone"></i>
+
+                <div>
+                    <h3>Téléphone</h3>
+                    <p>+233 XX XXX XXXX</p>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fas fa-envelope"></i>
+
+                <div>
+                    <h3>Email</h3>
+                    <p>contact@ccgghana.org</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form
+            id="contactForm"
+            class="contact-form reveal">
+
+            <input
+                type="text"
+                placeholder="Votre nom"
+                required>
+
+            <input
+                type="email"
+                placeholder="Votre email"
+                required>
+
+            <textarea
+                placeholder="Votre message"
+                rows="6"
+                required></textarea>
+
+            <button
+                type="submit"
+                class="btn primary">
+
+                Envoyer le message
+                <i class="fas fa-paper-plane"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h2>
+            CCG 🇨🇫🇬🇭
+        </h2>
+
+        <p>
+            Communauté Centrafricaine au Ghana
+        </p>
+
+
+        <div class="socials">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+
+            © 2026 CCG — Tous droits réservés.
+
+        </p>
+
+    </div>
 
 </footer>
 
 
 
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div id="lightbox"
+     class="lightbox">
+
+    <button
+        class="lightbox-close"
+        type="button">
+
+        <i class="fas fa-xmark"></i>
+
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Image agrandie">
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script src="script.js"></script>
 
 </body>
-
 </html>
