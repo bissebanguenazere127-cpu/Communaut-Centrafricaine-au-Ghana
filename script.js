@@ -1,1257 +1,155 @@
-/* ==========================================
-   CCG WEBSITE JAVASCRIPT
-   Communauté de Centrafrique du Ghana
-========================================== */
+/* =====================================================
+   COMMUNAUTÉ CENTRAFRICAINE AU GHANA
+   JAVASCRIPT
+===================================================== */
 
 
+/* ================= LOADER ================= */
 
-// ================================
-// MENU MOBILE
-// ================================
+window.addEventListener("load", () => {
 
+    const loader = document.getElementById("loader");
 
-const menuBtn = document.querySelector(".menu-btn");
-const navbar = document.querySelector("#navbar");
+    setTimeout(() => {
 
+        loader.classList.add("hide");
 
-menuBtn.addEventListener("click",()=>{
-
-    navbar.classList.toggle("active");
+    }, 800);
 
 });
 
 
+/* ================= HEADER ================= */
 
-// Fermer le menu après clic sur un lien
+const header = document.getElementById("header");
 
-document.querySelectorAll("nav a").forEach(link=>{
+window.addEventListener("scroll", () => {
 
+    if (window.scrollY > 50) {
 
-    link.addEventListener("click",()=>{
-
-        navbar.classList.remove("active");
-
-    });
-
-
-});
-
-
-
-
-
-
-
-// ================================
-// HEADER SCROLL EFFECT
-// ================================
-
-
-window.addEventListener("scroll",()=>{
-
-
-const header=document.querySelector("header");
-
-
-if(window.scrollY > 50){
-
-header.style.background="rgba(255,255,255,0.98)";
-
-header.style.boxShadow=
-"0 10px 30px rgba(0,0,0,0.15)";
-
-}
-
-else{
-
-
-header.style.background=
-"rgba(255,255,255,0.9)";
-
-
-header.style.boxShadow=
-"0 5px 20px rgba(0,0,0,0.08)";
-
-
-}
-
-
-});
-
-
-
-
-
-
-
-
-// ================================
-// ANIMATION AU SCROLL
-// ================================
-
-
-const observer = new IntersectionObserver((entries)=>{
-
-
-entries.forEach(entry=>{
-
-
-if(entry.isIntersecting){
-
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
-
-
-}
-
-
-});
-
-
-},
-{
-
-threshold:0.15
-
-});
-
-
-
-document.querySelectorAll(".section, .new-section, .member, .card, .new-card, .values div")
-.forEach(element=>{
-
-
-element.style.opacity="0";
-
-element.style.transform="translateY(50px)";
-
-element.style.transition="0.8s ease";
-
-
-observer.observe(element);
-
-
-});
-
-const newCards = document.querySelectorAll('.new-card');
-newCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const title = card.querySelector('h3')?.textContent || 'Carte';
-        alert(`${title} sélectionnée.`);
-    });
-});
-
-// ================================
-// RECHERCHE DE DOCUMENTS
-// ================================
-
-const documentSearchInput = document.querySelector('#document-search-input');
-
-if (documentSearchInput) {
-    const documentCards = [...document.querySelectorAll('[data-document-card]')];
-    const documentSearchStatus = document.querySelector('#document-search-status');
-    const documentNoResults = document.querySelector('#document-no-results');
-    const clearDocumentSearch = document.querySelector('#clear-document-search');
-
-    const filterDocuments = () => {
-        const query = documentSearchInput.value.trim().toLocaleLowerCase('fr');
-        let visibleCount = 0;
-
-        documentCards.forEach((card) => {
-            const matches = card.textContent.toLocaleLowerCase('fr').includes(query);
-            card.hidden = !matches;
-            if (matches) visibleCount += 1;
-        });
-
-        documentSearchStatus.textContent = query
-            ? `${visibleCount} document${visibleCount > 1 ? 's' : ''} trouvé${visibleCount > 1 ? 's' : ''}`
-            : `${documentCards.length} documents disponibles`;
-        documentNoResults.hidden = visibleCount !== 0;
-        clearDocumentSearch.hidden = !query;
-    };
-
-    documentSearchInput.addEventListener('input', filterDocuments);
-    clearDocumentSearch.addEventListener('click', () => {
-        documentSearchInput.value = '';
-        filterDocuments();
-        documentSearchInput.focus();
-    });
-}
-
-
-
-
-
-
-
-
-// ================================
-// GALERIE LIGHTBOX
-// ================================
-
-
-const galleryImages =
-document.querySelectorAll(".gallery img");
-
-
-
-const lightbox=document.createElement("div");
-
-
-lightbox.className="lightbox";
-
-
-lightbox.innerHTML=`
-
-<img src="" alt="image">
-
-<span class="close">
-&times;
-</span>
-
-`;
-
-
-
-document.body.appendChild(lightbox);
-
-
-
-const lightboxImage =
-lightbox.querySelector("img");
-
-const closeBtn =
-lightbox.querySelector(".close");
-
-
-
-galleryImages.forEach(image=>{
-
-
-image.addEventListener("click",()=>{
-
-
-lightbox.style.display="flex";
-
-
-lightboxImage.src=image.src;
-
-
-});
-
-
-});
-
-
-
-closeBtn.onclick=()=>{
-
-
-lightbox.style.display="none";
-
-
-};
-
-
-
-lightbox.onclick=(e)=>{
-
-
-if(e.target !== lightboxImage){
-
-lightbox.style.display="none";
-
-}
-
-
-};
-
-
-
-
-
-
-
-// ================================
-// STYLE LIGHTBOX AUTOMATIQUE
-// ================================
-
-
-const style=document.createElement("style");
-
-
-style.innerHTML=`
-
-.lightbox{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,.9);
-
-display:none;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:2000;
-
-}
-
-
-.lightbox img{
-
-max-width:90%;
-
-max-height:85%;
-
-border-radius:20px;
-
-animation:zoom .5s;
-
-}
-
-
-.close{
-
-position:absolute;
-
-top:30px;
-
-right:50px;
-
-font-size:50px;
-
-color:white;
-
-cursor:pointer;
-
-}
-
-
-
-@keyframes zoom{
-
-from{
-
-transform:scale(.5);
-
-opacity:0;
-
-}
-
-to{
-
-transform:scale(1);
-
-opacity:1;
-
-}
-
-}
-
-`;
-
-
-document.head.appendChild(style);
-
-
-
-
-
-
-
-
-
-// ================================
-// FORMULAIRE INSCRIPTION
-// ================================
-
-
-
-const form=document.querySelector(".form");
-
-
-form.addEventListener("submit",(e)=>{
-
-
-e.preventDefault();
-
-
-
-alert(
-
-"Merci pour votre inscription à la Communauté de Centrafrique du Ghana (CCG). Votre demande sera traitée prochainement."
-
-);
-
-
-
-form.reset();
-
-
-
-});
-
-
-
-
-
-
-
-
-
-// ================================
-// WHATSAPP MESSAGE AUTOMATIQUE
-// ================================
-
-
-
-const whatsapp =
-document.querySelector(".whatsapp");
-
-
-
-whatsapp.addEventListener("click",()=>{
-
-
-const message =
-"Bonjour, je souhaite rejoindre la Communauté de Centrafrique du Ghana (CCG).";
-
-
-const number =
-"233000000000";
-
-
-
-whatsapp.href =
-"https://wa.me/"+number+
-"?text="+encodeURIComponent(message);
-
-
-
-});
-
-
-
-
-
-
-
-
-
-// ================================
-// ANNEE AUTOMATIQUE FOOTER
-// ================================
-
-
-const year =
-new Date().getFullYear();
-
-
-
-const footerText =
-document.querySelector("footer p");
-
-
-
-if(footerText){
-
-
-footerText.innerHTML =
-
-"© "+year+
-" Communauté de Centrafrique du Ghana (CCG). Tous droits réservés.";
-
-
-}
-
-
-
-
-
-
-
-
-
-// ================================
-// DARK MODE OPTION
-// ================================
-
-
-const darkButton=document.createElement("button");
-
-
-darkButton.innerHTML="🌙";
-
-
-darkButton.className="dark-mode-btn";
-
-
-document.body.appendChild(darkButton);
-
-
-
-darkButton.onclick=()=>{
-
-
-document.body.classList.toggle("dark");
-
-
-};
-
-
-// CARROUSEL DES TÃ‰MOIGNAGES
-function setupTestimonials() {
-  const slider = document.querySelector('.testimonial-slider');
-  if (!slider) return;
-
-  const cards = Array.from(slider.querySelectorAll('.testimonial-card'));
-  const prev = document.querySelector('#prevTestimonial');
-  const next = document.querySelector('#nextTestimonial');
-  if (!cards.length || !prev || !next) return;
-
-  let index = Math.max(0, cards.findIndex(card => card.classList.contains('active')));
-  let autoplay;
-
-  function showSlide(newIndex) {
-    index = (newIndex + cards.length) % cards.length;
-    cards.forEach((card, cardIndex) => {
-      card.classList.toggle('active', cardIndex === index);
-      card.setAttribute('aria-hidden', String(cardIndex !== index));
-    });
-  }
-
-  function startAutoplay() {
-    clearInterval(autoplay);
-    autoplay = setInterval(() => showSlide(index + 1), 6000);
-  }
-
-  prev.addEventListener('click', () => {
-    showSlide(index - 1);
-    startAutoplay();
-  });
-
-  next.addEventListener('click', () => {
-    showSlide(index + 1);
-    startAutoplay();
-  });
-
-  slider.addEventListener('mouseenter', () => clearInterval(autoplay));
-  slider.addEventListener('mouseleave', startAutoplay);
-  slider.addEventListener('focusin', () => clearInterval(autoplay));
-  slider.addEventListener('focusout', startAutoplay);
-
-  showSlide(index);
-  startAutoplay();
-}
-
-setupTestimonials();
-
-
-
-
-
-// DARK MODE STYLE
-
-const darkStyle=document.createElement("style");
-
-
-darkStyle.innerHTML=`
-
-.dark{
-
-background:#111;
-
-color:white;
-
-}
-
-
-
-.dark header{
-
-background:#1c1c1c;
-
-}
-
-
-
-.dark .card,
-
-.dark .member,
-
-.dark .values div,
-
-.dark .president-card{
-
-background:#222;
-
-color:white;
-
-}
-
-
-
-.dark .title{
-
-color:#FFD700;
-
-}
-
-
-
-.dark-mode-btn{
-
-position:fixed;
-
-left:25px;
-
-bottom:25px;
-
-width:50px;
-
-height:50px;
-
-border-radius:50%;
-
-border:none;
-
-cursor:pointer;
-
-font-size:22px;
-
-z-index:999;
-
-}
-
-
-`;
-
-
-document.head.appendChild(darkStyle);
-
-
-/* =========================================
-   CENTRAL AFRICAN COMMUNITY
-   200 PHOTO GALLERY
-========================================= */
-
-
-/* =========================================
-   VARIABLES
-========================================= */
-
-const galleryGrid = document.getElementById("galleryGrid");
-
-const searchInput = document.getElementById("gallerySearch");
-
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
-
-const noResults =
-    document.getElementById("noResults");
-
-const loadMoreButton =
-    document.getElementById("loadMore");
-
-const photoCount =
-    document.getElementById("photoCount");
-
-
-const lightbox =
-    document.getElementById("lightbox");
-
-const lightboxImage =
-    document.getElementById("lightboxImage");
-
-const lightboxTitle =
-    document.getElementById("lightboxTitle");
-
-const lightboxCategory =
-    document.getElementById("lightboxCategory");
-
-const lightboxNumber =
-    document.getElementById("lightboxNumber");
-
-const lightboxClose =
-    document.getElementById("lightboxClose");
-
-const lightboxPrev =
-    document.getElementById("lightboxPrev");
-
-const lightboxNext =
-    document.getElementById("lightboxNext");
-
-
-let currentFilter = "all";
-
-let searchTerm = "";
-
-let currentPhoto = 0;
-
-let visiblePhotos = 20;
-
-
-/* =========================================
-   CATEGORY DATA
-========================================= */
-
-const categories = [
-    "events",
-    "community",
-    "culture",
-    "sports",
-    "students",
-    "meetings"
-];
-
-
-/* =========================================
-   GENERATE 200 PHOTOS
-========================================= */
-
-function generatePhotos() {
-
-    /*
-        We already have 5 example photos
-        inside HTML.
-
-        Generate photos 006 to 200.
-    */
-
-    for (let i = 6; i <= 200; i++) {
-
-        const number =
-            String(i).padStart(3, "0");
-
-        const category =
-            categories[(i - 1) % categories.length];
-
-        const item =
-            document.createElement("article");
-
-        item.className = "gallery-item";
-
-        item.dataset.category = category;
-
-        item.dataset.title =
-            `${capitalize(category)} ${number}`;
-
-        item.innerHTML = `
-
-            <img
-                src="images/gallery/photo-${number}.jpg"
-                alt="Central African Community ${category} photo ${number}"
-                loading="lazy"
-            >
-
-            <div class="photo-overlay">
-
-                <div>
-
-                    <span>
-                        ${category.toUpperCase()}
-                    </span>
-
-                    <h3>
-                        ${capitalize(category)} ${number}
-                    </h3>
-
-                </div>
-
-                <button
-                    class="view-photo"
-                    aria-label="View photo ${number}"
-                >
-                    ＋
-                </button>
-
-            </div>
-
-        `;
-
-        galleryGrid.appendChild(item);
-    }
-
-    photoCount.textContent = "200";
-}
-
-
-/* =========================================
-   CAPITALIZE
-========================================= */
-
-function capitalize(text) {
-
-    return text.charAt(0).toUpperCase()
-        + text.slice(1);
-
-}
-
-
-/* =========================================
-   FILTER PHOTOS
-========================================= */
-
-function filterPhotos() {
-
-    const items =
-        [...document.querySelectorAll(".gallery-item")];
-
-    let matchingItems = [];
-
-    items.forEach(item => {
-
-        const category =
-            item.dataset.category;
-
-        const title =
-            item.dataset.title.toLowerCase();
-
-        const matchesFilter =
-            currentFilter === "all"
-            || category === currentFilter;
-
-        const matchesSearch =
-            title.includes(searchTerm);
-
-        if (
-            matchesFilter &&
-            matchesSearch
-        ) {
-
-            matchingItems.push(item);
-
-        }
-
-    });
-
-
-    items.forEach(item => {
-
-        item.classList.add("hidden");
-
-    });
-
-
-    matchingItems
-        .slice(0, visiblePhotos)
-        .forEach(item => {
-
-            item.classList.remove("hidden");
-
-        });
-
-
-    noResults.style.display =
-        matchingItems.length === 0
-            ? "block"
-            : "none";
-
-
-    if (
-        matchingItems.length >
-        visiblePhotos
-    ) {
-
-        loadMoreButton.style.display =
-            "block";
+        header.classList.add("scrolled");
 
     } else {
 
-        loadMoreButton.style.display =
-            "none";
+        header.classList.remove("scrolled");
 
     }
-
-}
-
-
-/* =========================================
-   FILTER BUTTONS
-========================================= */
-
-filterButtons.forEach(button => {
-
-    button.addEventListener(
-        "click",
-        () => {
-
-            filterButtons.forEach(btn => {
-
-                btn.classList.remove("active");
-
-            });
-
-            button.classList.add("active");
-
-            currentFilter =
-                button.dataset.filter;
-
-            visiblePhotos = 20;
-
-            filterPhotos();
-
-        }
-    );
 
 });
 
 
-/* =========================================
-   SEARCH
-========================================= */
+/* ================= MOBILE MENU ================= */
 
-searchInput.addEventListener(
-    "input",
-    event => {
+const menuBtn = document.getElementById("menuBtn");
 
-        searchTerm =
-            event.target.value
-                .trim()
-                .toLowerCase();
+const nav = document.getElementById("nav");
 
-        visiblePhotos = 20;
+menuBtn.addEventListener("click", () => {
 
-        filterPhotos();
+    nav.classList.toggle("open");
 
-    }
-);
+    const icon = menuBtn.querySelector("i");
 
+    if (nav.classList.contains("open")) {
 
-/* =========================================
-   LOAD MORE
-========================================= */
+        icon.classList.remove("fa-bars");
 
-loadMoreButton.addEventListener(
-    "click",
-    () => {
+        icon.classList.add("fa-xmark");
 
-        visiblePhotos += 20;
+    } else {
 
-        filterPhotos();
+        icon.classList.remove("fa-xmark");
 
-    }
-);
-
-
-/* =========================================
-   LIGHTBOX
-========================================= */
-
-function getVisibleItems() {
-
-    return [
-        ...document.querySelectorAll(
-            ".gallery-item:not(.hidden)"
-        )
-    ];
-
-}
-
-
-function openLightbox(item) {
-
-    const visibleItems =
-        getVisibleItems();
-
-    currentPhoto =
-        visibleItems.indexOf(item);
-
-    if (currentPhoto < 0) {
-
-        currentPhoto = 0;
+        icon.classList.add("fa-bars");
 
     }
 
-    showLightboxPhoto();
-
-    lightbox.classList.add("active");
-
-    document.body.style.overflow = "hidden";
-
-}
+});
 
 
-function showLightboxPhoto() {
+/* Close mobile menu */
 
-    const items =
-        getVisibleItems();
+document.querySelectorAll(".nav-link").forEach(link => {
 
-    if (!items.length) return;
+    link.addEventListener("click", () => {
 
-    const item =
-        items[currentPhoto];
+        nav.classList.remove("open");
 
-    const image =
-        item.querySelector("img");
+        const icon = menuBtn.querySelector("i");
 
-    const title =
-        item.dataset.title;
+        icon.classList.remove("fa-xmark");
 
-    const category =
-        item.dataset.category;
+        icon.classList.add("fa-bars");
 
-    lightboxImage.src =
-        image.src;
+    });
 
-    lightboxImage.alt =
-        image.alt;
-
-    lightboxTitle.textContent =
-        title;
-
-    lightboxCategory.textContent =
-        category.toUpperCase();
-
-    lightboxNumber.textContent =
-        `Photo ${currentPhoto + 1} / ${items.length}`;
-
-}
+});
 
 
-/* =========================================
-   OPEN PHOTO
-========================================= */
+/* ================= ACTIVE NAV ================= */
 
-galleryGrid.addEventListener(
-    "click",
-    event => {
+const sections = document.querySelectorAll("section[id]");
 
-        const item =
-            event.target.closest(".gallery-item");
+window.addEventListener("scroll", () => {
 
-        if (!item) return;
+    let current = "";
 
-        openLightbox(item);
+    sections.forEach(section => {
 
-    }
-);
+        const sectionTop = section.offsetTop - 150;
 
+        if (window.scrollY >= sectionTop) {
 
-/* =========================================
-   CLOSE LIGHTBOX
-========================================= */
-
-function closeLightbox() {
-
-    lightbox.classList.remove("active");
-
-    document.body.style.overflow = "";
-
-}
-
-
-lightboxClose.addEventListener(
-    "click",
-    closeLightbox
-);
-
-
-/* =========================================
-   NEXT PHOTO
-========================================= */
-
-function nextPhoto() {
-
-    const items =
-        getVisibleItems();
-
-    if (!items.length) return;
-
-    currentPhoto =
-        (currentPhoto + 1) % items.length;
-
-    showLightboxPhoto();
-
-}
-
-
-lightboxNext.addEventListener(
-    "click",
-    nextPhoto
-);
-
-
-/* =========================================
-   PREVIOUS PHOTO
-========================================= */
-
-function previousPhoto() {
-
-    const items =
-        getVisibleItems();
-
-    if (!items.length) return;
-
-    currentPhoto =
-        (currentPhoto - 1 + items.length)
-        % items.length;
-
-    showLightboxPhoto();
-
-}
-
-
-lightboxPrev.addEventListener(
-    "click",
-    previousPhoto
-);
-
-
-/* =========================================
-   KEYBOARD NAVIGATION
-========================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            !lightbox.classList.contains("active")
-        ) {
-            return;
-        }
-
-
-        if (event.key === "Escape") {
-
-            closeLightbox();
+            current = section.getAttribute("id");
 
         }
 
-
-        if (event.key === "ArrowRight") {
-
-            nextPhoto();
-
-        }
+    });
 
 
-        if (event.key === "ArrowLeft") {
+    document.querySelectorAll(".nav-link").forEach(link => {
 
-            previousPhoto();
+        link.classList.remove("active");
 
-        }
+        if (link.getAttribute("href") === "#" + current) {
 
-    }
-);
-
-
-/* =========================================
-   CLICK OUTSIDE IMAGE
-========================================= */
-
-lightbox.addEventListener(
-    "click",
-    event => {
-
-        if (event.target === lightbox) {
-
-            closeLightbox();
+            link.classList.add("active");
 
         }
 
-    }
-);
+    });
+
+});
 
 
-/* =========================================
-   TOUCH SWIPE
-========================================= */
+/* ================= REVEAL ================= */
 
-let touchStartX = 0;
-
-let touchEndX = 0;
+const revealElements = document.querySelectorAll(".reveal");
 
 
-lightbox.addEventListener(
-    "touchstart",
-    event => {
+const revealObserver = new IntersectionObserver(
 
-        touchStartX =
-            event.changedTouches[0].screenX;
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
 
     },
-    { passive: true }
+
+    {
+        threshold: .12
+    }
+
 );
-
-
-lightbox.addEventListener(
-    "touchend",
-    event => {
-
-        touchEndX =
-            event.changedTouches[0].screenX;
-
-        const distance =
-            touchEndX - touchStartX;
-
-
-        if (Math.abs(distance) < 50) {
-            return;
-        }
-
-
-        if (distance < 0) {
-
-            nextPhoto();
-
-        } else {
-
-            previousPhoto();
-
-        }
-
-    },
-    { passive: true }
-);
-
-
-/* =========================================
-   SCROLL REVEAL ANIMATION
-========================================= */
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                    revealObserver.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.15
-        }
-    );
 
 
 revealElements.forEach(element => {
@@ -1261,67 +159,135 @@ revealElements.forEach(element => {
 });
 
 
-/* =========================================
-   INITIALIZE
-========================================= */
+/* ================= COUNTERS ================= */
 
-generatePhotos();
+const counters = document.querySelectorAll(".counter");
 
-filterPhotos();
+let counterStarted = false;
 
 
+function startCounters() {
 
-/* =========================================
-   GALERIE COMMUNAUTÉ 🇨🇫
-========================================= */
+    if (counterStarted) return;
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* ================================
-       FILTRES
-    ================================= */
-
-    const filterButtons =
-        document.querySelectorAll(".filter-btn");
-
-    const categories =
-        document.querySelectorAll(".gallery-category");
+    counterStarted = true;
 
 
-    filterButtons.forEach(button => {
+    counters.forEach(counter => {
 
-        button.addEventListener("click", () => {
+        const target = Number(counter.dataset.target);
 
-            const target =
-                button.dataset.filter;
+        let current = 0;
 
+        const duration = 1600;
 
-            /* Bouton actif */
-
-            filterButtons.forEach(btn => {
-                btn.classList.remove("active");
-            });
-
-            button.classList.add("active");
+        const increment = target / (duration / 16);
 
 
-            /* Cacher les catégories */
+        const update = () => {
 
-            categories.forEach(category => {
-                category.classList.remove("active");
-            });
+            current += increment;
+
+            if (current < target) {
+
+                counter.textContent = Math.floor(current);
+
+                requestAnimationFrame(update);
+
+            } else {
+
+                counter.textContent = target;
+
+            }
+
+        };
 
 
-            /* Afficher la catégorie */
+        update();
 
-            const selected =
-                document.getElementById(target);
+    });
 
-            if (selected) {
+}
 
-                selected.classList.add("active");
 
-                animatePhotos(selected);
+const statsSection = document.querySelector(".stats");
+
+
+const counterObserver = new IntersectionObserver(
+
+    entries => {
+
+        if (entries[0].isIntersecting) {
+
+            startCounters();
+
+        }
+
+    },
+
+    {
+        threshold: .3
+    }
+
+);
+
+
+counterObserver.observe(statsSection);
+
+
+/* ================= GALLERY FILTER ================= */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const galleryItems =
+    document.querySelectorAll(".gallery-item");
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+
+        const filter = button.dataset.filter;
+
+
+        galleryItems.forEach(item => {
+
+            if (
+                filter === "all" ||
+                item.classList.contains(filter)
+            ) {
+
+                item.style.display = "block";
+
+                setTimeout(() => {
+
+                    item.style.opacity = "1";
+
+                    item.style.transform = "scale(1)";
+
+                }, 50);
+
+            } else {
+
+                item.style.opacity = "0";
+
+                item.style.transform = "scale(.8)";
+
+                setTimeout(() => {
+
+                    item.style.display = "none";
+
+                }, 300);
 
             }
 
@@ -1329,332 +295,592 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
-    /* ================================
-       ANIMATION DES PHOTOS
-    ================================= */
-
-    function animatePhotos(category) {
-
-        const photos =
-            category.querySelectorAll(".gallery-item");
+});
 
 
-        photos.forEach((photo, index) => {
+/* ================= LIGHTBOX ================= */
 
-            photo.style.animation = "none";
+const lightbox =
+    document.getElementById("lightbox");
 
-            /* Force le navigateur à recalculer */
+const lightboxImage =
+    document.getElementById("lightboxImage");
 
-            void photo.offsetWidth;
-
-            photo.style.animation =
-                `photoAppear .6s ease forwards`;
-
-            photo.style.animationDelay =
-                `${Math.min(index * 0.04, 0.8)}s`;
-
-        });
-
-    }
+const closeLightbox =
+    document.querySelector(".lightbox-close");
 
 
-    /* ================================
-       LIGHTBOX
-    ================================= */
+document.querySelectorAll(".gallery-item").forEach(item => {
 
-    const lightbox =
-        document.getElementById("lightbox");
+    item.addEventListener("click", () => {
 
-    const lightboxImage =
-        document.getElementById("lightboxImage");
+        const image = item.querySelector("img");
 
-    const lightboxCaption =
-        document.getElementById("lightboxCaption");
-
-    const closeButton =
-        document.getElementById("lightboxClose");
-
-    const previousButton =
-        document.getElementById("lightboxPrev");
-
-    const nextButton =
-        document.getElementById("lightboxNext");
-
-
-    let currentPhotos = [];
-
-    let currentIndex = 0;
-
-
-    /* ================================
-       RÉCUPÉRER LES PHOTOS
-    ================================= */
-
-    function getCurrentPhotos() {
-
-        const activeCategory =
-            document.querySelector(
-                ".gallery-category.active"
-            );
-
-        if (!activeCategory) {
-            return [];
-        }
-
-        return Array.from(
-            activeCategory.querySelectorAll(
-                ".gallery-item"
-            )
-        );
-
-    }
-
-
-    /* ================================
-       OUVRIR LIGHTBOX
-    ================================= */
-
-    function openLightbox(photo, index) {
-
-        const image =
-            photo.querySelector("img");
-
-        const title =
-            photo.querySelector("h4");
-
-
-        if (!image) return;
-
-
-        lightboxImage.src =
-            image.src;
-
-        lightboxImage.alt =
-            image.alt;
-
-
-        lightboxCaption.textContent =
-            title
-                ? title.textContent
-                : image.alt;
-
-
-        currentIndex = index;
-
+        lightboxImage.src = image.src;
 
         lightbox.classList.add("active");
 
         document.body.style.overflow = "hidden";
 
+    });
+
+});
+
+
+closeLightbox.addEventListener("click", closeLightboxFunction);
+
+
+lightbox.addEventListener("click", event => {
+
+    if (event.target === lightbox) {
+
+        closeLightboxFunction();
+
     }
 
-
-    /* ================================
-       CLIQUER PHOTO
-    ================================= */
-
-    document.addEventListener("click", event => {
-
-        const photo =
-            event.target.closest(".gallery-item");
+});
 
 
-        if (!photo) return;
+function closeLightboxFunction() {
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
 
 
-        currentPhotos =
-            getCurrentPhotos();
+/* ESC */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+        closeLightboxFunction();
+
+    }
+
+});
 
 
-        const index =
-            currentPhotos.indexOf(photo);
+/* ================= CONTACT FORM ================= */
+
+const contactForm =
+    document.getElementById("contactForm");
 
 
-        openLightbox(photo, index);
+contactForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+
+    const button =
+        contactForm.querySelector("button");
+
+
+    const originalText =
+        button.innerHTML;
+
+
+    button.innerHTML =
+        '<i class="fa-solid fa-check"></i> Message envoyé';
+
+
+    button.style.background =
+        "#159447";
+
+
+    button.style.color =
+        "white";
+
+
+    contactForm.reset();
+
+
+    setTimeout(() => {
+
+        button.innerHTML = originalText;
+
+        button.style.background = "";
+
+        button.style.color = "";
+
+    }, 3000);
+
+});
+
+
+/* ================= LANGUAGE ================= */
+
+const languageBtn =
+    document.getElementById("languageBtn");
+
+
+languageBtn.addEventListener("click", () => {
+
+    alert(
+        "La version anglaise peut être ajoutée dans une deuxième page : index-en.html"
+    );
+
+});
+
+
+/* ================= PARALLAX HERO ================= */
+
+const hero = document.querySelector(".hero");
+
+
+window.addEventListener("scroll", () => {
+
+    const scroll = window.scrollY;
+
+    if (scroll < 700) {
+
+        hero.style.backgroundPositionY =
+            `${scroll * .25}px`;
+
+    }
+
+});/* =====================================================
+   COMMUNAUTÉ CENTRAFRICAINE AU GHANA
+   JAVASCRIPT
+===================================================== */
+
+
+/* ================= LOADER ================= */
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        loader.classList.add("hide");
+
+    }, 800);
+
+});
+
+
+/* ================= HEADER ================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn = document.getElementById("menuBtn");
+
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", () => {
+
+    nav.classList.toggle("open");
+
+    const icon = menuBtn.querySelector("i");
+
+    if (nav.classList.contains("open")) {
+
+        icon.classList.remove("fa-bars");
+
+        icon.classList.add("fa-xmark");
+
+    } else {
+
+        icon.classList.remove("fa-xmark");
+
+        icon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+/* Close mobile menu */
+
+document.querySelectorAll(".nav-link").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        nav.classList.remove("open");
+
+        const icon = menuBtn.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+
+        icon.classList.add("fa-bars");
+
+    });
+
+});
+
+
+/* ================= ACTIVE NAV ================= */
+
+const sections = document.querySelectorAll("section[id]");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+
+            current = section.getAttribute("id");
+
+        }
 
     });
 
 
-    /* ================================
-       FERMER
-    ================================= */
+    document.querySelectorAll(".nav-link").forEach(link => {
 
-    function closeLightbox() {
+        link.classList.remove("active");
 
-        lightbox.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
 
-        document.body.style.overflow = "";
+            link.classList.add("active");
 
+        }
+
+    });
+
+});
+
+
+/* ================= REVEAL ================= */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+
+const revealObserver = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: .12
     }
 
-
-    closeButton.addEventListener(
-        "click",
-        closeLightbox
-    );
+);
 
 
-    /* ================================
-       PHOTO SUIVANTE
-    ================================= */
+revealElements.forEach(element => {
 
-    function showNext() {
+    revealObserver.observe(element);
 
-        if (!currentPhotos.length) return;
+});
 
 
-        currentIndex =
-            (currentIndex + 1) %
-            currentPhotos.length;
+/* ================= COUNTERS ================= */
+
+const counters = document.querySelectorAll(".counter");
+
+let counterStarted = false;
 
 
-        openLightbox(
-            currentPhotos[currentIndex],
-            currentIndex
-        );
+function startCounters() {
 
+    if (counterStarted) return;
+
+    counterStarted = true;
+
+
+    counters.forEach(counter => {
+
+        const target = Number(counter.dataset.target);
+
+        let current = 0;
+
+        const duration = 1600;
+
+        const increment = target / (duration / 16);
+
+
+        const update = () => {
+
+            current += increment;
+
+            if (current < target) {
+
+                counter.textContent = Math.floor(current);
+
+                requestAnimationFrame(update);
+
+            } else {
+
+                counter.textContent = target;
+
+            }
+
+        };
+
+
+        update();
+
+    });
+
+}
+
+
+const statsSection = document.querySelector(".stats");
+
+
+const counterObserver = new IntersectionObserver(
+
+    entries => {
+
+        if (entries[0].isIntersecting) {
+
+            startCounters();
+
+        }
+
+    },
+
+    {
+        threshold: .3
     }
 
-
-    /* ================================
-       PHOTO PRÉCÉDENTE
-    ================================= */
-
-    function showPrevious() {
-
-        if (!currentPhotos.length) return;
+);
 
 
-        currentIndex =
-            (currentIndex - 1 +
-            currentPhotos.length) %
-            currentPhotos.length;
+counterObserver.observe(statsSection);
 
 
-        openLightbox(
-            currentPhotos[currentIndex],
-            currentIndex
-        );
+/* ================= GALLERY FILTER ================= */
 
-    }
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
 
-
-    nextButton.addEventListener(
-        "click",
-        showNext
-    );
+const galleryItems =
+    document.querySelectorAll(".gallery-item");
 
 
-    previousButton.addEventListener(
-        "click",
-        showPrevious
-    );
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
 
 
-    /* ================================
-       FERMER EN CLIQUANT À L'EXTÉRIEUR
-    ================================= */
+        const filter = button.dataset.filter;
 
-    lightbox.addEventListener(
-        "click",
-        event => {
+
+        galleryItems.forEach(item => {
 
             if (
-                event.target === lightbox
+                filter === "all" ||
+                item.classList.contains(filter)
             ) {
 
-                closeLightbox();
+                item.style.display = "block";
+
+                setTimeout(() => {
+
+                    item.style.opacity = "1";
+
+                    item.style.transform = "scale(1)";
+
+                }, 50);
+
+            } else {
+
+                item.style.opacity = "0";
+
+                item.style.transform = "scale(.8)";
+
+                setTimeout(() => {
+
+                    item.style.display = "none";
+
+                }, 300);
 
             }
 
-        }
+        });
+
+    });
+
+});
+
+
+/* ================= LIGHTBOX ================= */
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+const closeLightbox =
+    document.querySelector(".lightbox-close");
+
+
+document.querySelectorAll(".gallery-item").forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        const image = item.querySelector("img");
+
+        lightboxImage.src = image.src;
+
+        lightbox.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+
+closeLightbox.addEventListener("click", closeLightboxFunction);
+
+
+lightbox.addEventListener("click", event => {
+
+    if (event.target === lightbox) {
+
+        closeLightboxFunction();
+
+    }
+
+});
+
+
+function closeLightboxFunction() {
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* ESC */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+        closeLightboxFunction();
+
+    }
+
+});
+
+
+/* ================= CONTACT FORM ================= */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+
+contactForm.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+
+    const button =
+        contactForm.querySelector("button");
+
+
+    const originalText =
+        button.innerHTML;
+
+
+    button.innerHTML =
+        '<i class="fa-solid fa-check"></i> Message envoyé';
+
+
+    button.style.background =
+        "#159447";
+
+
+    button.style.color =
+        "white";
+
+
+    contactForm.reset();
+
+
+    setTimeout(() => {
+
+        button.innerHTML = originalText;
+
+        button.style.background = "";
+
+        button.style.color = "";
+
+    }, 3000);
+
+});
+
+
+/* ================= LANGUAGE ================= */
+
+const languageBtn =
+    document.getElementById("languageBtn");
+
+
+languageBtn.addEventListener("click", () => {
+
+    alert(
+        "La version anglaise peut être ajoutée dans une deuxième page : index-en.html"
     );
 
-
-    /* ================================
-       CLAVIER
-    ================================= */
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (
-                !lightbox.classList.contains(
-                    "active"
-                )
-            ) {
-                return;
-            }
+});
 
 
-            if (event.key === "Escape") {
-                closeLightbox();
-            }
+/* ================= PARALLAX HERO ================= */
+
+const hero = document.querySelector(".hero");
 
 
-            if (event.key === "ArrowRight") {
-                showNext();
-            }
+window.addEventListener("scroll", () => {
 
+    const scroll = window.scrollY;
 
-            if (event.key === "ArrowLeft") {
-                showPrevious();
-            }
+    if (scroll < 700) {
 
-        }
-    );
-
-
-    /* ================================
-       SWIPE MOBILE
-    ================================= */
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-
-    lightbox.addEventListener(
-        "touchstart",
-        event => {
-
-            touchStartX =
-                event.changedTouches[0].screenX;
-
-        }
-    );
-
-
-    lightbox.addEventListener(
-        "touchend",
-        event => {
-
-            touchEndX =
-                event.changedTouches[0].screenX;
-
-            handleSwipe();
-
-        }
-    );
-
-
-    function handleSwipe() {
-
-        const distance =
-            touchEndX - touchStartX;
-
-
-        if (Math.abs(distance) < 50) {
-            return;
-        }
-
-
-        if (distance < 0) {
-            showNext();
-        } else {
-            showPrevious();
-        }
+        hero.style.backgroundPositionY =
+            `${scroll * .25}px`;
 
     }
 
