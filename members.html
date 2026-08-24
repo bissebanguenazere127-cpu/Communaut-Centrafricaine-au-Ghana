@@ -6,8 +6,7 @@
     <meta name="description" content="Portail des membres de la Communauté centrafricaine au Ghana." />
     <title>Membres de la Communauté | CCG</title>
     <link rel="stylesheet" href="members.css" />
-      <link rel="stylesheet" href="ccg-responsive.css">
-</head>
+  </head>
   <body>
     <header class="hero">
       <nav class="nav container"><a class="brand" href="index.html"><span>🇨🇫</span> CCG</a><a class="nav-link" href="index.html">Accueil</a></nav>
@@ -76,6 +75,5 @@
     <div class="modal hidden" id="profileModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><button class="close" id="closeProfileModal" type="button" aria-label="Fermer">×</button><div id="profileModalContent"></div></div></div>
     <div class="modal hidden" id="joinModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="joinTitle"><div class="modal-card form-card"><button class="close" id="closeJoinModal" type="button" aria-label="Fermer">×</button><p class="eyebrow red">DEMANDE D’ADHÉSION</p><h2 id="joinTitle">Devenir membre</h2><p class="form-intro">Votre demande sera vérifiée par l’administration avant publication.</p><form id="membershipForm"><div class="form-grid"><label>Photo de profil<input name="photo" type="file" accept="image/*" /></label><label>Nom<input name="lastName" required autocomplete="family-name" /></label><label>Prénom<input name="firstName" required autocomplete="given-name" /></label><label>Téléphone<input name="phone" type="tel" required autocomplete="tel" /></label><label>Ville<select name="city" required><option value="">Choisir</option><option>Accra</option><option>Kumasi</option><option>Tema</option><option>Takoradi</option><option>Autre</option></select></label><label>Quartier<input name="district" required /></label><label>Email<input name="email" type="email" required autocomplete="email" /></label><label>Profession<input name="profession" required /></label><label>Date de naissance<input name="birthDate" type="date" required /></label><label>Genre<select name="gender" required><option value="">Choisir</option><option>Femme</option><option>Homme</option><option>Autre</option><option>Préfère ne pas répondre</option></select></label><label>Numéro WhatsApp<input name="whatsapp" type="tel" required /></label><label>Mot de passe<input name="password" type="password" minlength="8" required autocomplete="new-password" /></label><label>Confirmation du mot de passe<input name="confirmPassword" type="password" minlength="8" required autocomplete="new-password" /></label></div><label class="check"><input name="terms" type="checkbox" required /> J’accepte les conditions de la communauté et la politique de confidentialité.</label><button class="btn btn-primary form-submit" type="submit">Envoyer ma demande d’adhésion</button><p class="feedback" id="formFeedback" role="status"></p></form></div></div>
     <script src="supabsae-config.js"></script><script src="members.js"></script>
-      <script src="ccg-responsive.js"></script>
-</body>
+  </body>
 </html>

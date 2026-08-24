@@ -2765,3 +2765,666 @@ WHATSAPP
     }
 
 }
+
+
+
+/* =========================
+RESPONSIVE MOBILE
+========================= */
+
+
+@media(max-width:1000px){
+
+
+nav{
+
+position:absolute;
+
+top:80px;
+
+left:0;
+
+width:100%;
+
+background:white;
+
+flex-direction:column;
+
+align-items:center;
+
+padding:30px;
+
+display:none;
+
+}
+
+
+
+nav.active{
+
+display:flex;
+
+}
+
+
+.menu-btn{
+
+display:block;
+
+}
+
+
+.hero h1{
+
+font-size:35px;
+
+}
+
+.video-presentation{
+
+grid-template-columns:1fr;
+gap:34px;
+
+}
+
+.video-copy{
+
+max-width:650px;
+
+}
+
+.entities-grid{
+
+grid-template-columns:1fr;
+max-width:620px;
+
+}
+
+
+.about-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+.team{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.gallery{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.president-card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.section{
+
+padding:70px 5%;
+
+}
+
+.video-presentation{
+
+padding:70px 5%;
+
+}
+
+.entities-section{
+
+padding:70px 5%;
+
+}
+
+.video-frame{
+
+border-width:5px;
+border-radius:16px;
+
+}
+
+.entity-card{
+
+min-height:0;
+
+}
+
+.entity-photo{
+
+height:225px;
+
+}
+
+.entity-photo::after{
+
+top:130px;
+
+}
+
+.entity-logo{
+
+top:165px;
+left:22px;
+width:88px;
+height:88px;
+
+}
+
+.entity-details{
+
+padding:48px 22px 28px;
+
+}
+
+
+
+.team{
+
+grid-template-columns:1fr;
+
+}
+
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.hero h1{
+
+font-size:28px;
+
+}
+
+
+.hero h3{
+
+font-size:22px;
+
+}
+
+.hero-content{
+
+padding:110px 20px 92px;
+
+}
+
+.hero-emblem{
+
+width:78px;
+height:78px;
+margin-bottom:18px;
+
+}
+
+.hero-kicker{
+
+font-size:10px !important;
+letter-spacing:.09em;
+
+}
+
+
+
+}
+
+
+.services-carsc{
+    padding:80px 8%;
+    background:#f5f7fa;
+}
+
+
+.services-header{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+}
+
+
+.services-header h2{
+    font-size:42px;
+    color:#0A192F;
+    font-weight:800;
+}
+
+
+.services-header p{
+    color:#555;
+    font-size:18px;
+    line-height:1.7;
+}
+
+
+
+.services-grid{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+
+
+.service-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+
+
+.service-image{
+    height:220px;
+    overflow:hidden;
+}
+
+
+
+.service-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+
+
+.service-card:hover img{
+    transform:scale(1.1);
+}
+
+
+
+.service-card h3{
+    padding:20px 20px 10px;
+    color:#0A192F;
+    font-size:20px;
+}
+
+
+
+.service-card p{
+    padding:0 20px 25px;
+    color:#666;
+    line-height:1.7;
+}
+
+
+
+
+.new-section{
+    padding:80px 8%;
+    background:#f5f7fa;
+}
+
+.new-section h2{
+    color:#003893;
+    font-size:42px;
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.new-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.new-card{
+    background:white;
+    border-radius:20px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 16px 40px rgba(0,0,0,.08);
+    transition:.4s;
+    cursor:pointer;
+}
+
+.new-card img{
+    width:100%;
+    height:220px;
+    border-radius:18px;
+    margin-bottom:20px;
+}
+
+.new-card.photo-card{
+    padding:25px;
+}
+
+.new-card.photo-card h3{
+    font-size:24px;
+}
+
+.new-card.photo-card p{
+    color:#555;
+}
+
+.new-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 22px 50px rgba(0,0,0,.12);
+}
+
+.new-card i{
+    font-size:40px;
+    color:#D52B1E;
+    margin-bottom:18px;
+}
+
+.new-card h3{
+    margin-bottom:12px;
+    color:#003893;
+}
+
+.new-card p{
+    color:#555;
+    line-height:1.8;
+}
+
+@media(max-width:768px){
+
+.services-header h2{
+    font-size:30px;
+}
+
+
+.services-carsc{
+    padding:50px 5%;
+}
+
+.new-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.new-section{
+    padding:50px 5%;
+}
+
+}
+
+.event-photo{
+    width:10%;     
+    height:400px;
+    object-fit:cover;
+    border-radius:18px;
+    margin-bottom:20px;
+}
+
+
+
+
+
+/* =========================================
+   MOT DE BIENVENUE DU PRESIDENT
+========================================= */
+
+.welcome-president {
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #f7f9fc, #ffffff);
+}
+
+.welcome-container {
+    width: min(1100px, 100%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+/* PHOTO */
+
+.welcome-photo {
+    position: relative;
+}
+
+.welcome-photo::before {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 14px;
+    left: 14px;
+
+    border-radius: 22px;
+
+    background: #ffd700;
+
+    z-index: 0;
+}
+
+.welcome-photo img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+
+    transition: transform .4s ease;
+}
+
+.welcome-photo:hover img {
+    transform: translateY(-6px);
+}
+
+/* CONTENU */
+
+.welcome-content {
+    color: #475467;
+}
+
+.welcome-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #0a192f;
+}
+
+.welcome-content h2 {
+    margin: 0 0 22px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(32px, 4vw, 50px);
+
+    line-height: 1.15;
+
+    color: #0a192f;
+}
+
+.welcome-content h2 span {
+    color: #d4a900;
+}
+
+.welcome-content p {
+    margin-bottom: 16px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.welcome-text {
+    font-size: 19px !important;
+
+    font-weight: 700;
+
+    color: #0a192f;
+}
+
+/* SIGNATURE */
+
+.welcome-signature {
+    margin-top: 28px;
+
+    padding-left: 18px;
+
+    border-left: 4px solid #ffd700;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.welcome-signature strong {
+    font-family: "Poppins", sans-serif;
+
+    color: #0a192f;
+
+    font-size: 17px;
+}
+
+.welcome-signature span {
+    color: #667085;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .welcome-container {
+        grid-template-columns: 300px 1fr;
+        gap: 35px;
+    }
+
+    .welcome-content h2 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .welcome-president {
+        padding: 65px 16px;
+    }
+
+    .welcome-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .welcome-photo {
+        width: min(330px, 90%);
+        margin: auto;
+    }
+
+    .welcome-content {
+        text-align: center;
+    }
+
+    .welcome-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .welcome-content h2 {
+        font-size: 34px;
+    }
+
+    .welcome-content p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .welcome-signature {
+        text-align: left;
+
+        width: fit-content;
+
+        margin: 25px auto 0;
+    }
+
+}
+
+
+/* =========================================
+   PETIT TELEPHONE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .welcome-president {
+        padding: 50px 14px;
+    }
+
+    .welcome-content h2 {
+        font-size: 29px;
+    }
+
+    .welcome-photo {
+        width: 85%;
+    }
+
+}
