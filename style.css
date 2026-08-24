@@ -3428,3 +3428,379 @@ letter-spacing:.09em;
     }
 
 }
+
+
+
+
+/* =====================================================
+   GLOBAL RESPONSIVE FIX
+   COMMUNAUTÉ CENTRAFRICAINE AU GHANA
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Empêche les sections de rester à 50% */
+section,
+header,
+footer,
+main,
+nav {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Images toujours responsives */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Vidéos */
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* Containers */
+.container,
+.section-container,
+.hero-container,
+.content-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/* =====================================================
+   HEADER / NAVBAR
+===================================================== */
+
+header {
+    width: 100%;
+}
+
+.navbar,
+nav {
+    width: 100%;
+    max-width: 100%;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    width: 100%;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 650px;
+}
+
+
+/* =====================================================
+   BIENVENUE / MOT DU PRESIDENT
+===================================================== */
+
+.welcome,
+.welcome-section,
+.message-section,
+.president-message {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.welcome-container,
+.message-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* Image du président */
+.welcome-image,
+.president-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container,
+    .section-container,
+    .hero-container,
+    .content-container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    /* Navbar */
+    .navbar {
+        width: 100%;
+    }
+
+    .nav-container {
+        width: 100%;
+        padding: 0 18px;
+    }
+
+    /* Hero */
+    .hero {
+        width: 100%;
+        min-height: 680px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        line-height: 1.1;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Bienvenue */
+    .welcome {
+        width: 100%;
+    }
+
+    .welcome-container {
+        width: 100%;
+        padding: 35px 20px;
+    }
+
+    .welcome-image,
+    .president-image {
+        width: 100%;
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .welcome h2 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        line-height: 1.15;
+        text-align: center;
+    }
+
+    .welcome p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+
+    /* Toutes les grilles deviennent une colonne */
+    .grid,
+    .cards,
+    .gallery-grid,
+    .services-grid,
+    .members-grid {
+        width: 100%;
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Évite les éléments qui dépassent */
+    .row {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   PETITS TELEPHONES
+===================================================== */
+
+@media screen and (max-width: 480px) {
+
+    .container,
+    .section-container,
+    .hero-container,
+    .content-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-content {
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .welcome-container {
+        padding: 30px 15px;
+    }
+
+    .welcome-image,
+    .president-image {
+        width: 100%;
+        max-width: 310px;
+    }
+}
+
+
+/* =====================================================
+   FIX ELEMENTS WITH FIXED WIDTH
+===================================================== */
+
+[class*="container"],
+[class*="section"],
+[class*="content"] {
+    max-width: 100%;
+}
+
+
+/* IMPORTANT :
+   Empêche un élément avec width: 50vw / 50%
+   de créer la colonne blanche.
+*/
+
+@media screen and (max-width: 768px) {
+
+    .hero,
+    .hero-section,
+    .home,
+    .home-section,
+    .welcome,
+    .welcome-section,
+    .about,
+    .about-section,
+    .gallery,
+    .gallery-section,
+    .services,
+    .services-section,
+    .contact,
+    .contact-section,
+    footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+
+/* =====================================================
+   WHATSAPP CHAT
+===================================================== */
+
+.whatsapp-widget {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    max-width: calc(100vw - 30px);
+}
+
+@media screen and (max-width: 480px) {
+
+    .whatsapp-widget {
+        right: 12px;
+        bottom: 12px;
+        max-width: calc(100vw - 24px);
+    }
+
+    .whatsapp-widget .chat-box {
+        width: calc(100vw - 30px);
+        max-width: 350px;
+    }
+}
+
+
+/* =====================================================
+   NO HORIZONTAL OVERFLOW
+===================================================== */
+
+.hero *,
+.welcome *,
+section *,
+header *,
+footer * {
+    max-width: 100%;
+}
