@@ -980,3 +980,18 @@ updateParallax();
 console.log(
     "🇨🇫 CCG — JavaScript chargé avec succès."
 );
+
+
+/* ================================
+   WHATSAPP SYSTEM
+================================ */
+
+function closeWhatsApp() {
+
+    const message = document.querySelector(".whatsapp-message");
+
+    if (message) {
+        message.style.display = "none";
+    }
+
+}

@@ -441,7 +441,7 @@ textarea {
             rgba(0,20,55,.65),
             rgba(0,20,55,.65)
         ),
-        url("image/WhatsApp Image 2026-07-31 at 10.21.44 AM.jpeg")
+        url("profile.png")
         center / cover no-repeat;
 
     background-attachment: fixed;
@@ -2177,3 +2177,481 @@ VIDEO PRESENTATION
     background:#061528;
 }
 
+
+
+/* =========================
+WHATSAPP
+========================= */
+
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    background:#25D366;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:35px;
+
+    z-index:999;
+
+    animation:pulse 2s infinite;
+
+}
+
+
+
+
+/* =====================================
+   FINANCEMENT / SOUTIEN INSTITUTIONNEL
+===================================== */
+
+.financement-section {
+    position: relative;
+    padding: 100px 8%;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(5, 15, 35, 0.97),
+            rgba(10, 35, 70, 0.95)
+        );
+    overflow: hidden;
+}
+
+.financement-section::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 215, 0, 0.08);
+    border-radius: 50%;
+    top: -150px;
+    left: -150px;
+    filter: blur(5px);
+}
+
+.financement-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+/* IMAGE */
+
+.financement-image {
+    position: relative;
+    height: 520px;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.financement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.financement-image:hover img {
+    transform: scale(1.06);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* CONTENT */
+
+.financement-content {
+    color: white;
+}
+
+.financement-label {
+    display: inline-block;
+    color: #FFD700;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.financement-content h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+}
+
+.financement-content h2 span {
+    color: #FFD700;
+}
+
+.financement-line {
+    width: 80px;
+    height: 4px;
+    background: #FFD700;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.financement-text {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #e9edf5;
+}
+
+.financement-content h3 {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.financement-content h3 strong {
+    display: block;
+    color: #FFD700;
+    font-size: 23px;
+    margin-top: 5px;
+}
+
+/* DATE */
+
+.financement-date {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 22px;
+    margin-bottom: 25px;
+    width: fit-content;
+    border-left: 4px solid #FFD700;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+}
+
+.financement-date > span {
+    font-size: 27px;
+}
+
+.financement-date small {
+    display: block;
+    color: #b9c1cf;
+    margin-bottom: 4px;
+}
+
+.financement-date strong {
+    color: white;
+    font-size: 17px;
+}
+
+.financement-description {
+    color: #cdd5e2;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .financement-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .financement-image {
+        height: 450px;
+    }
+
+    .financement-content h2 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .financement-section {
+        padding: 70px 20px;
+    }
+
+    .financement-image {
+        height: 380px;
+    }
+
+    .financement-content h2 {
+        font-size: 29px;
+    }
+
+    .financement-text {
+        font-size: 17px;
+    }
+
+    .financement-content h3 strong {
+        font-size: 19px;
+    }
+}
+
+
+/* =================================
+   WHATSAPP SYSTEM
+================================= */
+
+.whatsapp-system {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+}
+
+/* BOUTON */
+
+.whatsapp-button {
+    position: relative;
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.3s ease;
+
+    animation: whatsappFloat 3s ease-in-out infinite;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.12);
+}
+
+/* ICÔNE */
+
+.whatsapp-icon {
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* PULSE */
+
+.whatsapp-pulse {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+    border: 3px solid #25D366;
+
+    animation: whatsappPulse 2s infinite;
+}
+
+/* MESSAGE */
+
+.whatsapp-message {
+    position: absolute;
+
+    right: 0;
+    bottom: 80px;
+
+    width: 320px;
+
+    padding: 22px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.2);
+
+    animation: whatsappAppear 0.5s ease;
+}
+
+.whatsapp-message strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+.whatsapp-message p {
+    color: #596273;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+/* CLOSE */
+
+.whatsapp-close {
+    position: absolute;
+
+    top: 8px;
+    right: 10px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 22px;
+
+    color: #777;
+
+    cursor: pointer;
+}
+
+/* CHAT BUTTON */
+
+.whatsapp-chat-btn {
+    display: block;
+
+    padding: 12px 15px;
+
+    background: #25D366;
+
+    color: white;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.whatsapp-chat-btn:hover {
+    background: #1ebe5d;
+}
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes whatsappFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes whatsappPulse {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+@keyframes whatsappAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .whatsapp-system {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .whatsapp-message {
+        width: calc(100vw - 40px);
+
+        right: 0;
+    }
+
+    .whatsapp-button {
+        width: 58px;
+        height: 58px;
+    }
+
+    .whatsapp-pulse {
+        width: 58px;
+        height: 58px;
+    }
+
+}
