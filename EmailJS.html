@@ -1,0 +1,127 @@
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+/* ==========================================
+   EMAILJS
+========================================== */
+
+emailjs.init({
+    publicKey: "TON_PUBLIC_KEY"
+});
+
+
+/* ==========================================
+   MEMBERSHIP FORM
+========================================== */
+
+const membershipForm = document.getElementById("membershipForm");
+const submitBtn = document.getElementById("submitBtn");
+const buttonText = document.getElementById("buttonText");
+const loader = document.getElementById("loader");
+const formMessage = document.getElementById("formMessage");
+
+
+membershipForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    submitBtn.disabled = true;
+
+    buttonText.textContent = "Envoi en cours...";
+    loader.style.display = "inline-block";
+
+    const formData = {
+
+        fullname:
+            document.getElementById("fullname").value,
+
+        email:
+            document.getElementById("email").value,
+
+        phone:
+            document.getElementById("phone").value,
+
+        city:
+            document.getElementById("city").value,
+
+        profession:
+            document.getElementById("profession").value,
+
+        message:
+            document.getElementById("message").value,
+
+        date:
+            new Date().toLocaleString("fr-FR")
+
+    };
+
+
+    emailjs.send(
+        "TON_SERVICE_ID",
+        "TON_TEMPLATE_ID",
+        formData
+    )
+
+    .then(function(response) {
+
+        console.log("Email envoyé :", response);
+
+        formMessage.innerHTML = `
+            <div class="success-message">
+                ✅ Inscription réussie !<br>
+                Votre demande a été envoyée à l'administration.
+            </div>
+        `;
+
+        membershipForm.reset();
+
+        buttonText.textContent = "Inscription envoyée";
+
+    })
+
+    .catch(function(error) {
+
+        console.error("Erreur EmailJS :", error);
+
+        formMessage.innerHTML = `
+            <div class="error-message">
+                ❌ Une erreur est survenue.
+                Veuillez réessayer.
+            </div>
+        `;
+
+        buttonText.textContent = "Réessayer";
+
+    })
+
+    .finally(function() {
+
+        submitBtn.disabled = false;
+        loader.style.display = "none";
+
+    });
+
+});
+</script>
+
+Nouvelle inscription — Communauté Centrafricaine au Ghana
+
+Nom complet :
+{{fullname}}
+
+Email :
+{{email}}
+
+Téléphone / WhatsApp :
+{{phone}}
+
+Ville :
+{{city}}
+
+Profession :
+{{profession}}
+
+Message :
+{{message}}
+
+Date d'inscription :
+{{date}}

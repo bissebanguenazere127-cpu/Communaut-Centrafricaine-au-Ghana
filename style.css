@@ -137,7 +137,7 @@ textarea {
 
     z-index: 5000;
 
-    background: rgba(221, 213, 98, 0.96);
+    background: rgba(250, 250, 249, 0.96);
 
     backdrop-filter: blur(15px);
 
@@ -3233,7 +3233,7 @@ letter-spacing:.09em;
 
     border-radius: 22px;
 
-    background: #ffd700;
+    background: #070707;
 
     z-index: 0;
 }
@@ -3292,7 +3292,7 @@ letter-spacing:.09em;
 }
 
 .welcome-content h2 span {
-    color: #d4a900;
+    color: #3208ee;
 }
 
 .welcome-content p {
@@ -3318,7 +3318,7 @@ letter-spacing:.09em;
 
     padding-left: 18px;
 
-    border-left: 4px solid #ffd700;
+    border-left: 4px solid #0400ff;
 
     display: flex;
     flex-direction: column;
@@ -3812,13 +3812,15 @@ footer * {
 
 .members-section {
     padding: 100px 20px;
-    background: #f5f7fa;
+    background: rgb(177, 105, 105);
+    
 }
 
 .members-container {
     max-width: 1200px;
     margin: auto;
 }
+
 
 
 /* ===============================
@@ -4132,6 +4134,2277 @@ footer * {
 
     .member-photo {
         height: 320px;
+    }
+
+}
+
+
+/* =========================
+   EVENTS SECTION
+========================= */
+
+.events-section {
+    position: relative;
+    padding: 100px 6%;
+    background: #f7f9fc;
+    overflow: hidden;
+}
+
+.events-container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+
+/* HEADER */
+
+.events-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px;
+}
+
+.section-tag {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background: rgba(0, 58, 112, 0.08);
+    color: #003a70;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.events-header h2 {
+    margin: 0;
+    font-size: clamp(35px, 5vw, 58px);
+    color: #071a2d;
+    font-weight: 800;
+}
+
+.events-header h2 span {
+    color: #003a70;
+}
+
+.events-header p {
+    margin-top: 18px;
+    color: #667085;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+
+/* GRID */
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+
+/* CARD */
+
+.event-card {
+    background: #ffffff;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+    transition: 0.4s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.13);
+}
+
+
+/* IMAGE */
+
+.event-image {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.08);
+}
+
+
+/* DATE */
+
+.event-date {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 65px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #ffffff;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.event-date strong {
+    font-size: 25px;
+    line-height: 1;
+    color: #003a70;
+}
+
+.event-date span {
+    margin-top: 5px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #777;
+}
+
+
+/* CATEGORY */
+
+.event-category {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    padding: 8px 13px;
+
+    background: #003a70;
+    color: #ffffff;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.event-category.sport {
+    background: #00843d;
+}
+
+.event-category.culture {
+    background: #d69e00;
+}
+
+
+/* CONTENT */
+
+.event-content {
+    padding: 28px;
+}
+
+.event-content h3 {
+    margin: 0 0 18px;
+    color: #071a2d;
+    font-size: 21px;
+    line-height: 1.35;
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.event-info p {
+    margin: 0;
+    color: #667085;
+    font-size: 14px;
+}
+
+.event-description {
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+
+/* BUTTON */
+
+.event-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    background: #003a70;
+    color: #ffffff;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.event-btn:hover {
+    background: #005ca8;
+    transform: translateX(4px);
+}
+
+.event-btn span {
+    font-size: 18px;
+}
+
+
+/* MORE BUTTON */
+
+.events-more {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.all-events-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px 28px;
+
+    border: 2px solid #003a70;
+    border-radius: 35px;
+
+    color: #003a70;
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.all-events-btn:hover {
+    background: #003a70;
+    color: white;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .events-section {
+        padding: 70px 5%;
+    }
+
+    .events-header {
+        margin-bottom: 40px;
+    }
+
+    .events-header h2 {
+        font-size: 36px;
+    }
+
+    .events-header p {
+        font-size: 14px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .event-image {
+        height: 230px;
+    }
+
+    .event-content {
+        padding: 23px;
+    }
+
+    .event-content h3 {
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================
+   ACTUALITÉS
+========================= */
+
+.news-section {
+    position: relative;
+    padding: 100px 6%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.news-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+
+/* HEADER */
+
+.news-header {
+    max-width: 750px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.news-header .section-tag {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-bottom: 15px;
+
+    background: rgba(0, 58, 112, 0.08);
+    color: #003a70;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.news-header h2 {
+    margin: 0;
+
+    color: #071a2d;
+
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 800;
+}
+
+.news-header h2 span {
+    color: #003a70;
+}
+
+.news-header p {
+    margin-top: 18px;
+
+    color: #667085;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* GRID */
+
+.news-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* CARD */
+
+.news-card {
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid #edf0f4;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.13);
+}
+
+
+/* IMAGE */
+
+.news-image {
+    position: relative;
+
+    width: 100%;
+    height: 240px;
+
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.08);
+}
+
+
+/* CATEGORY */
+
+.news-category {
+    position: absolute;
+
+    left: 16px;
+    bottom: 16px;
+
+    padding: 8px 14px;
+
+    background: #003a70;
+    color: #ffffff;
+
+    border-radius: 25px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.news-category.sport {
+    background: #00843d;
+}
+
+.news-category.culture {
+    background: #d49a00;
+}
+
+.news-category.meeting {
+    background: #7028a0;
+}
+
+
+/* CONTENT */
+
+.news-content {
+    padding: 26px;
+}
+
+
+/* DATE */
+
+.news-date {
+    margin-bottom: 12px;
+
+    color: #7a869a;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* TITLE */
+
+.news-content h3 {
+    margin: 0 0 14px;
+
+    color: #071a2d;
+
+    font-size: 20px;
+    line-height: 1.4;
+
+    transition: color 0.3s ease;
+}
+
+.news-card:hover .news-content h3 {
+    color: #003a70;
+}
+
+
+/* DESCRIPTION */
+
+.news-content p {
+    margin: 0 0 22px;
+
+    color: #667085;
+
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+
+/* BUTTON */
+
+.news-btn {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 9px;
+
+    text-decoration: none;
+
+    color: #003a70;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition:
+        gap 0.3s ease,
+        color 0.3s ease;
+}
+
+.news-btn:hover {
+    gap: 15px;
+    color: #005ca8;
+}
+
+.news-btn span {
+    font-size: 19px;
+}
+
+
+/* ALL NEWS */
+
+.news-more {
+    margin-top: 55px;
+
+    text-align: center;
+}
+
+.all-news-btn {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px 28px;
+
+    border: 2px solid #003a70;
+    border-radius: 40px;
+
+    color: #003a70;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.all-news-btn:hover {
+    background: #003a70;
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .news-section {
+        padding: 70px 5%;
+    }
+
+    .news-header {
+        margin-bottom: 40px;
+    }
+
+    .news-header h2 {
+        font-size: 36px;
+    }
+
+    .news-header p {
+        font-size: 14px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .news-image {
+        height: 230px;
+    }
+
+    .news-content {
+        padding: 22px;
+    }
+
+    .news-content h3 {
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   CCG — GLOBAL PREMIUM ANIMATION SYSTEM
+   Animation de toute la page
+========================================================= */
+
+
+/* =========================================================
+   1. VARIABLES
+========================================================= */
+
+:root {
+    --animation-fast: 0.25s;
+    --animation-normal: 0.6s;
+    --animation-slow: 0.9s;
+
+    --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   2. PAGE LOAD
+========================================================= */
+
+body {
+    opacity: 0;
+    animation: pageReveal 0.9s ease forwards;
+}
+
+@keyframes pageReveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   3. GLOBAL SCROLL REVEAL
+========================================================= */
+
+[data-animation] {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+[data-animation="fade-up"] {
+    transform: translateY(55px);
+}
+
+[data-animation="fade-down"] {
+    transform: translateY(-55px);
+}
+
+[data-animation="fade-left"] {
+    transform: translateX(-55px);
+}
+
+[data-animation="fade-right"] {
+    transform: translateX(55px);
+}
+
+[data-animation="zoom"] {
+    transform: scale(0.92);
+}
+
+[data-animation="blur"] {
+    transform: translateY(30px);
+    filter: blur(8px);
+}
+
+[data-animation].is-visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+    filter: blur(0);
+
+    transition:
+        opacity 0.9s var(--ease-premium),
+        transform 0.9s var(--ease-premium),
+        filter 0.9s var(--ease-premium);
+}
+
+
+/* =========================================================
+   4. SECTIONS
+========================================================= */
+
+section {
+    position: relative;
+}
+
+section > * {
+    will-change: transform;
+}
+
+
+/* =========================================================
+   5. SECTION TITLES
+========================================================= */
+
+.section-title,
+.news-header,
+.events-header,
+.gallery-header,
+.about-header,
+.members-header {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s var(--ease-premium),
+        transform 0.8s var(--ease-premium);
+}
+
+.section-title.visible,
+.news-header.visible,
+.events-header.visible,
+.gallery-header.visible,
+.about-header.visible,
+.members-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   6. CARDS
+========================================================= */
+
+.event-card,
+.news-card,
+.member-card,
+.executive-card,
+.stat-card,
+.gallery-item,
+.info-card,
+.program-card,
+.contact-card {
+    transition:
+        transform 0.45s var(--ease-premium),
+        box-shadow 0.45s var(--ease-premium),
+        border-color 0.45s ease;
+}
+
+
+/* Hover */
+
+.event-card:hover,
+.news-card:hover,
+.member-card:hover,
+.executive-card:hover,
+.stat-card:hover,
+.gallery-item:hover,
+.info-card:hover,
+.program-card:hover,
+.contact-card:hover {
+
+    transform: translateY(-8px);
+}
+
+
+/* =========================================================
+   7. CARD IMAGE
+========================================================= */
+
+.event-card img,
+.news-card img,
+.member-card img,
+.executive-card img,
+.gallery-item img,
+.program-card img {
+
+    transition:
+        transform 0.8s var(--ease-premium),
+        filter 0.5s ease;
+}
+
+.event-card:hover img,
+.news-card:hover img,
+.member-card:hover img,
+.executive-card:hover img,
+.gallery-item:hover img,
+.program-card:hover img {
+
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   8. IMAGE OVERLAY
+========================================================= */
+
+.gallery-item,
+.news-image,
+.event-image,
+.member-image {
+
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item::after,
+.news-image::after,
+.event-image::after,
+.member-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 30%,
+            rgba(255,255,255,0.15),
+            transparent 70%
+        );
+
+    transform: translateX(-120%);
+
+    transition:
+        transform 0.8s ease;
+
+    pointer-events: none;
+}
+
+.gallery-item:hover::after,
+.news-card:hover .news-image::after,
+.event-card:hover .event-image::after,
+.member-card:hover .member-image::after {
+
+    transform: translateX(120%);
+}
+
+
+/* =========================================================
+   9. BUTTON ANIMATION
+========================================================= */
+
+button,
+.btn,
+.hero-btn,
+.news-btn,
+.event-btn,
+.all-news-btn,
+.all-events-btn,
+.submit-btn {
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s var(--ease-premium),
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+button:hover,
+.btn:hover,
+.hero-btn:hover,
+.news-btn:hover,
+.event-btn:hover,
+.all-news-btn:hover,
+.all-events-btn:hover,
+.submit-btn:hover {
+
+    transform: translateY(-3px);
+}
+
+
+/* Light sweep */
+
+button::before,
+.btn::before,
+.hero-btn::before,
+.news-btn::before,
+.event-btn::before,
+.all-news-btn::before,
+.all-events-btn::before,
+.submit-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.25),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.7s ease;
+}
+
+button:hover::before,
+.btn:hover::before,
+.hero-btn:hover::before,
+.news-btn:hover::before,
+.event-btn:hover::before,
+.all-news-btn:hover::before,
+.all-events-btn:hover::before,
+.submit-btn:hover::before {
+
+    left: 140%;
+}
+
+
+/* =========================================================
+   10. HERO ANIMATION
+========================================================= */
+
+.hero-content > * {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    animation:
+        heroElement 0.9s var(--ease-premium)
+        forwards;
+}
+
+.hero-content > *:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.hero-content > *:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.hero-content > *:nth-child(3) {
+    animation-delay: 0.45s;
+}
+
+.hero-content > *:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes heroElement {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   11. HERO IMAGE / VIDEO
+========================================================= */
+
+.hero img,
+.hero video,
+.hero-bg img,
+.hero-bg video {
+
+    animation:
+        heroBackground 1.8s var(--ease-premium)
+        forwards;
+}
+
+@keyframes heroBackground {
+
+    from {
+        transform: scale(1.08);
+        filter: brightness(0.7);
+    }
+
+    to {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+}
+
+
+/* =========================================================
+   12. FLOATING EFFECT
+========================================================= */
+
+.floating {
+    animation:
+        floatingAnimation 4s ease-in-out infinite;
+}
+
+@keyframes floatingAnimation {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================================================
+   13. LOGO
+========================================================= */
+
+.logo img {
+
+    transition:
+        transform 0.5s var(--ease-premium);
+}
+
+.logo:hover img {
+
+    transform:
+        scale(1.06)
+        rotate(-2deg);
+}
+
+
+/* =========================================================
+   14. NAVIGATION
+========================================================= */
+
+header,
+.navbar,
+nav {
+
+    transition:
+        background 0.4s ease,
+        box-shadow 0.4s ease,
+        backdrop-filter 0.4s ease,
+        padding 0.4s ease;
+}
+
+header.scrolled,
+.navbar.scrolled,
+nav.scrolled {
+
+    background:
+        rgba(107, 3, 3, 0.92);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.08);
+}
+
+
+/* =========================================================
+   15. NAV LINKS
+========================================================= */
+
+nav a,
+.navbar a {
+
+    position: relative;
+}
+
+nav a::after,
+.navbar a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: currentColor;
+
+    transform: translateX(-50%);
+
+    transition:
+        width 0.3s ease;
+}
+
+nav a:hover::after,
+.navbar a:hover::after,
+nav a.active::after,
+.navbar a.active::after {
+
+    width: 70%;
+}
+
+
+/* =========================================================
+   16. STAGGER CARDS
+========================================================= */
+
+.stagger-item:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.stagger-item:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+.stagger-item:nth-child(3) {
+    transition-delay: 0.19s;
+}
+
+.stagger-item:nth-child(4) {
+    transition-delay: 0.26s;
+}
+
+.stagger-item:nth-child(5) {
+    transition-delay: 0.33s;
+}
+
+.stagger-item:nth-child(6) {
+    transition-delay: 0.40s;
+}
+
+
+/* =========================================================
+   17. STATISTICS
+========================================================= */
+
+.counter {
+
+    font-variant-numeric:
+        tabular-nums;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.counter:hover {
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   18. CONTACT INPUTS
+========================================================= */
+
+input,
+textarea,
+select {
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0,58,112,0.10);
+}
+
+
+/* =========================================================
+   19. FOOTER
+========================================================= */
+
+footer {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+footer::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 200%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.7),
+            transparent
+        );
+
+    animation:
+        footerLine 5s linear infinite;
+}
+
+@keyframes footerLine {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(50%);
+    }
+
+}
+
+
+/* =========================================================
+   20. SCROLL TO TOP
+========================================================= */
+
+#scrollTop {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(20px)
+        scale(0.8);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
+}
+
+#scrollTop.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+#scrollTop:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
+}
+
+
+/* =========================================================
+   21. MOBILE OPTIMIZATION
+========================================================= */
+
+@media (max-width: 768px) {
+
+    [data-animation="fade-up"] {
+        transform: translateY(35px);
+    }
+
+    [data-animation="fade-left"] {
+        transform: translateX(-30px);
+    }
+
+    [data-animation="fade-right"] {
+        transform: translateX(30px);
+    }
+
+    .event-card:hover,
+    .news-card:hover,
+    .member-card:hover,
+    .executive-card:hover,
+    .stat-card:hover,
+    .gallery-item:hover {
+
+        transform: translateY(-5px);
+    }
+
+}
+
+
+/* =========================================================
+   22. ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    [data-animation] {
+
+        opacity: 1 !important;
+
+        transform: none !important;
+
+        filter: none !important;
+    }
+
+}
+
+
+#scrollTop {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #003a70;
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.18);
+}
+
+
+/* =====================================================
+   DESTINATIONS — CCG
+===================================================== */
+
+.destinations-section {
+    width: 100%;
+    padding: 90px 6%;
+    background: #ffffff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.destinations-container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+
+.destinations-header {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-tag {
+    display: inline-block;
+
+    margin-bottom: 14px;
+    padding: 7px 16px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 58, 112, 0.08);
+    color: #003a70;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.destinations-header h2 {
+    margin: 0;
+
+    color: #102033;
+
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 800;
+}
+
+.destinations-header h2 span {
+    color: #003a70;
+}
+
+.destinations-header p {
+    margin-top: 15px;
+
+    color: #667085;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.destinations-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.destination-card {
+    width: 100%;
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.destination-image {
+    position: relative;
+
+    width: 100%;
+    height: 240px;
+
+    overflow: hidden;
+
+    background: #e9eef3;
+}
+
+
+/* IMPORTANT */
+
+.destination-image img {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    object-fit: cover;
+    object-position: center;
+
+    margin: 0;
+    padding: 0;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.destination-card:hover
+.destination-image img {
+    transform: scale(1.07);
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.destination-number {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    color: #003a70;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.destination-content {
+    padding: 25px;
+}
+
+.destination-category {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #003a70;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.destination-content h3 {
+    margin: 0 0 12px;
+
+    color: #102033;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.destination-content p {
+    margin: 0 0 20px;
+
+    color: #667085;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   LINK
+===================================================== */
+
+.destination-link {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 8px;
+
+    color: #003a70;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition:
+        gap 0.3s ease,
+        color 0.3s ease;
+}
+
+.destination-link:hover {
+    gap: 14px;
+    color: #005ca8;
+}
+
+
+/* =====================================================
+   MORE BUTTON
+===================================================== */
+
+.destinations-more {
+    margin-top: 45px;
+
+    text-align: center;
+}
+
+.destinations-btn {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 24px;
+
+    border: 2px solid #003a70;
+
+    border-radius: 30px;
+
+    color: #003a70;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.destinations-btn:hover {
+    background: #003a70;
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .destinations-section {
+        padding: 70px 5%;
+    }
+
+    .destinations-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .destinations-section {
+        padding: 60px 5%;
+    }
+
+    .destinations-header {
+        margin-bottom: 35px;
+    }
+
+    .destinations-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .destination-image {
+        height: 220px;
+    }
+
+    .destination-content {
+        padding: 21px;
+    }
+
+    .destination-content h3 {
+        font-size: 19px;
+    }
+
+    .destination-content p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   CCG GALLERY — ANIMATED BACKGROUND
+========================================================= */
+
+.gallery-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding: 100px 5%;
+
+    background: #f4f7fb;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.gallery-background {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* IMAGE DE FOND */
+
+.gallery-bg-image {
+    position: absolute;
+
+    inset: -8%;
+
+    background-image:
+        url("images/gallery-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.08);
+
+    animation:
+        galleryKenBurns 18s ease-in-out infinite alternate;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   KEN BURNS / MOUVEMENT LENT
+========================================================= */
+
+@keyframes galleryKenBurns {
+
+    0% {
+        transform:
+            scale(1.08)
+            translate3d(-1%, -1%, 0);
+    }
+
+    25% {
+        transform:
+            scale(1.12)
+            translate3d(1%, -1%, 0);
+    }
+
+    50% {
+        transform:
+            scale(1.10)
+            translate3d(1%, 1%, 0);
+    }
+
+    75% {
+        transform:
+            scale(1.14)
+            translate3d(-1%, 1%, 0);
+    }
+
+    100% {
+        transform:
+            scale(1.08)
+            translate3d(-1%, -1%, 0);
+    }
+
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.gallery-bg-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(248, 250, 252, 0.94),
+            rgba(248, 250, 252, 0.88)
+        );
+
+    backdrop-filter: blur(2px);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.gallery-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1250px, 100%);
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.gallery-header {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: 0 auto 45px;
+}
+
+.gallery-header h2 {
+    margin: 12px 0;
+
+    font-size: clamp(35px, 5vw, 58px);
+
+    color: #102033;
+
+    font-weight: 800;
+}
+
+.gallery-header h2 span {
+    color: #003a70;
+}
+
+.gallery-header p {
+    color: #667085;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.gallery-filters {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 35px;
+}
+
+.gallery-filter {
+    position: relative;
+
+    border: 1px solid rgba(0, 58, 112, 0.12);
+
+    background: rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(10px);
+
+    color: #344054;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.gallery-filter:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 58, 112, 0.10);
+}
+
+.gallery-filter.active {
+    background: #003a70;
+
+    color: #fff;
+
+    border-color: #003a70;
+
+    box-shadow:
+        0 8px 25px rgba(0, 58, 112, 0.20);
+}
+
+
+/* =========================================================
+   GALLERY GRID
+========================================================= */
+
+.gallery-grid {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.gallery-item {
+    position: relative;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #e8edf3;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.45s cubic-bezier(.22,1,.36,1),
+        box-shadow 0.45s ease,
+        opacity 0.4s ease;
+}
+
+
+/* IMAGE */
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.7s cubic-bezier(.22,1,.36,1),
+        filter 0.5s ease;
+}
+
+
+/* =========================================================
+   PHOTO HOVER
+========================================================= */
+
+.gallery-item:hover {
+    transform: translateY(-5px) scale(1.015);
+
+    z-index: 5;
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+
+    filter:
+        brightness(1.05)
+        saturate(1.08);
+}
+
+
+/* =========================================================
+   LIGHT SWEEP
+========================================================= */
+
+.gallery-item::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -130%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.25),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.8s ease;
+
+    pointer-events: none;
+}
+
+.gallery-item:hover::after {
+    left: 150%;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.gallery-item {
+    opacity: 0;
+
+    transform:
+        translateY(25px)
+        scale(0.97);
+
+    animation:
+        galleryReveal 0.7s
+        cubic-bezier(.22,1,.36,1)
+        forwards;
+}
+
+
+/* Stagger */
+
+.gallery-item:nth-child(1) {
+    animation-delay: .05s;
+}
+
+.gallery-item:nth-child(2) {
+    animation-delay: .10s;
+}
+
+.gallery-item:nth-child(3) {
+    animation-delay: .15s;
+}
+
+.gallery-item:nth-child(4) {
+    animation-delay: .20s;
+}
+
+.gallery-item:nth-child(5) {
+    animation-delay: .25s;
+}
+
+.gallery-item:nth-child(6) {
+    animation-delay: .30s;
+}
+
+.gallery-item:nth-child(7) {
+    animation-delay: .35s;
+}
+
+.gallery-item:nth-child(8) {
+    animation-delay: .40s;
+}
+
+@keyframes galleryReveal {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .gallery-section {
+        padding: 75px 4%;
+    }
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .gallery-section {
+        padding: 60px 4%;
+    }
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 6px;
+    }
+
+    .gallery-item {
+        border-radius: 7px;
+    }
+
+    .gallery-filters {
+        gap: 7px;
+    }
+
+    .gallery-filter {
+        padding: 8px 12px;
+
+        font-size: 11px;
+    }
+
+    .gallery-bg-image {
+        animation-duration: 25s;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .gallery-bg-image {
+        animation: none;
+        transform: scale(1.02);
+    }
+
+    .gallery-item {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .gallery-item img {
+        transition: none;
     }
 
 }

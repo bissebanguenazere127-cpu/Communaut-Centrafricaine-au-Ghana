@@ -17,7 +17,9 @@
     
 </head>
 
-
+<button id="scrollTop" aria-label="Retour en haut">
+    ↑
+</button>
 <body>
 
 <!-- =====================================================
@@ -69,9 +71,20 @@
             </div>
 
         </a>
+<div data-animation="fade-left">
+    ...
+</div>
+<div data-animation="fade-right">
+    ...
+</div>
+<div data-animation="zoom">
+    ...
+</div>
+<div data-animation="blur">
+    ...
+</div>
 
-
-        <!-- MENU -->
+     <!-- MENU -->
 
         <nav class="nav-menu" id="navMenu">
 
@@ -102,7 +115,7 @@
             </a>
 
 
-            <a href="#events"
+            <a href="#evenements"
                class="nav-link">
 
                 <i class="fas fa-calendar-alt"></i>
@@ -248,7 +261,7 @@
         <div class="welcome-content">
 
             <span class="welcome-label">
-                🇨🇫 MOT DE BIENVENUE 🇬🇭
+                 MOT DE BIENVENUE 🇬🇭
             </span>
 
             <h2>
@@ -322,7 +335,7 @@
     <div class="entities-grid">
         <article class="entity-card">
             <div class="entity-photo">
-                <img src="image/image.png" alt="&Eacute;tudiants centrafricains au Ghana">
+                <img src="association .jpeg" alt="&Eacute;tudiants centrafricains au Ghana">
             </div>
             <div class="entity-logo">
                 <img src="as logo.jpeg" alt="Logo de l'Association des &eacute;tudiants et stagiaires centrafricains au Ghana">
@@ -373,6 +386,14 @@
             <div class="document-card" data-document-card>
                 <div class="pdf-icon">📄</div>
                 <h3>CCG STATUS</h3>
+                <p>Registre des statuts de la CCG.</p>
+                <a href="CCG. STATUT & RI.pdf" target="_blank" class="btn">
+                    View PDF
+                </a>
+            </div>
+            <div class="document-card" data-document-card>
+                <div class="pdf-icon">📄</div>
+                <h3>CCG AESCG</h3>
                 <p>Registre des statuts de la CCG.</p>
                 <a href="reglement interieur  AESCG.pdf" target="_blank" class="btn">
                     View PDF
@@ -468,31 +489,181 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
 </div>
 </div>
 
-<div class="cards">
+<section class="destinations-section" id="destinations">
 
-<div class="card">
-<img class="event-photo" src="image/WhatsApp Image 2026-07-31 at 11.59.47 AM.jpeg" alt="Hôtel en Centrafrique">
-<h3>Hôtel lEDGER PLAZA</h3>
-<p>Un lieu confortable pour les visiteurs, situé à Bangui</p>
-</div>
+    <div class="destinations-container">
 
-<div class="card">
-<img class="event-photo" src="image/WhatsApp Image 2026-07-31 at 11.59.46 AM (1).jpeg" alt="Marché du pays">
-<h3>Marché Central</h3>
-<p>Un marché animé où découvrir l'artisanat local, les épices et la gastronomie centrafricaine.</p>
-</div>
+        <!-- TITRE -->
+        <div class="destinations-header">
 
-<div class="card">
-<img class="event-photo" src="image/WhatsApp Image 2026-07-31 at 11.59.46 AM.jpeg" alt="Paysage naturel">
-<h3>Lac Télé</h3>
-<p>Une destination naturelle majeure, parfaite pour les safaris et les paysages verdoyants de l'Afrique centrale.</p>
-</div>
+            <span class="section-tag">
+                DÉCOUVRIR LA CENTRAFRIQUE
+            </span>
 
-</div>
-<a href="https://en.wikipedia.org/wiki/Central_African_Republic" class="btn">
-plur d'informations sur la Centrafrique
-</a>
-</div>
+            <h2>
+                Découvrez notre <span>pays</span>
+            </h2>
+
+            <p>
+                Quelques lieux emblématiques à découvrir en
+                République centrafricaine.
+            </p>
+
+        </div>
+
+
+        <!-- CARTES -->
+        <div class="destinations-grid">
+
+
+            <!-- =========================
+                 HÔTEL LEDGER PLAZA
+            ========================== -->
+
+            <article class="destination-card">
+
+                <div class="destination-image">
+
+                    <img
+                        src="LG.jpeg"
+                        alt="Hôtel LEDGER PLAZA à Bangui"
+                        loading="lazy"
+                    >
+
+                    <span class="destination-number">
+                        01
+                    </span>
+
+                </div>
+
+
+                <div class="destination-content">
+
+                    <span class="destination-category">
+                        🏨 HÔTEL
+                    </span>
+
+                    <h3>
+                        Hôtel LEDGER PLAZA
+                    </h3>
+
+                    <p>
+                        Un lieu confortable pour les visiteurs,
+                        situé au cœur de Bangui, offrant un cadre
+                        agréable pour séjourner et découvrir
+                        la capitale centrafricaine.
+                    </p>
+
+                  
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 MARCHÉ CENTRAL
+            ========================== -->
+
+            <article class="destination-card">
+
+                <div class="destination-image">
+
+                    <img
+                        src="LG2.jpeg"
+                        alt="Marché Central de Bangui"
+                        loading="lazy"
+                    >
+
+                    <span class="destination-number">
+                        02
+                    </span>
+
+                </div>
+
+
+                <div class="destination-content">
+
+                    <span class="destination-category">
+                        🛍️ CULTURE
+                    </span>
+
+                    <h3>
+                        Marché Central
+                    </h3>
+
+                    <p>
+                        Un marché animé où découvrir l'artisanat
+                        local, les épices, les produits et la
+                        gastronomie centrafricaine.
+                    </p>
+
+                  
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 LAC TÉLÉ
+            ========================== -->
+
+            <article class="destination-card">
+
+                <div class="destination-image">
+
+                    <img
+                        src="EL.jpeg"
+                        alt="Lac Télé en République centrafricaine"
+                        loading="lazy"
+                    >
+
+                    <span class="destination-number">
+                        03
+                    </span>
+
+                </div>
+
+
+                <div class="destination-content">
+
+                    <span class="destination-category">
+                        🌿 NATURE
+                    </span>
+
+                    <h3>
+                        Lac Télé
+                    </h3>
+
+                    <p>
+                        Une destination naturelle majeure,
+                        parfaite pour les safaris et les paysages
+                        verdoyants de l'Afrique centrale.
+                    </p>
+
+                   
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- BOUTON -->
+
+        <div class="destinations-more">
+
+            <a
+                href="https://en.wikipedia.org/wiki/Central_African_Republic"
+                class="destinations-btn"
+            >
+                Plus d'informations sur la Centrafrique
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -564,7 +735,9 @@ plur d'informations sur la Centrafrique
         </div>
 
     </div>
-
+<div data-animation="fade-up">
+    ...
+</div>
 </section>
 
 
@@ -689,103 +862,164 @@ plur d'informations sur la Centrafrique
 
 
 
-<!-- =====================================================
-     EVENTS
-===================================================== -->
+<!-- =========================
+     SECTION ÉVÉNEMENTS
+========================= -->
+<section id="evenements" class="events-section">
 
-<section id="events"
-         class="section">
+    <div class="events-container">
 
-    <div class="section-title reveal">
+        <div class="events-header reveal">
+            <span class="section-tag">AGENDA CCG</span>
 
-        <p class="eyebrow">
-            ACTIVITÉS
-        </p>
-
-        <h2>
-            Événements
-        </h2>
-
-        <p>
-            Découvrez les activités et événements
-            organisés par la communauté.
-        </p>
-
-    </div>
-
-
-    <div class="cards">
-
-        <article class="card reveal">
-            <img
-                class="event-photo"
-                src="AG .jpeg"
-                alt="Assemblée Générale">
-
-            <div class="card-icon">
-                <i class="fas fa-calendar"></i>
-            </div>
-
-            <h3>
-                Assemblée Générale
-            </h3>
+            <h2>
+                Nos <span>Événements</span>
+            </h2>
 
             <p>
-                Réunion annuelle de la communauté.
+                Découvrez les prochains événements, activités
+                culturelles, sportives et communautaires de la
+                Communauté Centrafricaine au Ghana.
             </p>
+        </div>
 
-        </article>
+        <div class="events-grid">
+
+            <!-- ÉVÉNEMENT 1 -->
+            <article class="event-card reveal">
+
+                <div class="event-image">
+                    <img src="AG .jpeg"
+                         alt="Événement communautaire CCG">
+
+                    <div class="event-date">
+                        <strong>30</strong>
+                        <span>AOÛT</span>
+                    </div>
+
+                    <span class="event-category">
+                         Communauté
+                    </span>
+                </div>
+
+                <div class="event-content">
+
+                    <h3>
+                      ASSEMBLE GENERAL 
+                    </h3>
+
+                    <div class="event-info">
+                        <p>📅 Samedi 30 Août 2026</p>
+                        <p>⏰ 12:45</p>
+                        <p>📍 Accra, Ghana</p>
+                    </div>
+
+                    <p class="event-description">
+                        Une grande rencontre réunissant les membres
+                        de la communauté centrafricaine au Ghana
+                        autour de l'unité, de la fraternité et du
+                        développement communautaire.
+                    </p>
 
 
-        <article class="card reveal">
+                </div>
 
-            <img
-                class="event-photo"
-                src="image/WhatsApp Image 2026-07-31 at 10.21.45 AM.jpeg"
-                alt="Tournoi sportif">
-
-            <div class="card-icon">
-                <i class="fas fa-futbol"></i>
-            </div>
-
-            <h3>
-                Tournoi sportif
-            </h3>
-
-            <p>
-                Activités sportives communautaires.
-            </p>
-
-        </article>
+            </article>
 
 
-        <article class="card reveal">
+            <!-- ÉVÉNEMENT 2 -->
+            <article class="event-card reveal">
 
-            <img
-                class="event-photo"
-                src="image/WhatsApp Image 2026-07-31 at 10.21.45 AM.jpeg"
-                alt="Activité communautaire">
+                <div class="event-image">
 
-            <div class="card-icon">
-                <i class="fas fa-heart"></i>
-            </div>
+                    <img src="FF.jpeg"
+                         alt="Match de football">
 
-            <h3>
-                Activités communautaires
-            </h3>
+                    <div class="event-date">
+                        <strong>6</strong>
+                        <span>SEPT</span>
+                    </div>
 
-            <p>
-                Activités destinées à renforcer
-                les liens entre les membres.
-            </p>
+                    <span class="event-category sport">
+                        ⚽ Sport
+                    </span>
 
-        </article>
+                </div>
+
+                <div class="event-content">
+
+                    <h3>
+                        Match Amical CFTG VS GABON
+                    </h3>
+
+                    <div class="event-info">
+                        <p>📅 Samedi 6 SEPTEMBRE 2026</p>
+                        <p>⏰ 15:00</p>
+                        <p>📍ABELEMKPE PART</p>
+                    </div>
+
+                    <p class="event-description">
+                        Un grand rendez-vous sportif entre les
+                        communautés centrafricaine et congolaise
+                        au Ghana.
+                    </p>
+
+                   
+
+                </div>
+
+            </article>
+
+
+            <!-- ÉVÉNEMENT 3 -->
+            <article class="event-card reveal">
+
+                <div class="event-image">
+
+                    <img src="DL.jpeg"
+                         alt="Activité culturelle">
+
+                    <div class="event-date">
+                        <strong>20</strong>
+                        <span>SEPT</span>
+                    </div>
+
+                    <span class="event-category culture">
+                        🎭 Culture
+                    </span>
+
+                </div>
+
+                <div class="event-content">
+
+                    <h3>
+                        Journée Culturelle Centrafricaine
+                    </h3>
+
+                    <div class="event-info">
+                        <p>📅 Dimanche 20 Septembre 2026</p>
+                        <p>⏰ 14:00</p>
+                        <p>📍 Accra, Ghana</p>
+                    </div>
+
+                    <p class="event-description">
+                        Une journée dédiée à la culture,
+                        aux traditions, à la musique et à la
+                        gastronomie centrafricaines.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+       
+        </div>
 
     </div>
 
 </section>
-
-
 
 <!-- =====================================================
      TESTIMONIALS
@@ -949,7 +1183,307 @@ plur d'informations sur la Centrafrique
 
 </section>
 
+<!-- =========================
+     SECTION ACTUALITÉS
+========================= -->
 
+<section id="actualites" class="news-section">
+
+    <div class="news-container">
+
+        <!-- HEADER -->
+        <div class="news-header reveal">
+
+            <span class="section-tag">
+                ACTUALITÉS CCG
+            </span>
+
+            <h2>
+                Dernières <span>Actualités</span>
+            </h2>
+
+            <p>
+                Retrouvez les dernières informations, annonces,
+                activités et nouvelles de la Communauté
+                Centrafricaine au Ghana.
+            </p>
+
+        </div>
+
+
+        <!-- NEWS GRID -->
+        <div class="news-grid">
+
+
+            <!-- ARTICLE 1 -->
+            <article class="news-card reveal">
+
+                <div class="news-image">
+
+                    <img
+                        src="nomi.jpeg"
+                        alt="Actualité de la Communauté Centrafricaine au Ghana"
+                    >
+
+                    <span class="news-category">
+                        Communauté
+                    </span>
+
+                </div>
+
+                <div class="news-content">
+
+                    <div class="news-date">
+                        📅 25 Août 2026
+                    </div>
+
+                    <h3>
+                        La Communauté Centrafricaine au Ghana
+                        renforce son unité
+                    </h3>
+
+                    <p>
+                        La communauté poursuit ses initiatives
+                        pour renforcer la solidarité, l'entraide
+                        et l'intégration des Centrafricains au Ghana.
+                    </p>
+
+                    <a href="#" class="news-btn">
+                        Lire l'article
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 2 -->
+            <article class="news-card reveal">
+
+                <div class="news-image">
+
+                    <img
+                        src="images/news-2.jpg"
+                        alt="Activité sportive CCG"
+                    >
+
+                    <span class="news-category sport">
+                        Sport
+                    </span>
+
+                </div>
+
+                <div class="news-content">
+
+                    <div class="news-date">
+                        📅 20 Août 2026
+                    </div>
+
+                    <h3>
+                        Grande activité sportive de la communauté
+                    </h3>
+
+                    <p>
+                        Retour sur les moments forts d'une activité
+                        sportive ayant réuni plusieurs membres de
+                        la communauté centrafricaine.
+                    </p>
+
+                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
+                        Lire l'article
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 3 -->
+            <article class="news-card reveal">
+
+                <div class="news-image">
+
+                    <img
+                        src="ap.jpeg"
+                        alt="Réunion communautaire CCG"
+                    >
+
+                    <span class="news-category">
+                        Annonce
+                    </span>
+
+                </div>
+
+                <div class="news-content">
+
+                    <div class="news-date">
+                        📅 15 Août 2026
+                    </div>
+
+                    <h3>
+                        Nouvelle initiative pour les membres
+                    </h3>
+
+                    <p>
+                        La CCG annonce de nouvelles initiatives
+                        destinées à améliorer l'accompagnement
+                        et les services proposés aux membres.
+                    </p>
+
+                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
+                        Lire l'article
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 4 -->
+            <article class="news-card reveal">
+
+                <div class="news-image">
+
+                    <img
+                        src="images/news-4.jpg"
+                        alt="Culture centrafricaine au Ghana"
+                    >
+
+                    <span class="news-category culture">
+                        Culture
+                    </span>
+
+                </div>
+
+                <div class="news-content">
+
+                    <div class="news-date">
+                        📅 10 Août 2026
+                    </div>
+
+                    <h3>
+                        La culture centrafricaine à l'honneur
+                    </h3>
+
+                    <p>
+                        La communauté met en avant la richesse
+                        culturelle centrafricaine à travers la
+                        musique, la gastronomie et les traditions.
+                    </p>
+
+                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
+                        Lire l'article
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 5 -->
+            <article class="news-card reveal">
+
+                <div class="news-image">
+
+                    <img
+                        src="images/news-5.jpg"
+                        alt="Réunion des membres CCG"
+                    >
+
+                    <span class="news-category meeting">
+                        Réunion
+                    </span>
+
+                </div>
+
+                <div class="news-content">
+
+                    <div class="news-date">
+                        📅 05 Août 2026
+                    </div>
+
+                    <h3>
+                        Réunion des membres de la CCG
+                    </h3>
+
+                    <p>
+                        Une rencontre importante consacrée aux
+                        projets et aux prochaines activités de
+                        la communauté.
+                    </p>
+
+                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
+                        Lire l'article
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 6 -->
+            <article class="news-card reveal">
+
+                <div class="news-image">
+
+                    <img
+                        src="images/news-6.jpg"
+                        alt="Communauté centrafricaine"
+                    >
+
+                    <span class="news-category">
+                        CCG
+                    </span>
+
+                </div>
+
+                <div class="news-content">
+
+                    <div class="news-date">
+                        📅 01 Août 2026
+                    </div>
+
+                    <h3>
+                        Message de la direction de la CCG
+                    </h3>
+
+                    <p>
+                        La direction adresse un message de
+                        fraternité, d'unité et d'espoir à
+                        l'ensemble des membres.
+                    </p>
+
+                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
+                        Lire l'article
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <div class="news-more reveal">
+
+            <a href="#" class="all-news-btn">
+                Voir toutes les actualités
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- =====================================================
      CONTACT
