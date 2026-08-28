@@ -1,786 +1,219 @@
 "use strict";
 
 /* =====================================================
-   COMMUNAUTÉ CENTRAFRICAINE AU GHANA 🇨🇫🇬🇭
-   JAVASCRIPT PRINCIPAL — VERSION CORRIGÉE
+   CCG 🇨🇫🇬🇭
+   JAVASCRIPT PRINCIPAL
 ===================================================== */
 
 
 /* =====================================================
-   LOADER
+   DOM READY
 ===================================================== */
 
-window.addEventListener("load", () => {
-
-    const loader = document.getElementById("loader");
-
-    if (!loader) return;
-
-    setTimeout(() => {
-        loader.classList.add("hide");
-    }, 800);
-
-});
+document.addEventListener("DOMContentLoaded", () => {
 
 
-/* =====================================================
-   ELEMENTS NAVIGATION
-===================================================== */
+    /* =================================================
+       ELEMENTS
+    ================================================= */
 
-const header = document.getElementById("navbar") ||
-               document.getElementById("header");
+    const header =
+        document.getElementById("navbar");
 
-const navMenu = document.getElementById("navMenu") ||
-                document.getElementById("nav-menu") ||
-                document.getElementById("nav");
+    const navMenu =
+        document.getElementById("navMenu");
 
-const menuToggle = document.getElementById("menuToggle") ||
-                   document.getElementById("menu-toggle") ||
-                   document.getElementById("menuBtn");
+    const menuToggle =
+        document.getElementById("menuToggle");
 
-const navLinks = document.querySelectorAll(
-    ".nav-link[href^='#']"
-);
+    const navLinks =
+        document.querySelectorAll(
+            ".nav-link[href^='#']"
+        );
 
 
-/* =====================================================
-   HEADER SCROLL
-===================================================== */
+    /* =================================================
+       LOADER
+    ================================================= */
 
-function updateHeader() {
+    const loader =
+        document.getElementById("loader");
 
-    if (!header) return;
+    if (loader) {
 
-    if (window.scrollY > 50) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
+        setTimeout(() => {
+
+            loader.classList.add("hide");
+
+        }, 800);
+
     }
 
-}
 
+    /* =================================================
+       HEADER SCROLL
+    ================================================= */
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
+    function updateHeader() {
 
-function openMenu() {
+        if (!header) return;
 
-    if (!navMenu || !menuToggle) return;
+        if (window.scrollY > 50) {
 
-    navMenu.classList.add("active");
-    navMenu.classList.add("open");
+            header.classList.add("scrolled");
 
-    menuToggle.classList.add("active");
+        } else {
 
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-
-    document.body.classList.add("menu-open");
-
-}
-
-
-function closeMenu() {
-
-    if (!navMenu || !menuToggle) return;
-
-    navMenu.classList.remove("active");
-    navMenu.classList.remove("open");
-
-    menuToggle.classList.remove("active");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-    document.body.classList.remove("menu-open");
-
-}
-
-
-function toggleMenu() {
-
-    if (!navMenu) return;
-
-    const isOpen =
-        navMenu.classList.contains("active") ||
-        navMenu.classList.contains("open");
-
-    if (isOpen) {
-        closeMenu();
-    } else {
-        openMenu();
-    }
-
-}
-
-
-if (menuToggle) {
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-    menuToggle.addEventListener(
-        "click",
-        (event) => {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-            toggleMenu();
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   NAVIGATION LINKS
-===================================================== */
-
-navLinks.forEach(link => {
-
-    link.addEventListener(
-        "click",
-        event => {
-
-            const href =
-                link.getAttribute("href");
-
-            if (
-                !href ||
-                href === "#" ||
-                !href.startsWith("#")
-            ) {
-                return;
-            }
-
-            const target =
-                document.querySelector(href);
-
-            if (!target) return;
-
-            event.preventDefault();
-
-            closeMenu();
-
-            const headerHeight =
-                header
-                    ? header.offsetHeight
-                    : 0;
-
-            const targetPosition =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight;
-
-            window.scrollTo({
-
-                top: Math.max(
-                    0,
-                    targetPosition
-                ),
-
-                behavior: "smooth"
-
-            });
-
-        }
-    );
-
-});
-
-
-/* =====================================================
-   ACTIVE NAVIGATION
-===================================================== */
-
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
-
-function updateActiveNavigation() {
-
-    if (!sections.length) return;
-
-    let currentSection = "";
-
-    const scrollPosition =
-        window.scrollY +
-        (header ? header.offsetHeight : 80) +
-        100;
-
-
-    sections.forEach(section => {
-
-        const sectionTop =
-            section.offsetTop;
-
-        const sectionBottom =
-            sectionTop +
-            section.offsetHeight;
-
-
-        if (
-            scrollPosition >= sectionTop &&
-            scrollPosition < sectionBottom
-        ) {
-
-            currentSection =
-                section.getAttribute("id");
-
-        }
-
-    });
-
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        const href =
-            link.getAttribute("href");
-
-        if (
-            href ===
-            `#${currentSection}`
-        ) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-}
-
-
-window.addEventListener(
-    "scroll",
-    updateActiveNavigation
-);
-
-
-/* =====================================================
-   ESCAPE — FERMER MENU
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (event.key === "Escape") {
-
-            closeMenu();
+            header.classList.remove("scrolled");
 
         }
 
     }
-);
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
+
+    updateHeader();
 
 
-/* =====================================================
-   CLICK OUTSIDE
-===================================================== */
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
 
-document.addEventListener(
-    "click",
-    event => {
+    function openMenu() {
 
         if (!navMenu || !menuToggle) return;
 
-        const clickedMenu =
-            navMenu.contains(event.target);
+        navMenu.classList.add("active");
 
-        const clickedButton =
-            menuToggle.contains(event.target);
+        menuToggle.classList.add("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        document.body.classList.add(
+            "menu-open"
+        );
+
+    }
+
+
+    function closeMenu() {
+
+        if (!navMenu || !menuToggle) return;
+
+        navMenu.classList.remove("active");
+
+        menuToggle.classList.remove("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        document.body.classList.remove(
+            "menu-open"
+        );
+
+    }
+
+
+    function toggleMenu() {
+
+        if (!navMenu) return;
 
         if (
-            !clickedMenu &&
-            !clickedButton
+            navMenu.classList.contains("active")
         ) {
 
             closeMenu();
 
-        }
+        } else {
 
-    }
-);
-
-
-/* =====================================================
-   RESIZE
-===================================================== */
-
-window.addEventListener(
-    "resize",
-    () => {
-
-        if (window.innerWidth > 1050) {
-
-            closeMenu();
+            openMenu();
 
         }
 
     }
-);
 
 
-/* =====================================================
-   DARK / LIGHT MODE
-===================================================== */
+    if (menuToggle) {
 
-const themeButton =
-    document.getElementById("theme-btn");
+        menuToggle.addEventListener(
+            "click",
+            (event) => {
 
-const savedTheme =
-    localStorage.getItem("ccg-theme");
+                event.preventDefault();
 
+                event.stopPropagation();
 
-if (
-    themeButton &&
-    savedTheme === "dark"
-) {
+                toggleMenu();
 
-    document.body.classList.add("dark");
-
-    themeButton.innerHTML =
-        '<i class="fa-solid fa-sun"></i>';
-
-}
-
-
-if (themeButton) {
-
-    themeButton.addEventListener(
-        "click",
-        () => {
-
-            document.body.classList.toggle(
-                "dark"
-            );
-
-            const isDark =
-                document.body.classList.contains(
-                    "dark"
-                );
-
-
-            if (isDark) {
-
-                themeButton.innerHTML =
-                    '<i class="fa-solid fa-sun"></i>';
-
-                localStorage.setItem(
-                    "ccg-theme",
-                    "dark"
-                );
-
-            } else {
-
-                themeButton.innerHTML =
-                    '<i class="fa-solid fa-moon"></i>';
-
-                localStorage.setItem(
-                    "ccg-theme",
-                    "light"
-                );
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   REVEAL ANIMATION
-===================================================== */
-
-const revealElements =
-    document.querySelectorAll(
-        ".reveal"
-    );
-
-
-if (
-    "IntersectionObserver" in window
-) {
-
-    const revealObserver =
-        new IntersectionObserver(
-            entries => {
-
-                entries.forEach(
-                    entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-                            revealObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    }
-                );
-
-            },
-            {
-                threshold: 0.12
             }
         );
 
-
-    revealElements.forEach(
-        element => {
-
-            revealObserver.observe(
-                element
-            );
-
-        }
-    );
-
-} else {
-
-    revealElements.forEach(
-        element => {
-
-            element.classList.add(
-                "visible"
-            );
-
-        }
-    );
-
-}
+    }
 
 
-/* =====================================================
-   COUNTERS
-===================================================== */
+    /* =================================================
+       NAVIGATION
+    ================================================= */
 
-const counters =
-    document.querySelectorAll(
-        ".counter"
-    );
+    navLinks.forEach(link => {
 
-const statsSection =
-    document.querySelector(
-        ".stats"
-    );
+        link.addEventListener(
+            "click",
+            (event) => {
 
-let counterStarted = false;
-
-
-function startCounters() {
-
-    if (counterStarted) return;
-
-    counterStarted = true;
-
-
-    counters.forEach(counter => {
-
-        const target =
-            Number(
-                counter.dataset.target
-            );
-
-        if (isNaN(target)) return;
-
-
-        let current = 0;
-
-        const duration = 1600;
-
-        const startTime =
-            performance.now();
-
-
-        function updateCounter(
-            currentTime
-        ) {
-
-            const elapsed =
-                currentTime -
-                startTime;
-
-            const progress =
-                Math.min(
-                    elapsed / duration,
-                    1
-                );
-
-
-            const easedProgress =
-                1 -
-                Math.pow(
-                    1 - progress,
-                    3
-                );
-
-
-            current =
-                Math.floor(
-                    easedProgress *
-                    target
-                );
-
-
-            counter.textContent =
-                current;
-
-
-            if (progress < 1) {
-
-                requestAnimationFrame(
-                    updateCounter
-                );
-
-            } else {
-
-                counter.textContent =
-                    target;
-
-            }
-
-        }
-
-
-        requestAnimationFrame(
-            updateCounter
-        );
-
-    });
-
-}
-
-
-if (
-    statsSection &&
-    "IntersectionObserver" in window
-) {
-
-    const counterObserver =
-        new IntersectionObserver(
-            entries => {
+                const href =
+                    link.getAttribute("href");
 
                 if (
-                    entries[0] &&
-                    entries[0].isIntersecting
+                    !href ||
+                    href === "#"
                 ) {
-
-                    startCounters();
-
-                    counterObserver.disconnect();
-
+                    return;
                 }
 
-            },
-            {
-                threshold: 0.3
-            }
-        );
+
+                const target =
+                    document.querySelector(href);
+
+                if (!target) return;
 
 
-    counterObserver.observe(
-        statsSection
-    );
+                event.preventDefault();
 
-}
+                closeMenu();
 
 
-/* =====================================================
-   GALLERY FILTER
-===================================================== */
-
-const filterButtons =
-    document.querySelectorAll(
-        ".filter-btn"
-    );
-
-const galleryItems =
-    document.querySelectorAll(
-        ".gallery-item"
-    );
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
 
 
-filterButtons.forEach(button => {
-
-    button.addEventListener(
-        "click",
-        () => {
-
-            filterButtons.forEach(
-                btn => {
-                    btn.classList.remove(
-                        "active"
-                    );
-                }
-            );
+                const position =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    headerHeight;
 
 
-            button.classList.add(
-                "active"
-            );
+                window.scrollTo({
 
+                    top: Math.max(
+                        0,
+                        position
+                    ),
 
-            const filter =
-                button.dataset.filter;
+                    behavior: "smooth"
 
-
-            galleryItems.forEach(
-                item => {
-
-                    const matches =
-                        filter === "all" ||
-                        item.classList.contains(
-                            filter
-                        );
-
-
-                    if (matches) {
-
-                        item.style.display =
-                            "block";
-
-                        requestAnimationFrame(
-                            () => {
-
-                                item.style.opacity =
-                                    "1";
-
-                                item.style.transform =
-                                    "scale(1)";
-
-                            }
-                        );
-
-                    } else {
-
-                        item.style.opacity =
-                            "0";
-
-                        item.style.transform =
-                            "scale(.8)";
-
-
-                        setTimeout(
-                            () => {
-
-                                item.style.display =
-                                    "none";
-
-                            },
-                            300
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
-});
-
-
-/* =====================================================
-   LIGHTBOX
-===================================================== */
-
-const lightbox =
-    document.getElementById(
-        "lightbox"
-    );
-
-const lightboxImage =
-    document.getElementById(
-        "lightboxImage"
-    );
-
-const closeLightbox =
-    document.querySelector(
-        ".lightbox-close"
-    );
-
-
-function openLightbox(
-    imageSrc
-) {
-
-    if (
-        !lightbox ||
-        !lightboxImage
-    ) return;
-
-
-    lightboxImage.src =
-        imageSrc;
-
-    lightbox.classList.add(
-        "active"
-    );
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-function closeLightboxFunction() {
-
-    if (!lightbox) return;
-
-    lightbox.classList.remove(
-        "active"
-    );
-
-    document.body.style.overflow =
-        "";
-
-}
-
-
-document
-    .querySelectorAll(
-        ".gallery-item"
-    )
-    .forEach(item => {
-
-        item.addEventListener(
-            "click",
-            () => {
-
-                const image =
-                    item.querySelector(
-                        "img"
-                    );
-
-                if (!image) return;
-
-                openLightbox(
-                    image.src
-                );
+                });
 
             }
         );
@@ -788,463 +221,227 @@ document
     });
 
 
-if (closeLightbox) {
+    /* =================================================
+       CLICK OUTSIDE
+    ================================================= */
 
-    closeLightbox.addEventListener(
+    document.addEventListener(
         "click",
-        closeLightboxFunction
-    );
+        (event) => {
 
-}
-
-
-if (lightbox) {
-
-    lightbox.addEventListener(
-        "click",
-        event => {
+            if (!navMenu || !menuToggle) {
+                return;
+            }
 
             if (
-                event.target ===
-                lightbox
+                !navMenu.contains(event.target) &&
+                !menuToggle.contains(event.target)
             ) {
 
-                closeLightboxFunction();
+                closeMenu();
 
             }
 
         }
     );
 
-}
 
+    /* =================================================
+       ESCAPE
+    ================================================= */
 
-/* =====================================================
-   ESCAPE LIGHTBOX
-===================================================== */
+    document.addEventListener(
+        "keydown",
+        (event) => {
 
-document.addEventListener(
-    "keydown",
-    event => {
+            if (event.key === "Escape") {
 
-        if (event.key === "Escape") {
+                closeMenu();
 
-            closeLightboxFunction();
+                closeLightbox();
 
-        }
-
-    }
-);
-
-
-/* =====================================================
-   CONTACT FORM
-===================================================== */
-
-const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
-
-
-if (contactForm) {
-
-    contactForm.addEventListener(
-        "submit",
-        event => {
-
-            event.preventDefault();
-
-
-            const button =
-                contactForm.querySelector(
-                    "button"
-                );
-
-
-            if (!button) return;
-
-
-            const originalText =
-                button.innerHTML;
-
-
-            button.innerHTML =
-                '<i class="fa-solid fa-check"></i> Message envoyé';
-
-
-            button.style.background =
-                "#159447";
-
-            button.style.color =
-                "#ffffff";
-
-
-            contactForm.reset();
-
-
-            setTimeout(
-                () => {
-
-                    button.innerHTML =
-                        originalText;
-
-                    button.style.background =
-                        "";
-
-                    button.style.color =
-                        "";
-
-                },
-                3000
-            );
+            }
 
         }
     );
 
-}
 
+    /* =================================================
+       RESIZE
+    ================================================= */
 
-/* =====================================================
-   LANGUAGE
-===================================================== */
-
-const languageBtn =
-    document.getElementById(
-        "languageBtn"
-    );
-
-
-if (languageBtn) {
-
-    languageBtn.addEventListener(
-        "click",
+    window.addEventListener(
+        "resize",
         () => {
 
-            alert(
-                "La version anglaise sera disponible prochainement."
-            );
+            if (window.innerWidth > 1050) {
+
+                closeMenu();
+
+            }
 
         }
     );
 
-}
+
+    /* =================================================
+       ACTIVE NAVIGATION
+    ================================================= */
+
+    const sections =
+        document.querySelectorAll(
+            "section[id]"
+        );
 
 
-/* =====================================================
-   PARALLAX HERO
-===================================================== */
+    function updateActiveNavigation() {
 
-const hero =
-    document.querySelector(
-        ".hero"
-    );
+        if (!sections.length) return;
+
+        let current = "";
 
 
-function updateParallax() {
-
-    if (!hero) return;
-
-
-    const scroll =
-        window.scrollY;
-
-
-    if (scroll < 700) {
-
-        hero.style.backgroundPositionY =
-            `${scroll * 0.25}px`;
-
-    }
-
-}
+        const scrollPosition =
+            window.scrollY +
+            (header
+                ? header.offsetHeight
+                : 80) +
+            150;
 
 
-window.addEventListener(
-    "scroll",
-    updateParallax
-);
+        sections.forEach(section => {
+
+            const top =
+                section.offsetTop;
+
+            const bottom =
+                top +
+                section.offsetHeight;
 
 
-/* =====================================================
-   INITIALISATION
-===================================================== */
+            if (
+                scrollPosition >= top &&
+                scrollPosition < bottom
+            ) {
 
-updateHeader();
-
-updateActiveNavigation();
-
-updateParallax();
-
-
-console.log(
-    "🇨🇫 CCG — JavaScript chargé avec succès."
-);
-
-
-/* ================================
-   WHATSAPP SYSTEM
-================================ */
-
-function closeWhatsApp() {
-
-    const message = document.querySelector(".whatsapp-message");
-
-    if (message) {
-        message.style.display = "none";
-    }
-
-}
-
-
-/* =========================
-   EVENTS REVEAL ANIMATION
-========================= */
-
-const revealElement = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("active");
-
-                revealObserver.unobserve(entry.target);
+                current =
+                    section.id;
 
             }
 
         });
 
-    },
-    {
-        threshold: 0.15
+
+        navLinks.forEach(link => {
+
+            link.classList.remove(
+                "active"
+            );
+
+
+            if (
+                link.getAttribute("href") ===
+                `#${current}`
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+
+            }
+
+        });
+
     }
-);
-
-revealElements.forEach((element) => {
-    revealObserver.observe(element);
-});
-
-
-/* =========================
-   ACTUALITÉS ANIMATION
-========================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const elements =
-        document.querySelectorAll(".reveal");
-
-    const observer =
-        new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add(
-                            "active"
-                        );
-
-                        observer.unobserve(
-                            entry.target
-                        );
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.15
-            }
-        );
-
-    elements.forEach((element) => {
-        observer.observe(element);
-    });
-
-});
-
-
-/* =========================================================
-   CCG — PREMIUM PAGE ANIMATION ENGINE
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* =====================================================
-       1. SCROLL REVEAL
-    ===================================================== */
-
-    const animatedElements =
-        document.querySelectorAll("[data-animation]");
-
-    const revealObserver =
-        new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add(
-                            "is-visible"
-                        );
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12,
-                rootMargin: "0px 0px -60px 0px"
-            }
-        );
-
-
-    animatedElements.forEach((element) => {
-
-        revealObserver.observe(element);
-
-    });
-
-
-    /* =====================================================
-       2. SECTION HEADERS
-    ===================================================== */
-
-    const headers = document.querySelectorAll(
-        ".section-title, .news-header, .events-header, " +
-        ".gallery-header, .about-header, .members-header"
-    );
-
-    const headerObserver =
-        new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        headerObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.2
-            }
-        );
-
-
-    headers.forEach((header) => {
-
-        headerObserver.observe(header);
-
-    });
-
-
-    /* =====================================================
-       3. AUTOMATIC CARD ANIMATION
-    ===================================================== */
-
-    const cardGroups = document.querySelectorAll(
-        ".news-grid, " +
-        ".events-grid, " +
-        ".members-grid, " +
-        ".gallery-grid, " +
-        ".executive-grid"
-    );
-
-
-    cardGroups.forEach((group) => {
-
-        const cards =
-            group.children;
-
-        Array.from(cards).forEach(
-            (card, index) => {
-
-                card.classList.add(
-                    "stagger-item"
-                );
-
-                card.setAttribute(
-                    "data-animation",
-                    "fade-up"
-                );
-
-                card.style.transitionDelay =
-                    `${index * 0.08}s`;
-
-                revealObserver.observe(card);
-
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       4. NAVBAR SCROLL
-    ===================================================== */
-
-    const nav =
-        document.querySelector(
-            "header, .navbar, nav"
-        );
-
-    const handleNavigation =
-        () => {
-
-            if (!nav) return;
-
-            if (window.scrollY > 50) {
-
-                nav.classList.add(
-                    "scrolled"
-                );
-
-            } else {
-
-                nav.classList.remove(
-                    "scrolled"
-                );
-
-            }
-
-        };
 
 
     window.addEventListener(
         "scroll",
-        handleNavigation,
+        updateActiveNavigation,
         { passive: true }
     );
 
-    handleNavigation();
+
+    updateActiveNavigation();
 
 
-    /* =====================================================
-       5. SCROLL TOP BUTTON
-    ===================================================== */
+    /* =================================================
+       REVEAL ANIMATION
+    ================================================= */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+
+    if (
+        "IntersectionObserver" in window
+    ) {
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                entry.target.classList.add(
+                                    "active"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            element => {
+
+                observer.observe(
+                    element
+                );
+
+            }
+        );
+
+    } else {
+
+        revealElements.forEach(
+            element => {
+
+                element.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       SCROLL TOP
+    ================================================= */
 
     const scrollTop =
         document.getElementById(
@@ -1282,8 +479,11 @@ document.addEventListener("DOMContentLoaded", () => {
             () => {
 
                 window.scrollTo({
+
                     top: 0,
+
                     behavior: "smooth"
+
                 });
 
             }
@@ -1292,172 +492,515 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       6. ACTIVE NAVIGATION
-    ===================================================== */
+    /* =================================================
+       CONTACT FORM — EMAILJS
+    ================================================= */
 
-    const sections =
-        document.querySelectorAll(
-            "section[id]"
+    const contactForm =
+        document.getElementById(
+            "contactForm"
         );
 
-    const navLinks =
-        document.querySelectorAll(
-            "nav a[href^='#'], " +
-            ".navbar a[href^='#']"
+    const contactStatus =
+        document.getElementById(
+            "contactStatus"
         );
 
-
-    const sectionObserver =
-        new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach(
-                    (entry) => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            const id =
-                                entry.target.id;
-
-                            navLinks.forEach(
-                                (link) => {
-
-                                    link.classList.remove(
-                                        "active"
-                                    );
-
-                                    if (
-                                        link.getAttribute(
-                                            "href"
-                                        ) === `#${id}`
-                                    ) {
-
-                                        link.classList.add(
-                                            "active"
-                                        );
-
-                                    }
-
-                                }
-                            );
-
-                        }
-
-                    }
-                );
-
-            },
-            {
-                threshold: 0.35
-            }
+    const contactSubmit =
+        document.getElementById(
+            "contactSubmit"
         );
 
 
-    sections.forEach(
-        (section) => {
+    if (contactForm) {
 
-            sectionObserver.observe(
-                section
-            );
-
-        }
-    );
-
-
-    /* =====================================================
-       7. SMOOTH ANCHOR NAVIGATION
-    ===================================================== */
-
-    document.querySelectorAll(
-        'a[href^="#"]'
-    ).forEach((link) => {
-
-        link.addEventListener(
-            "click",
-            (event) => {
-
-                const targetId =
-                    link.getAttribute(
-                        "href"
-                    );
-
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-                    return;
-                }
-
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
-
-                if (!target) return;
+        contactForm.addEventListener(
+            "submit",
+            async (event) => {
 
                 event.preventDefault();
 
-                const navHeight =
-                    nav
-                        ? nav.offsetHeight
-                        : 0;
 
-                const position =
-                    target.getBoundingClientRect()
-                        .top +
-                    window.scrollY -
-                    navHeight;
+                if (
+                    typeof emailjs ===
+                    "undefined"
+                ) {
 
-                window.scrollTo({
-                    top: position,
-                    behavior: "smooth"
-                });
+                    console.error(
+                        "EmailJS n'est pas chargé."
+                    );
+
+                    if (contactStatus) {
+
+                        contactStatus.textContent =
+                            "Erreur : EmailJS n'est pas chargé.";
+
+                        contactStatus.className =
+                            "form-status error";
+
+                    }
+
+                    return;
+
+                }
+
+
+                const buttonText =
+                    contactSubmit
+                        ? contactSubmit.querySelector(
+                            "span"
+                        )
+                        : null;
+
+
+                if (contactSubmit) {
+
+                    contactSubmit.disabled =
+                        true;
+
+                }
+
+
+                if (buttonText) {
+
+                    buttonText.textContent =
+                        "Envoi en cours...";
+
+                }
+
+
+                if (contactStatus) {
+
+                    contactStatus.textContent =
+                        "";
+
+                    contactStatus.className =
+                        "form-status";
+
+                }
+
+
+                try {
+
+                    await emailjs.sendForm(
+
+                        "service_dsdyaw8",
+
+                        "template_xdezry7",
+
+                        contactForm
+
+                    );
+
+
+                    if (contactStatus) {
+
+                        contactStatus.textContent =
+                            "✓ Votre message a été envoyé avec succès !";
+
+                        contactStatus.className =
+                            "form-status success";
+
+                    }
+
+
+                    contactForm.reset();
+
+
+                } catch (error) {
+
+                    console.error(
+                        "EmailJS Contact Error:",
+                        error
+                    );
+
+
+                    if (contactStatus) {
+
+                        contactStatus.textContent =
+                            "✕ Impossible d'envoyer le message. Veuillez réessayer.";
+
+                        contactStatus.className =
+                            "form-status error";
+
+                    }
+
+                }
+
+
+                if (contactSubmit) {
+
+                    contactSubmit.disabled =
+                        false;
+
+                }
+
+
+                if (buttonText) {
+
+                    buttonText.textContent =
+                        "Envoyer le message";
+
+                }
 
             }
         );
 
-    });
+    }
 
 
-    /* =====================================================
-       8. PARALLAX HERO
-    ===================================================== */
+    /* =================================================
+       MEMBERSHIP FORM — EMAILJS
+    ================================================= */
+
+    const membershipForm =
+        document.getElementById(
+            "membershipForm"
+        );
+
+    const membershipStatus =
+        document.getElementById(
+            "membershipStatus"
+        );
+
+    const membershipSubmit =
+        document.getElementById(
+            "membershipSubmit"
+        );
+
+    const memberDate =
+        document.getElementById(
+            "memberDate"
+        );
+
+
+    if (membershipForm) {
+
+
+        membershipForm.addEventListener(
+            "submit",
+            async (event) => {
+
+                event.preventDefault();
+
+
+                /* Vérification EmailJS */
+
+                if (
+                    typeof emailjs ===
+                    "undefined"
+                ) {
+
+                    console.error(
+                        "EmailJS n'est pas chargé."
+                    );
+
+                    if (membershipStatus) {
+
+                        membershipStatus.textContent =
+                            "Erreur : EmailJS n'est pas chargé.";
+
+                        membershipStatus.className =
+                            "form-status error";
+
+                    }
+
+                    return;
+
+                }
+
+
+                /* DATE */
+
+                if (memberDate) {
+
+                    const today =
+                        new Date();
+
+
+                    memberDate.value =
+                        today.toLocaleDateString(
+                            "fr-FR",
+                            {
+                                day: "2-digit",
+                                month: "2-digit",
+                                year: "numeric"
+                            }
+                        );
+
+                }
+
+
+                /* BOUTON */
+
+                if (membershipSubmit) {
+
+                    membershipSubmit.disabled =
+                        true;
+
+                }
+
+
+                const buttonText =
+                    membershipSubmit
+                        ? membershipSubmit.querySelector(
+                            "span"
+                        )
+                        : null;
+
+
+                if (buttonText) {
+
+                    buttonText.textContent =
+                        "Inscription en cours...";
+
+                }
+
+
+                if (membershipStatus) {
+
+                    membershipStatus.textContent =
+                        "";
+
+                    membershipStatus.className =
+                        "form-status";
+
+                }
+
+
+                /* ENVOI */
+
+                try {
+
+                    await emailjs.sendForm(
+
+                        "service_dsdyaw8",
+
+                        "template_2f89i0q",
+
+                        membershipForm
+
+                    );
+
+
+                    /* SUCCÈS */
+
+                    if (membershipStatus) {
+
+                        membershipStatus.textContent =
+                            "✓ Votre inscription a été envoyée avec succès. Bienvenue dans la CCG 🇨🇫🇬🇭 !";
+
+                        membershipStatus.className =
+                            "form-status success";
+
+                    }
+
+
+                    membershipForm.reset();
+
+
+                } catch (error) {
+
+                    console.error(
+                        "EmailJS Membership Error:",
+                        error
+                    );
+
+
+                    if (membershipStatus) {
+
+                        membershipStatus.textContent =
+                            "✕ Impossible d'envoyer votre inscription. Veuillez réessayer.";
+
+                        membershipStatus.className =
+                            "form-status error";
+
+                    }
+
+                }
+
+
+                /* RÉACTIVER */
+
+                if (membershipSubmit) {
+
+                    membershipSubmit.disabled =
+                        false;
+
+                }
+
+
+                if (buttonText) {
+
+                    buttonText.textContent =
+                        "S'inscrire";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       LIGHTBOX
+    ================================================= */
+
+    const lightbox =
+        document.getElementById(
+            "lightbox"
+        );
+
+    const lightboxImage =
+        document.getElementById(
+            "lightboxImage"
+        );
+
+    const lightboxClose =
+        document.querySelector(
+            ".lightbox-close"
+        );
+
+
+    function openLightbox(src) {
+
+        if (
+            !lightbox ||
+            !lightboxImage
+        ) {
+            return;
+        }
+
+
+        lightboxImage.src =
+            src;
+
+
+        lightbox.classList.add(
+            "active"
+        );
+
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
+
+
+    function closeLightbox() {
+
+        if (!lightbox) return;
+
+
+        lightbox.classList.remove(
+            "active"
+        );
+
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+    document
+        .querySelectorAll(
+            ".gallery-item img"
+        )
+        .forEach(image => {
+
+            image.addEventListener(
+                "click",
+                () => {
+
+                    openLightbox(
+                        image.src
+                    );
+
+                }
+            );
+
+        });
+
+
+    if (lightboxClose) {
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+    }
+
+
+    if (lightbox) {
+
+        lightbox.addEventListener(
+            "click",
+            (event) => {
+
+                if (
+                    event.target ===
+                    lightbox
+                ) {
+
+                    closeLightbox();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       WHATSAPP
+    ================================================= */
+
+    window.closeWhatsApp =
+        function () {
+
+            const message =
+                document.querySelector(
+                    ".whatsapp-message"
+                );
+
+
+            if (message) {
+
+                message.style.display =
+                    "none";
+
+            }
+
+        };
+
+
+    /* =================================================
+       PARALLAX
+    ================================================= */
 
     const hero =
         document.querySelector(
             ".hero"
         );
 
-    const heroBackground =
-        document.querySelector(
-            ".hero-bg img, " +
-            ".hero-bg video, " +
-            ".hero img.hero-image"
-        );
 
-
-    if (
-        hero &&
-        heroBackground &&
-        window.matchMedia(
-            "(prefers-reduced-motion: no-preference)"
-        ).matches
-    ) {
+    if (hero) {
 
         window.addEventListener(
             "scroll",
             () => {
 
-                const scroll =
-                    window.scrollY;
+                if (
+                    window.scrollY <
+                    700
+                ) {
 
-                if (scroll < hero.offsetHeight) {
-
-                    heroBackground.style.transform =
-                        `translateY(${scroll * 0.15}px) scale(1.02)`;
+                    hero.style.backgroundPositionY =
+                        `${window.scrollY * 0.2}px`;
 
                 }
 
@@ -1468,143 +1011,316 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       9. MOUSE MICRO-INTERACTION
-    ===================================================== */
+    /* =================================================
+       CARD HOVER
+    ================================================= */
 
-    const interactiveCards =
+    const cards =
         document.querySelectorAll(
-            ".news-card, " +
-            ".event-card, " +
-            ".member-card"
+            ".news-card, .event-card"
         );
 
 
-    interactiveCards.forEach(
-        (card) => {
+    cards.forEach(card => {
 
-            card.addEventListener(
-                "mousemove",
-                (event) => {
+        card.addEventListener(
+            "mousemove",
+            (event) => {
 
-                    if (
-                        window.innerWidth < 768
-                    ) {
-                        return;
-                    }
-
-                    const rect =
-                        card.getBoundingClientRect();
-
-                    const x =
-                        event.clientX -
-                        rect.left;
-
-                    const y =
-                        event.clientY -
-                        rect.top;
-
-                    const centerX =
-                        rect.width / 2;
-
-                    const centerY =
-                        rect.height / 2;
-
-                    const rotateX =
-                        (y - centerY) /
-                        30;
-
-                    const rotateY =
-                        (centerX - x) /
-                        30;
-
-                    card.style.transform =
-                        `perspective(1000px)
-                         rotateX(${rotateX}deg)
-                         rotateY(${rotateY}deg)
-                         translateY(-6px)`;
-
+                if (
+                    window.innerWidth < 768
+                ) {
+                    return;
                 }
-            );
 
 
-            card.addEventListener(
-                "mouseleave",
-                () => {
+                const rect =
+                    card.getBoundingClientRect();
 
-                    card.style.transform =
-                        "";
 
-                }
-            );
+                const x =
+                    event.clientX -
+                    rect.left;
 
-        }
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const centerX =
+                    rect.width / 2;
+
+
+                const centerY =
+                    rect.height / 2;
+
+
+                const rotateX =
+                    (y - centerY) / 35;
+
+
+                const rotateY =
+                    (centerX - x) / 35;
+
+
+                card.style.transform =
+                    `perspective(1000px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-5px)`;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform =
+                    "";
+
+            }
+        );
+
+    });
+
+
+    /* =================================================
+       CONSOLE
+    ================================================= */
+
+    console.log(
+        "🇨🇫🇬🇭 CCG — Site chargé avec succès."
     );
 
 });
 
+/* =====================================================
+   TESTIMONIAL SLIDER
+===================================================== */
 
-/* =========================================================
-   CCG — GALLERY BACKGROUND SLIDESHOW
-========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+    const testimonials =
+        document.querySelectorAll(".testimonial-card");
 
-    const background =
-        document.querySelector(".gallery-bg-image");
+    const nextButton =
+        document.getElementById("nextTestimonial");
 
-    if (!background) return;
+    const prevButton =
+        document.getElementById("prevTestimonial");
 
-
-    const backgrounds = [
-
-        "images/gallery-bg-1.jpg",
-
-        "images/gallery-bg-2.jpg",
-
-        "images/gallery-bg-3.jpg",
-
-        "images/gallery-bg-4.jpg",
-
-        "images/gallery-bg-5.jpg"
-
-    ];
+    const dotsContainer =
+        document.getElementById("testimonialDots");
 
 
-    let current = 0;
+    if (
+        !testimonials.length ||
+        !nextButton ||
+        !prevButton
+    ) {
+        return;
+    }
 
 
-    function changeBackground() {
+    let currentIndex = 0;
 
-        current++;
+    let autoSlide;
 
-        if (current >= backgrounds.length) {
-            current = 0;
+
+    /* =================================================
+       CREATE DOTS
+    ================================================= */
+
+    testimonials.forEach((_, index) => {
+
+        const dot = document.createElement("span");
+
+        dot.classList.add("testimonial-dot");
+
+        if (index === 0) {
+            dot.classList.add("active");
         }
 
+        dot.addEventListener("click", () => {
 
-        background.style.opacity = "0";
+            showTestimonial(index);
+
+            restartAutoSlide();
+
+        });
+
+        dotsContainer.appendChild(dot);
+
+    });
 
 
-        setTimeout(() => {
+    const dots =
+        document.querySelectorAll(".testimonial-dot");
 
-            background.style.backgroundImage =
-                `url("${backgrounds[current]}")`;
 
-            background.style.opacity = "1";
+    /* =================================================
+       SHOW TESTIMONIAL
+    ================================================= */
 
-        }, 600);
+    function showTestimonial(index) {
+
+        testimonials.forEach((testimonial) => {
+
+            testimonial.classList.remove("active");
+
+        });
+
+
+        dots.forEach((dot) => {
+
+            dot.classList.remove("active");
+
+        });
+
+
+        testimonials[index].classList.add("active");
+
+        dots[index].classList.add("active");
+
+
+        currentIndex = index;
 
     }
 
 
-    background.style.backgroundImage =
-        `url("${backgrounds[0]}")`;
+    /* =================================================
+       NEXT
+    ================================================= */
+
+    function nextTestimonial() {
+
+        let nextIndex =
+            currentIndex + 1;
+
+        if (nextIndex >= testimonials.length) {
+
+            nextIndex = 0;
+
+        }
+
+        showTestimonial(nextIndex);
+
+    }
 
 
-    setInterval(
-        changeBackground,
-        7000
+    /* =================================================
+       PREVIOUS
+    ================================================= */
+
+    function previousTestimonial() {
+
+        let previousIndex =
+            currentIndex - 1;
+
+        if (previousIndex < 0) {
+
+            previousIndex =
+                testimonials.length - 1;
+
+        }
+
+        showTestimonial(previousIndex);
+
+    }
+
+
+    /* =================================================
+       BUTTON EVENTS
+    ================================================= */
+
+    nextButton.addEventListener(
+        "click",
+        function () {
+
+            nextTestimonial();
+
+            restartAutoSlide();
+
+        }
     );
+
+
+    prevButton.addEventListener(
+        "click",
+        function () {
+
+            previousTestimonial();
+
+            restartAutoSlide();
+
+        }
+    );
+
+
+    /* =================================================
+       AUTO SLIDE
+    ================================================= */
+
+    function startAutoSlide() {
+
+        autoSlide = setInterval(() => {
+
+            nextTestimonial();
+
+        }, 5000);
+
+    }
+
+
+    /* =================================================
+       RESTART AUTO SLIDE
+    ================================================= */
+
+    function restartAutoSlide() {
+
+        clearInterval(autoSlide);
+
+        startAutoSlide();
+
+    }
+
+
+    /* =================================================
+       START
+    ================================================= */
+
+    startAutoSlide();
+
+
+    /* =================================================
+       PAUSE WHEN MOUSE IS OVER SLIDER
+    ================================================= */
+
+    const slider =
+        document.querySelector(".testimonial-slider");
+
+
+    slider.addEventListener(
+        "mouseenter",
+        () => {
+
+            clearInterval(autoSlide);
+
+        }
+    );
+
+
+    slider.addEventListener(
+        "mouseleave",
+        () => {
+
+            startAutoSlide();
+
+        }
+    );
+
 
 });

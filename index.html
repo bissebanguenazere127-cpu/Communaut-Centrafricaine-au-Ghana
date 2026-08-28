@@ -10,17 +10,33 @@
     <meta name="description"
         content="Communauté Centrafricaine au Ghana — unité, solidarité, culture et accompagnement des Centrafricains au Ghana.">
 
+    <!-- FONT AWESOME -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    
+
+    <!-- EMAILJS : UNE SEULE FOIS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        emailjs.init({
+            publicKey: "KVERO_HNEP-FVO8lR"
+        });
+    </script>
 </head>
+
+<body>
+
+<!-- =====================================================
+     SCROLL TOP
+===================================================== -->
 
 <button id="scrollTop" aria-label="Retour en haut">
     ↑
 </button>
-<body>
+
 
 <!-- =====================================================
      LOADER
@@ -31,12 +47,14 @@
     <div class="loader-content">
 
         <div class="loader-logo">
-            HELLO!
+          BARA ALA! HELLO! BONJOUR!
         </div>
 
         <h2>CCG</h2>
 
-        <p>Communauté Centrafricaine au Ghana</p>
+        <p>
+            Communauté Centrafricaine au Ghana
+        </p>
 
         <div class="loader-spinner"></div>
 
@@ -52,8 +70,6 @@
 <header class="navbar" id="navbar">
 
     <div class="nav-container">
-
-        <!-- LOGO -->
 
         <a href="#home" class="logo">
 
@@ -71,107 +87,66 @@
             </div>
 
         </a>
-<div data-animation="fade-left">
-    ...
-</div>
-<div data-animation="fade-right">
-    ...
-</div>
-<div data-animation="zoom">
-    ...
-</div>
-<div data-animation="blur">
-    ...
-</div>
 
-     <!-- MENU -->
+
+        <!-- MENU -->
 
         <nav class="nav-menu" id="navMenu">
 
-            <a href="#home"
-               class="nav-link active">
-
+            <a href="#home" class="nav-link active">
                 <i class="fas fa-home"></i>
                 Accueil
-
             </a>
 
-
-            <a href="#about"
-               class="nav-link">
-
+            <a href="#about" class="nav-link">
                 <i class="fas fa-users"></i>
                 À propos
-
             </a>
 
-
-            <a href="#bureau"
-               class="nav-link">
-
+            <a href="#bureau" class="nav-link">
                 <i class="fas fa-user-tie"></i>
                 Bureau
-
             </a>
 
-
-            <a href="#evenements"
-               class="nav-link">
-
+            <a href="#evenements" class="nav-link">
                 <i class="fas fa-calendar-alt"></i>
                 Événements
-
             </a>
 
+            <a href="#actualites" class="nav-link">
+                <i class="fas fa-newspaper"></i>
+                Actualités
+            </a>
 
-            <a href="#testimonials"
-               class="nav-link">
-
+            <a href="#testimonials" class="nav-link">
                 <i class="fas fa-comments"></i>
                 Témoignages
-
             </a>
 
-
-            <a href="#membership"
-               class="nav-link">
-
+            <a href="#membership" class="nav-link">
                 <i class="fas fa-user-plus"></i>
                 Membres
-
             </a>
 
-
-            <a href="gallery.html"
-               class="nav-link">
-
-                <i class="fas fa-user-plus"></i>
+            <a href="gallery.html" class="nav-link">
+                <i class="fas fa-images"></i>
                 Galerie
-
             </a>
 
-
-            <a href="#contact"
-               class="nav-link">
-
+            <a href="#contact" class="nav-link">
                 <i class="fas fa-phone"></i>
                 Contact
-
             </a>
 
-
-            <a href="Adhesion.html"
-               class="member-btn">
-
+            <a href="Adhesion.html" class="member-btn">
                 <i class="fas fa-lock"></i>
                 Espace membre
-
             </a>
 
         </nav>
 
 
-        <!-- MOBILE BUTTON -->
+        <!-- MOBILE -->
 
         <button
             class="menu-toggle"
@@ -191,15 +166,18 @@
 </header>
 
 
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
 
 <!-- =====================================================
      HOME
 ===================================================== -->
 
-<main>
-
-<section id="home"
-         class="hero">
+<section id="home" class="hero">
 
     <div class="hero-overlay"></div>
 
@@ -222,24 +200,16 @@
 
         </p>
 
-
         <div class="hero-buttons">
 
-            <a href="#about"
-               class="btn primary">
-
+            <a href="#about" class="btn primary">
                 Découvrir la CCG
                 <i class="fas fa-arrow-down"></i>
-
             </a>
 
-
-            <a href="#membership"
-               class="btn secondary">
-
+            <a href="#membership" class="btn secondary">
                 Devenir membre
                 <i class="fas fa-user-plus"></i>
-
             </a>
 
         </div>
@@ -249,23 +219,31 @@
 </section>
 
 
+<!-- =====================================================
+     MOT DU PRESIDENT
+===================================================== -->
+
 <section class="welcome-president" id="mot-president">
+
     <div class="welcome-container">
 
         <div class="welcome-photo">
+
             <img src="President.jpeg"
                  alt="Président de la Communauté Centrafricaine au Ghana"
                  loading="lazy">
+
         </div>
 
         <div class="welcome-content">
 
             <span class="welcome-label">
-                 MOT DE BIENVENUE 🇬🇭
+                MOT DE BIENVENUE 🇬🇭
             </span>
 
             <h2>
-                Bienvenue dans notre <span>Communauté</span>
+                Bienvenue dans notre
+                <span>Communauté</span>
             </h2>
 
             <p class="welcome-text">
@@ -273,15 +251,15 @@
             </p>
 
             <p>
-                C’est avec un grand plaisir que je vous souhaite la
-                bienvenue sur la plateforme officielle de la
+                C’est avec un grand plaisir que je vous souhaite
+                la bienvenue sur la plateforme officielle de la
                 <strong>Communauté Centrafricaine au Ghana</strong>.
             </p>
 
             <p>
-                Cette plateforme est un espace d’information, de
-                solidarité, de partage et de rassemblement pour tous
-                les Centrafricains vivant au Ghana.
+                Cette plateforme est un espace d’information,
+                de solidarité, de partage et de rassemblement
+                pour tous les Centrafricains vivant au Ghana.
             </p>
 
             <p>
@@ -291,138 +269,304 @@
             </p>
 
             <div class="welcome-signature">
+
                 <strong>Le Président</strong>
-                <span>Communauté Centrafricaine au Ghana</span>
+
+                <span>
+                    Communauté Centrafricaine au Ghana
+                </span>
+
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 
+<!-- =====================================================
+     VIDEO
+===================================================== -->
 
-<!-- VIDEO PRESENTATION -->
-<section class="video-presentation" aria-labelledby="video-title">
+<section class="video-presentation">
+
     <div class="video-copy">
-        <p class="video-eyebrow">CCG en images</p>
-        <h2 id="video-title">D&eacute;couvrez notre communaut&eacute;</h2>
-        <p>Regardez ce moment de partage et de fraternit&eacute; 
-            avec la Communaut&eacute; de Centrafrique du Ghana.</p>
+
+        <p class="video-eyebrow">
+            CCG EN IMAGES
+        </p>
+
+        <h2>
+            Découvrez notre communauté
+        </h2>
+
+        <p>
+            Regardez ce moment de partage et de fraternité
+            avec la Communauté Centrafricaine du Ghana.
+        </p>
+
     </div>
 
     <div class="video-frame">
-        <video controls playsinline preload="metadata" aria-label="Vid&eacute;o de pr&eacute;sentation de la CCG">
-            <source src="WhatsApp Video 2026-08-07 at 12.28.42 PM.mp4" type="video/mp4">
-            <source src="WhatsApp Video 2026-08-07 at 12.28.42 PM.mp4" type="video/mp4">
-            Votre navigateur ne prend pas en charge la lecture vid&eacute;o.
+
+        <video
+            controls
+            playsinline
+            preload="metadata">
+
+            <source
+                src="vv.mp4"
+                type="video/mp4">
+
+            Votre navigateur ne prend pas en charge
+            la lecture vidéo.
+
         </video>
-   v  </div>
-      <div class="gallery-btn">
-             <li><a href="morevideos.html">Voir plus de vidéos</a></li>
-        </div>
+
+    </div>
+
+    <div class="gallery-btn">
+
+        <a href="morevideos.html">
+            Voir plus de vidéos
+        </a>
+
+    </div>
+
 </section>
 
-<!-- SOUS-ENTITES -->
-<section id="entities" class="entities-section" aria-labelledby="entities-title">
+
+<!-- =====================================================
+     SOUS ENTITES
+===================================================== -->
+
+<section id="entities"
+         class="entities-section">
+
     <div class="entities-heading">
-        <p class="entities-eyebrow">Nos organisations partenaires</p>
-        <h2 id="entities-title">Les sous-entit&eacute;s de la CCG</h2>
-        <p>Des structures engag&eacute;es qui renforcent l&rsquo;unit&eacute;, l
-            &rsquo;entraide et le rayonnement de notre communaut&eacute;.</p>
+
+        <p class="entities-eyebrow">
+            NOS ORGANISATIONS PARTENAIRES
+        </p>
+
+        <h2>
+            Les sous-entités de la CCG
+        </h2>
+
+        <p>
+            Des structures engagées qui renforcent l’unité,
+            l’entraide et le rayonnement de notre communauté.
+        </p>
+
     </div>
+
 
     <div class="entities-grid">
-        <article class="entity-card">
-            <div class="entity-photo">
-                <img src="association .jpeg" alt="&Eacute;tudiants centrafricains au Ghana">
-            </div>
-            <div class="entity-logo">
-                <img src="as logo.jpeg" alt="Logo de l'Association des &eacute;tudiants et stagiaires centrafricains au Ghana">
-            </div>
-            <div class="entity-details">
-                <p class="entity-tag">&Eacute;ducation &middot; Jeunesse</p>
-                <h3>AESCG</h3>
-                <p>Association des &eacute;tudiants et stagiaires centrafricains au Ghana.</p>
-            </div>
-        </article>
 
         <article class="entity-card">
+
             <div class="entity-photo">
-                <img src="WhatsApp Image 2026-08-07 at 12.28.39 PM.jpeg" alt="Membre de l'&eacute;quipe centrafricaine de football au Ghana">
+
+                <img
+                    src="association .jpeg"
+                    alt="Étudiants centrafricains au Ghana">
+
             </div>
+
             <div class="entity-logo">
-                <img src="CFTG LOG.jpeg" alt="Logo de Team-Ghana Bamaras Football Centrafrique">
+
+                <img
+                    src="as logo.jpeg"
+                    alt="Logo AESCG">
+
             </div>
+
             <div class="entity-details">
-                <p class="entity-tag">Sport &middot; Fraternit&eacute;</p>
-                <h3>Centrafrique Football Team Ghana</h3>
-                <p>Une &eacute;quipe qui fait vivre l&rsquo;esprit
-                     de la Centrafrique sur les terrains du Ghana.</p>
+
+                <p class="entity-tag">
+                    Éducation · Jeunesse
+                </p>
+
+                <h3>
+                    AESCG
+                </h3>
+
+                <p>
+                    Association des étudiants et stagiaires
+                    centrafricains au Ghana.
+                </p>
+
             </div>
+
         </article>
+
+
+        <article class="entity-card">
+
+            <div class="entity-photo">
+
+                <img
+                    src="WhatsApp Image 2026-08-07 at 12.28.39 PM.jpeg"
+                    alt="Football centrafricain au Ghana">
+
+            </div>
+
+            <div class="entity-logo">
+
+                <img
+                    src="CFTG LOG.jpeg"
+                    alt="Logo CFTG">
+
+            </div>
+
+            <div class="entity-details">
+
+                <p class="entity-tag">
+                    Sport · Fraternité
+                </p>
+
+                <h3>
+                    Centrafrique Football Team Ghana
+                </h3>
+
+                <p>
+                    Une équipe qui fait vivre l’esprit
+                    de la Centrafrique sur les terrains du Ghana.
+                </p>
+
+            </div>
+
+        </article>
+
     </div>
+
 </section>
+
+
+<!-- =====================================================
+     DOCUMENTS
+===================================================== -->
 
 <section class="documents">
+
     <div class="container">
+
         <div class="section-header">
-            <h2>Documents & Ressources</h2>
-            <p>Trouvez rapidement les documents importants de la communaut&eacute;.</p>
-        </div>
 
-        <div class="document-search" role="search">
-            <label for="document-search-input">Rechercher un document</label>
-            <div class="document-search-field">
-                <i class="fas fa-search" aria-hidden="true"></i>
-                <input id="document-search-input" type="search" placeholder="Ex. statuts, constitution, certificat..." autocomplete="off">
-                <button id="clear-document-search" type="button" aria-label="Effacer la recherche" hidden>&times;</button>
-            </div>
-            <p id="document-search-status" class="document-search-status" aria-live="polite">3 documents disponibles</p>
-        </div>
+            <h2>
+                Documents & Ressources
+            </h2>
 
-        <div class="document-grid" id="document-grid">
-
-            <div class="document-card" data-document-card>
-                <div class="pdf-icon">📄</div>
-                <h3>CCG STATUS</h3>
-                <p>Registre des statuts de la CCG.</p>
-                <a href="CCG. STATUT & RI.pdf" target="_blank" class="btn">
-                    View PDF
-                </a>
-            </div>
-            <div class="document-card" data-document-card>
-                <div class="pdf-icon">📄</div>
-                <h3>CCG AESCG</h3>
-                <p>Registre des statuts de la CCG.</p>
-                <a href="reglement interieur  AESCG.pdf" target="_blank" class="btn">
-                    View PDF
-                </a>
-            </div>
-
-            <div class="document-card" data-document-card>
-                <div class="pdf-icon">📄</div>
-                <h3>CERTIFICAT OF INCORPORATION</h3>
-                <p>Fill out our membership form to join our team.</p>
-                <a href="CCG CERTIFICATE OF INCORPORATION .pdf" target="_blank" class="btn">
-                    View PDF
-                </a>
-            </div>
-
-            <div class="document-card" data-document-card>
-                <div class="pdf-icon">📄</div>
-                <h3>Project Portfolio</h3>
-                <p>CONSTITUTION DE LA REPUBLIQUE CENTRAFRICAINE.</p>
-                <a href="Constitution-de-la-Republique-Centrafricaine-du-30-aout-2023.pdf" target="_blank" class="btn">
-                    Download PDF
-                </a>
-            </div>
+            <p>
+                Trouvez rapidement les documents importants
+                de la communauté.
+            </p>
 
         </div>
-        <p id="document-no-results" class="document-no-results" hidden>Aucun document ne correspond &agrave; votre recherche.</p>
+
+
+        <div class="document-grid">
+
+            <div class="document-card">
+
+                <div class="pdf-icon">
+                    📄
+                </div>
+
+                <h3>
+                    CCG STATUS
+                </h3>
+
+                <p>
+                    Registre des statuts de la CCG.
+                </p>
+
+                <a href="CCG. STATUT & RI.pdf"
+                   target="_blank"
+                   class="btn">
+                    Voir PDF
+                </a>
+
+            </div>
+
+
+            <div class="document-card">
+
+                <div class="pdf-icon">
+                    📄
+                </div>
+
+                <h3>
+                    CCG AESCG
+                </h3>
+
+                <p>
+                    Règlement intérieur AESCG.
+                </p>
+
+                <a href="reglement interieur  AESCG.pdf"
+                   target="_blank"
+                   class="btn">
+                    Voir PDF
+                </a>
+
+            </div>
+
+
+            <div class="document-card">
+
+                <div class="pdf-icon">
+                    📄
+                </div>
+
+                <h3>
+                    CERTIFICATE OF INCORPORATION
+                </h3>
+
+                <p>
+                    Certificat officiel de la communauté.
+                </p>
+
+                <a href="CCG CERTIFICATE OF INCORPORATION .pdf"
+                   target="_blank"
+                   class="btn">
+                    Voir PDF
+                </a>
+
+            </div>
+
+
+            <div class="document-card">
+
+                <div class="pdf-icon">
+                    📄
+                </div>
+
+                <h3>
+                    CONSTITUTION RCA
+                </h3>
+
+                <p>
+                    Constitution de la République centrafricaine.
+                </p>
+
+                <a href="Constitution-de-la-Republique-Centrafricaine-du-30-aout-2023.pdf"
+                   target="_blank"
+                   class="btn">
+                    Voir PDF
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>
-</section>
+
+
+
 <!-- CENTRAFRIQUE -->
 
 <section id="centrafrique" class="section">
@@ -666,9 +810,6 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
     </div>
 
 </section>
-
-
-
 <!-- =====================================================
      ABOUT
 ===================================================== -->
@@ -687,9 +828,9 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         </h2>
 
         <p>
-            La Communauté Centrafricaine au Ghana
-            œuvre pour l'unité, la solidarité et
-            l'intégration des Centrafricains au Ghana.
+            La Communauté Centrafricaine au Ghana œuvre
+            pour l’unité, la solidarité et l’intégration
+            des Centrafricains au Ghana.
         </p>
 
     </div>
@@ -699,8 +840,9 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
 
         <div class="about-image reveal">
 
-            <img src="c.jpeg"
-                 alt="Communauté Centrafricaine au Ghana">
+            <img
+                src="c.jpeg"
+                alt="Communauté Centrafricaine au Ghana">
 
         </div>
 
@@ -712,18 +854,17 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
             </h3>
 
             <p>
-                Nous créons un espace où les
-                Centrafricains peuvent se rencontrer,
-                s'entraider, partager leur culture et
-                construire ensemble un avenir meilleur.
+                Nous créons un espace où les Centrafricains
+                peuvent se rencontrer, s’entraider, partager
+                leur culture et construire ensemble un avenir
+                meilleur.
             </p>
 
             <p>
                 Notre objectif est de renforcer les liens
-                entre les membres de la communauté et
-                de favoriser leur intégration au Ghana.
+                entre les membres de la communauté et de
+                favoriser leur intégration au Ghana.
             </p>
-
 
             <a href="#membership"
                class="btn primary">
@@ -735,11 +876,8 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         </div>
 
     </div>
-<div data-animation="fade-up">
-    ...
-</div>
-</section>
 
+</section>
 
 
 <!-- =====================================================
@@ -760,8 +898,8 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         </h2>
 
         <p>
-            Une équipe engagée au service de la
-            communauté centrafricaine au Ghana.
+            Une équipe engagée au service de la communauté
+            centrafricaine au Ghana.
         </p>
 
     </div>
@@ -772,11 +910,15 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         <article class="team-card reveal">
 
             <div class="team-photo">
+
                 <img src="President.jpeg"
                      alt="Président">
+
             </div>
 
-            <h3>Président</h3>
+            <h3>
+                Président
+            </h3>
 
             <p>
                 Direction générale de la communauté
@@ -789,11 +931,15 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         <article class="team-card reveal">
 
             <div class="team-photo">
+
                 <img src="VP Amos.png"
                      alt="Vice Président">
+
             </div>
 
-            <h3>Vice-Président</h3>
+            <h3>
+                Vice-Président
+            </h3>
 
             <p>
                 Assistance à la présidence et
@@ -806,11 +952,15 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         <article class="team-card reveal">
 
             <div class="team-photo">
+
                 <img src="TG.png"
-                     alt="Trésorier">
+                     alt="Trésorier Général">
+
             </div>
 
-            <h3>Trésorier Général</h3>
+            <h3>
+                Trésorier Général
+            </h3>
 
             <p>
                 Gestion et suivi financier
@@ -823,15 +973,19 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         <article class="team-card reveal">
 
             <div class="team-photo">
+
                 <img src="SG.png"
                      alt="Secrétaire Général">
+
             </div>
 
-            <h3>Secrétaire Général</h3>
+            <h3>
+                Secrétaire Général
+            </h3>
 
             <p>
-                Administration, communication et
-                organisation des réunions.
+                Administration, communication
+                et organisation.
             </p>
 
         </article>
@@ -840,94 +994,117 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         <article class="team-card reveal">
 
             <div class="team-photo">
+
                 <img src="TGA.png"
                      alt="Secrétaire Général Adjoint">
+
             </div>
 
-            <h3>Secrétaire Général Adjoint</h3>
+            <h3>
+                Secrétaire Général Adjoint
+            </h3>
 
             <p>
-              Assiste le Secrétaire Général
-                dans ses fonctions et le remplace en cas d'absence.
+                Assiste le Secrétaire Général
+                dans ses fonctions.
             </p>
 
         </article>
-
-
-       
 
     </div>
 
 </section>
 
 
+<!-- =====================================================
+     EVENEMENTS
+===================================================== -->
 
-<!-- =========================
-     SECTION ÉVÉNEMENTS
-========================= -->
-<section id="evenements" class="events-section">
+<section id="evenements"
+         class="events-section">
 
     <div class="events-container">
 
         <div class="events-header reveal">
-            <span class="section-tag">AGENDA CCG</span>
+
+            <span class="section-tag">
+                AGENDA CCG
+            </span>
 
             <h2>
                 Nos <span>Événements</span>
             </h2>
 
             <p>
-                Découvrez les prochains événements, activités
-                culturelles, sportives et communautaires de la
-                Communauté Centrafricaine au Ghana.
+                Découvrez les prochains événements,
+                activités culturelles, sportives et
+                communautaires.
             </p>
+
         </div>
+
 
         <div class="events-grid">
 
-            <!-- ÉVÉNEMENT 1 -->
+
             <article class="event-card reveal">
 
                 <div class="event-image">
+
                     <img src="AG .jpeg"
-                         alt="Événement communautaire CCG">
+                         alt="Assemblée générale">
 
                     <div class="event-date">
-                        <strong>30</strong>
-                        <span>AOÛT</span>
+
+                        <strong>
+                            30
+                        </strong>
+
+                        <span>
+                            AOÛT
+                        </span>
+
                     </div>
 
                     <span class="event-category">
-                         Communauté
+                        Communauté
                     </span>
+
                 </div>
+
 
                 <div class="event-content">
 
                     <h3>
-                      ASSEMBLE GENERAL 
+                        ASSEMBLÉE GÉNÉRALE
                     </h3>
 
                     <div class="event-info">
-                        <p>📅 Samedi 30 Août 2026</p>
-                        <p>⏰ 12:45</p>
-                        <p>📍 Accra, Ghana</p>
+
+                        <p>
+                            📅 Dimanche 30 Août 2026
+                        </p>
+
+                        <p>
+                            ⏰ 12:45
+                        </p>
+
+                        <p>
+                            📍 Accra, Ghana
+                        </p>
+
                     </div>
 
                     <p class="event-description">
-                        Une grande rencontre réunissant les membres
-                        de la communauté centrafricaine au Ghana
-                        autour de l'unité, de la fraternité et du
-                        développement communautaire.
+                        Une grande rencontre réunissant
+                        les membres de la communauté.
                     </p>
-
 
                 </div>
 
             </article>
 
 
-            <!-- ÉVÉNEMENT 2 -->
             <article class="event-card reveal">
 
                 <div class="event-image">
@@ -936,8 +1113,15 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
                          alt="Match de football">
 
                     <div class="event-date">
-                        <strong>6</strong>
-                        <span>SEPT</span>
+
+                        <strong>
+                            6
+                        </strong>
+
+                        <span>
+                            SEPT
+                        </span>
+
                     </div>
 
                     <span class="event-category sport">
@@ -946,6 +1130,7 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
 
                 </div>
 
+
                 <div class="event-content">
 
                     <h3>
@@ -953,35 +1138,48 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
                     </h3>
 
                     <div class="event-info">
-                        <p>📅 Samedi 6 SEPTEMBRE 2026</p>
-                        <p>⏰ 15:00</p>
-                        <p>📍ABELEMKPE PART</p>
+
+                        <p>
+                            📅 Dimanche 6 Septembre 2026
+                        </p>
+
+                        <p>
+                            ⏰ 15:00
+                        </p>
+
+                        <p>
+                            📍 ABELEMKPE PARK
+                        </p>
+
                     </div>
 
                     <p class="event-description">
-                        Un grand rendez-vous sportif entre les
-                        communautés centrafricaine et congolaise
-                        au Ghana.
+                        Un grand rendez-vous sportif
+                        entre communautés.
                     </p>
-
-                   
 
                 </div>
 
             </article>
 
 
-            <!-- ÉVÉNEMENT 3 -->
             <article class="event-card reveal">
 
                 <div class="event-image">
 
                     <img src="DL.jpeg"
-                         alt="Activité culturelle">
+                         alt="Journée culturelle">
 
                     <div class="event-date">
-                        <strong>20</strong>
-                        <span>SEPT</span>
+
+                        <strong>
+                            20
+                        </strong>
+
+                        <span>
+                            SEPT
+                        </span>
+
                     </div>
 
                     <span class="event-category culture">
@@ -990,6 +1188,7 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
 
                 </div>
 
+
                 <div class="event-content">
 
                     <h3>
@@ -997,15 +1196,24 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
                     </h3>
 
                     <div class="event-info">
-                        <p>📅 Dimanche 20 Septembre 2026</p>
-                        <p>⏰ 14:00</p>
-                        <p>📍 Accra, Ghana</p>
+
+                        <p>
+                            📅 Dimanche 20 Septembre 2026
+                        </p>
+
+                        <p>
+                            ⏰ 14:00
+                        </p>
+
+                        <p>
+                            📍 Accra, Ghana
+                        </p>
+
                     </div>
 
                     <p class="event-description">
                         Une journée dédiée à la culture,
-                        aux traditions, à la musique et à la
-                        gastronomie centrafricaines.
+                        aux traditions et à la gastronomie.
                     </p>
 
                 </div>
@@ -1014,106 +1222,189 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
 
         </div>
 
-       
-        </div>
-
     </div>
 
 </section>
 
+
 <!-- =====================================================
-     TESTIMONIALS
+     TESTIMONIALS SECTION
 ===================================================== -->
+<section class="testimonials-section" id="testimonials">
 
-<section id="testimonials"
-         class="section section-light">
+    <!-- Background overlay -->
+    <div class="testimonials-overlay"></div>
 
-    <div class="section-title reveal">
+    <div class="testimonials-container">
 
-        <p class="eyebrow">
-            TÉMOIGNAGES
-        </p>
-
-        <h2>
-            Ce que nos compatriotes disent de nous
-        </h2>
-
-    </div>
-
-
-    <div class="testimonial-slider reveal">
-
-        <button
-            class="slider-btn"
-            id="prevTestimonial"
-            type="button">
-
-            <i class="fas fa-chevron-left"></i>
-
-        </button>
-
-
-        <div class="testimonial-card active">
-
-            <img
-                src="image/WhatsApp Image 2026-08-01 at 8.14.30 PM (1).jpeg"
-                alt="Témoignage">
-
-            <h3>
-                Amina K.
-            </h3>
-
+        <div class="section-heading">
+            <span class="section-subtitle">TESTIMONIALS</span>
+            <h2>What People Say About Us</h2>
             <p>
-                « Les activités de la communauté
-                m'ont donné confiance et m'ont permis
-                de mieux m'intégrer au Ghana. »
+                Discover what our members and partners say about
+                the Community Central African Ghana.
             </p>
-
-            <div class="rating">
-                ★★★★★
-            </div>
-
-        </div>
-        <div class="testimonial-card active">
-
-            <img
-                src="image/WhatsApp Image 2026-08-01 at 8.14.30 PM (1).jpeg"
-                alt="Témoignage">
-
-            <h3>
-                Amina K.
-            </h3>
-
-            <p>
-                « Les activités de la communauté
-                m'ont donné confiance et m'ont permis
-                de mieux m'intégrer au Ghana. »
-            </p>
-
-            <div class="rating">
-                ★★★★★
-            </div>
-
         </div>
 
+        <!-- Testimonials Slider -->
+        <div class="testimonial-slider">
 
-        <button
-            class="slider-btn"
-            id="nextTestimonial"
-            type="button">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card active">
 
-            <i class="fas fa-chevron-right"></i>
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
 
-        </button>
+                <div class="testimonial-photo">
+                    <img src="WhatsApp Image 2026-08-26 at 9.57.52 PM (1).jpeg" alt="Testimonial">
+                </div>
+
+                <p class="testimonial-text">
+                    "« Depuis mon arrivée au Ghana, la communauté centrafricaine m’a permis de 
+                    me sentir beaucoup moins loin de chez moi. Nous partageons nos expériences, nous 
+                    nous soutenons et nous restons unis malgré la distance. »"
+                </p>
+
+                <h3>Christ le Prafait</h3>
+                <span>Community Member</span>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+            </div>
+
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+
+                <div class="testimonial-photo">
+                    <img src="WhatsApp Image 2026-08-26 at 9.57.54 PM.jpeg" alt="Testimonial">
+                </div>
+
+                <p class="testimonial-text">
+                    "The organization brings people together,
+                    supports members and promotes our Central African
+                    culture here in Ghana."
+                </p>
+
+                <h3>Privat TOGNAMA</h3>
+                <span>Community Member</span>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+            </div>
+
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+
+                <div class="testimonial-photo">
+                    <img src="WhatsApp Image 2026-08-26 at 9.57.52 PM.jpeg" alt="Testimonial">
+                </div>
+
+                <p class="testimonial-text">
+                   « La solidarité entre les Centrafricains au Ghana est une véritable richesse.
+                    Dans les moments difficiles comme dans les moments de joie, 
+                   nous pouvons compter les uns sur les autres. Cette communauté représente pour moi une grande famille. »
+                </p>
+
+                <h3>Amos BENAM </h3>
+                <span>Community Member</span>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+            </div>
+
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+
+                <div class="testimonial-photo">
+                    <img src="WhatsApp Image 2026-08-26 at 9.57.53 PM.jpeg" alt="Testimonial">
+                </div>
+
+                <p class="testimonial-text">
+                    "Being part of this community makes me feel
+                    connected to home while building my future in Ghana."
+                </p>
+
+                <h3>Richie Demogan</h3>
+                <span>Community Member</span>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+            </div>
+
+
+            <!-- Testimonial 5 -->
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+
+                <div class="testimonial-photo">
+                    <img src="WhatsApp Image 2026-07-31 at 10.21.44 AM.jpeg" alt="Testimonial">
+                </div>
+
+                <p class="testimonial-text">
+                   « Grâce à la communauté, j’ai pu rencontrer d’autres compatriotes, 
+                   développer de nouvelles relations et mieux m’intégrer dans la société ghanéenne. 
+                   C’est une belle initiative qui contribue à renforcer notre unité et notre identité centrafricaine. »
+                </p>
+
+                <h3>Esther</h3>
+                <span>Community Member</span>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+            </div>
+
+
+           
+        <!-- Navigation -->
+        <div class="testimonial-navigation">
+
+            <button class="testimonial-btn" id="prevTestimonial">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="testimonial-dots" id="testimonialDots"></div>
+
+            <button class="testimonial-btn" id="nextTestimonial">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
 
     </div>
 
 </section>
 
-
-
 <!-- =====================================================
-     MEMBERSHIP
+     DEVENIR MEMBRE
 ===================================================== -->
 
 <section id="membership"
@@ -1130,68 +1421,197 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         </h2>
 
         <p>
-            Faites partie de la communauté
-            centrafricaine au Ghana.
+            Faites partie de la Communauté Centrafricaine
+            au Ghana.
         </p>
 
     </div>
 
 
-    <form class="form reveal"
-          id="membershipForm">
-
-        <input
-            type="text"
-            placeholder="Nom"
-            required>
+    <div class="membership-container">
 
 
-        <input
-            type="text"
-            placeholder="Prénom"
-            required>
+        <!-- INFORMATIONS -->
+
+        <div class="membership-info reveal">
+
+            <i class="fas fa-users"></i>
+
+            <h3>
+                Rejoignez la CCG
+            </h3>
+
+            <p>
+                Remplissez le formulaire d'inscription.
+                Vos informations seront envoyées directement
+                à l'administration.
+            </p>
 
 
-        <input
-            type="email"
-            placeholder="Email"
-            required>
+            <div class="membership-benefits">
+
+                <div>
+                    <i class="fas fa-check-circle"></i>
+                    <span>
+                        Participer aux activités
+                    </span>
+                </div>
+
+                <div>
+                    <i class="fas fa-check-circle"></i>
+                    <span>
+                        Recevoir les informations
+                    </span>
+                </div>
+
+                <div>
+                    <i class="fas fa-check-circle"></i>
+                    <span>
+                        Faire partie de la communauté
+                    </span>
+                </div>
+
+                <div>
+                    <i class="fas fa-check-circle"></i>
+                    <span>
+                        Renforcer la solidarité
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
 
 
-        <input
-            type="tel"
-            placeholder="WhatsApp"
-            required>
+        <!-- FORMULAIRE MEMBRE -->
+
+        <form
+            id="membershipForm"
+            class="form membership-form reveal">
 
 
-        <input
-            type="text"
-            placeholder="Ville au Ghana"
-            required>
+            <div class="form-group">
+
+                <label for="memberNom">
+                    Nom *
+                </label>
+
+                <input
+                    type="text"
+                    id="memberNom"
+                    name="nom"
+                    placeholder="Votre nom"
+                    required>
+
+            </div>
 
 
-        <button
-            type="submit"
-            class="btn primary">
+            <div class="form-group">
 
-            S'inscrire
-            <i class="fas fa-user-plus"></i>
+                <label for="memberPrenom">
+                    Prénom *
+                </label>
 
-        </button>
+                <input
+                    type="text"
+                    id="memberPrenom"
+                    name="prenom"
+                    placeholder="Votre prénom"
+                    required>
 
-    </form>
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="memberEmail">
+                    Email *
+                </label>
+
+                <input
+                    type="email"
+                    id="memberEmail"
+                    name="email"
+                    placeholder="exemple@gmail.com"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="memberWhatsapp">
+                    WhatsApp *
+                </label>
+
+                <input
+                    type="tel"
+                    id="memberWhatsapp"
+                    name="whatsapp"
+                    placeholder="+233 XX XXX XXXX"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="memberVille">
+                    Ville au Ghana *
+                </label>
+
+                <input
+                    type="text"
+                    id="memberVille"
+                    name="ville"
+                    placeholder="Ex: Accra"
+                    required>
+
+            </div>
+
+
+            <input
+                type="hidden"
+                id="memberDate"
+                name="date">
+
+
+            <button
+                type="submit"
+                class="btn primary"
+                id="membershipSubmit">
+
+                <span>
+                    S'inscrire
+                </span>
+
+                <i class="fas fa-user-plus"></i>
+
+            </button>
+
+
+            <p
+                id="membershipStatus"
+                class="form-status"
+                aria-live="polite">
+            </p>
+
+        </form>
+
+    </div>
 
 </section>
 
-<!-- =========================
-     SECTION ACTUALITÉS
-========================= -->
 
-<section id="actualites" class="news-section">
+<!-- =====================================================
+     ACTUALITES
+===================================================== -->
+
+<section id="actualites"
+         class="news-section">
 
     <div class="news-container">
 
-        <!-- HEADER -->
         <div class="news-header reveal">
 
             <span class="section-tag">
@@ -1203,27 +1623,23 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
             </h2>
 
             <p>
-                Retrouvez les dernières informations, annonces,
-                activités et nouvelles de la Communauté
-                Centrafricaine au Ghana.
+                Retrouvez les dernières informations,
+                annonces et activités de la CCG.
             </p>
 
         </div>
 
 
-        <!-- NEWS GRID -->
         <div class="news-grid">
 
 
-            <!-- ARTICLE 1 -->
             <article class="news-card reveal">
 
                 <div class="news-image">
 
                     <img
                         src="nomi.jpeg"
-                        alt="Actualité de la Communauté Centrafricaine au Ghana"
-                    >
+                        alt="Actualité CCG">
 
                     <span class="news-category">
                         Communauté
@@ -1238,38 +1654,30 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
                     </div>
 
                     <h3>
-                        La Communauté Centrafricaine au Ghana
-                        renforce son unité
+                        La Communauté Centrafricaine
+                        au Ghana renforce son unité
                     </h3>
 
                     <p>
                         La communauté poursuit ses initiatives
-                        pour renforcer la solidarité, l'entraide
-                        et l'intégration des Centrafricains au Ghana.
+                        pour renforcer la solidarité.
                     </p>
-
-                    <a href="#" class="news-btn">
-                        Lire l'article
-                        <span>→</span>
-                    </a>
 
                 </div>
 
             </article>
 
 
-            <!-- ARTICLE 2 -->
             <article class="news-card reveal">
 
                 <div class="news-image">
 
                     <img
-                        src="images/news-2.jpg"
-                        alt="Activité sportive CCG"
-                    >
+                        src="ap.jpeg"
+                        alt="Activité CCG">
 
-                    <span class="news-category sport">
-                        Sport
+                    <span class="news-category">
+                        Annonce
                     </span>
 
                 </div>
@@ -1281,37 +1689,29 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
                     </div>
 
                     <h3>
-                        Grande activité sportive de la communauté
+                        Nouvelle initiative pour les membres
                     </h3>
 
                     <p>
-                        Retour sur les moments forts d'une activité
-                        sportive ayant réuni plusieurs membres de
-                        la communauté centrafricaine.
+                        La CCG annonce de nouvelles initiatives
+                        destinées aux membres.
                     </p>
-
-                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
-                        Lire l'article
-                        <span>→</span>
-                    </a>
 
                 </div>
 
             </article>
 
 
-            <!-- ARTICLE 3 -->
             <article class="news-card reveal">
 
                 <div class="news-image">
 
                     <img
-                        src="ap.jpeg"
-                        alt="Réunion communautaire CCG"
-                    >
+                        src="DL.jpeg"
+                        alt="Culture centrafricaine">
 
-                    <span class="news-category">
-                        Annonce
+                    <span class="news-category culture">
+                        Culture
                     </span>
 
                 </div>
@@ -1323,167 +1723,24 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
                     </div>
 
                     <h3>
-                        Nouvelle initiative pour les membres
-                    </h3>
-
-                    <p>
-                        La CCG annonce de nouvelles initiatives
-                        destinées à améliorer l'accompagnement
-                        et les services proposés aux membres.
-                    </p>
-
-                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
-                        Lire l'article
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ARTICLE 4 -->
-            <article class="news-card reveal">
-
-                <div class="news-image">
-
-                    <img
-                        src="images/news-4.jpg"
-                        alt="Culture centrafricaine au Ghana"
-                    >
-
-                    <span class="news-category culture">
-                        Culture
-                    </span>
-
-                </div>
-
-                <div class="news-content">
-
-                    <div class="news-date">
-                        📅 10 Août 2026
-                    </div>
-
-                    <h3>
                         La culture centrafricaine à l'honneur
                     </h3>
 
                     <p>
                         La communauté met en avant la richesse
-                        culturelle centrafricaine à travers la
-                        musique, la gastronomie et les traditions.
+                        culturelle centrafricaine.
                     </p>
-
-                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
-                        Lire l'article
-                        <span>→</span>
-                    </a>
 
                 </div>
 
             </article>
-
-
-            <!-- ARTICLE 5 -->
-            <article class="news-card reveal">
-
-                <div class="news-image">
-
-                    <img
-                        src="images/news-5.jpg"
-                        alt="Réunion des membres CCG"
-                    >
-
-                    <span class="news-category meeting">
-                        Réunion
-                    </span>
-
-                </div>
-
-                <div class="news-content">
-
-                    <div class="news-date">
-                        📅 05 Août 2026
-                    </div>
-
-                    <h3>
-                        Réunion des membres de la CCG
-                    </h3>
-
-                    <p>
-                        Une rencontre importante consacrée aux
-                        projets et aux prochaines activités de
-                        la communauté.
-                    </p>
-
-                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
-                        Lire l'article
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ARTICLE 6 -->
-            <article class="news-card reveal">
-
-                <div class="news-image">
-
-                    <img
-                        src="images/news-6.jpg"
-                        alt="Communauté centrafricaine"
-                    >
-
-                    <span class="news-category">
-                        CCG
-                    </span>
-
-                </div>
-
-                <div class="news-content">
-
-                    <div class="news-date">
-                        📅 01 Août 2026
-                    </div>
-
-                    <h3>
-                        Message de la direction de la CCG
-                    </h3>
-
-                    <p>
-                        La direction adresse un message de
-                        fraternité, d'unité et d'espoir à
-                        l'ensemble des membres.
-                    </p>
-
-                    <a href="CCG. STATUT & RI.pdf" class="news-btn">
-                        Lire l'article
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- BUTTON -->
-
-        <div class="news-more reveal">
-
-            <a href="#" class="all-news-btn">
-                Voir toutes les actualités
-                <span>→</span>
-            </a>
 
         </div>
 
     </div>
 
 </section>
+
 
 <!-- =====================================================
      CONTACT
@@ -1512,6 +1769,9 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
 
     <div class="contact-container">
 
+
+        <!-- CONTACT INFO -->
+
         <div class="contact-info reveal">
 
             <div class="contact-item">
@@ -1519,8 +1779,15 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
                 <i class="fas fa-location-dot"></i>
 
                 <div>
-                    <h3>Adresse</h3>
-                    <p>Accra, Ghana</p>
+
+                    <h3>
+                        Adresse
+                    </h3>
+
+                    <p>
+                        Accra, Ghana
+                    </p>
+
                 </div>
 
             </div>
@@ -1531,8 +1798,15 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
                 <i class="fas fa-phone"></i>
 
                 <div>
-                    <h3>Téléphone</h3>
-                    <p>+233 XX XXX XXXX</p>
+
+                    <h3>
+                        Téléphone
+                    </h3>
+
+                    <p>
+                        +233 596 860 669
+                    </p>
+
                 </div>
 
             </div>
@@ -1543,8 +1817,15 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
                 <i class="fas fa-envelope"></i>
 
                 <div>
-                    <h3>Email</h3>
-                    <p>contact@ccgghana.org</p>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                       ccdughana@gmail.com
+                    </p>
+
                 </div>
 
             </div>
@@ -1552,33 +1833,53 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         </div>
 
 
+        <!-- FORMULAIRE CONTACT -->
+
         <form
             id="contactForm"
             class="contact-form reveal">
 
+
             <input
                 type="text"
+                name="from_name"
                 placeholder="Votre nom"
                 required>
 
+
             <input
                 type="email"
+                name="from_email"
                 placeholder="Votre email"
                 required>
 
+
             <textarea
+                name="message"
                 placeholder="Votre message"
                 rows="6"
                 required></textarea>
 
+
             <button
                 type="submit"
-                class="btn primary">
+                class="btn primary"
+                id="contactSubmit">
 
-                Envoyer le message
+                <span>
+                    Envoyer le message
+                </span>
+
                 <i class="fas fa-paper-plane"></i>
 
             </button>
+
+
+            <p
+                id="contactStatus"
+                class="form-status"
+                aria-live="polite">
+            </p>
 
         </form>
 
@@ -1586,94 +1887,24 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
 
 </section>
 
-</main>
-
-
 
 <!-- =====================================================
-     FOOTER
+     FINANCEMENT
 ===================================================== -->
 
-<footer class="footer">
-
-    <div class="footer-content">
-
-        <h2>
-            CCG 🇨🇫🇬🇭
-        </h2>
-
-        <p>
-            Communauté Centrafricaine au Ghana
-        </p>
-
-
-        <div class="socials">
-
-            <a href="#" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-
-            <a href="#" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <a href="#" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-
-        </div>
-
-
-        <p class="copyright">
-
-            © 2026 CCG — Tous droits réservés.
-
-        </p>
-
-    </div>
-
-</footer>
-
-
-
-<!-- =====================================================
-     LIGHTBOX
-===================================================== -->
-
-<div id="lightbox"
-     class="lightbox">
-
-    <button
-        class="lightbox-close"
-        type="button">
-
-        <i class="fas fa-xmark"></i>
-
-    </button>
-
-    <img
-        id="lightboxImage"
-        src=""
-        alt="Image agrandie">
-
-</div>
-
-
-<!-- ===============================
-     SECTION FINANCEMENT / SOUTIEN
-================================ -->
-
-<section id="financement" class="financement-section">
+<section id="financement"
+         class="financement-section">
 
     <div class="financement-container">
 
         <div class="financement-image">
-            <!-- REMPLACE cette image par la photo du Ministre -->
-            <img src="aide.png"
-                 alt="Son Excellence Monsieur HÉRITIER RODOLPHE BONHEUR DONENG WANZOUMON">
 
-           
+            <img
+                src="aide.png"
+                alt="Soutien institutionnel">
+
         </div>
+
 
         <div class="financement-content">
 
@@ -1702,19 +1933,30 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
             </h3>
 
             <div class="financement-date">
-                <span>📅</span>
+
+                <span>
+                    📅
+                </span>
+
                 <div>
-                    <small>Date</small>
-                    <strong>8 Mars 2024</strong>
+
+                    <small>
+                        Date
+                    </small>
+
+                    <strong>
+                        8 Mars 2024
+                    </strong>
+
                 </div>
+
             </div>
 
             <p class="financement-description">
-                La Communauté Centrafricaine au Ghana exprime sa
-                profonde reconnaissance pour le soutien apporté aux
-                initiatives en faveur de la jeunesse, du sport,
-                de l’éducation civique et du renforcement des liens
-                entre les Centrafricains.
+                La Communauté Centrafricaine au Ghana exprime
+                sa profonde reconnaissance pour le soutien
+                apporté aux initiatives en faveur de la jeunesse,
+                du sport et de l’éducation civique.
             </p>
 
         </div>
@@ -1722,16 +1964,27 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
     </div>
 
 </section>
-<!-- =========================
-     WHATSAPP SYSTEM
-========================= -->
+
+</main>
+
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
 
 <div class="whatsapp-system">
 
     <div class="whatsapp-message">
-        <button class="whatsapp-close" onclick="closeWhatsApp()">×</button>
 
-        <strong> Communauté Centrafricaine au Ghana</strong>
+        <button
+            class="whatsapp-close"
+            onclick="closeWhatsApp()">
+            ×
+        </button>
+
+        <strong>
+            Communauté Centrafricaine au Ghana
+        </strong>
 
         <p>
             Bonjour 👋<br>
@@ -1739,26 +1992,107 @@ La capitale est Bangui, située sur les rives de la rivière Oubangui. Le pays e
         </p>
 
         <a
-            href="+233596860669"
+            href="https://chat.whatsapp.com/ETnaLPCGDKUC3eDUQytmyb?s=cl&p=a&mlu=4"
             target="_blank"
             class="whatsapp-chat-btn">
+
             💬 Démarrer une conversation
+
         </a>
+
     </div>
 
+
     <a
-        href="https://wa.me/233XXXXXXXXX?text=Bonjour%20Communauté%20Centrafricaine%20au%20Ghana"
+        href="https://chat.whatsapp.com/ETnaLPCGDKUC3eDUQytmyb?s=cl&p=a&mlu=4"
         target="_blank"
         class="whatsapp-button"
-        aria-label="Contacter la Communauté Centrafricaine au Ghana sur WhatsApp">
+        aria-label="WhatsApp">
 
-        <span class="whatsapp-icon">☏</span>
+        <span class="whatsapp-icon">
+            <i class="fab fa-whatsapp"></i>
+        </span>
 
         <span class="whatsapp-pulse"></span>
 
     </a>
 
 </div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h2>
+            CCG 
+        </h2>
+
+        <p>
+            Communauté Centrafricaine au Ghana
+        </p>
+
+
+        <div class="socials">
+
+            <a href="https://www.facebook.com/communautecentrafricainedughana.ccg
+" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://vm.tiktok.com/ZS9hawecpFaRL-5XbYJ/
+" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a
+                href="https://chat.whatsapp.com/ETnaLPCGDKUC3eDUQytmyb?s=cl&p=a&mlu=4"
+                target="_blank"
+                aria-label="WhatsApp">
+
+                <i class="fab fa-whatsapp"></i>
+
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+            © 2026 CCG — Tous droits réservés.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div id="lightbox"
+     class="lightbox">
+
+    <button
+        class="lightbox-close"
+        type="button">
+
+        <i class="fas fa-xmark"></i>
+
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Image agrandie">
+
+</div>
+
+
 <!-- =====================================================
      JAVASCRIPT
 ===================================================== -->
