@@ -128,6 +128,7 @@ sidebarLinks.forEach(link => {
 const logoutLink = document.querySelector('.logout-link');
 if (logoutLink) {
     logoutLink.addEventListener('click', event => {
+        if (window.ccgSupabase) return;
         const confirmed = confirm('Voulez-vous vraiment vous déconnecter ?');
         if (!confirmed) {
             event.preventDefault();
