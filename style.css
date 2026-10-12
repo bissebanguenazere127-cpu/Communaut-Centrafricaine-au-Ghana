@@ -1188,6 +1188,21 @@ textarea {
     font-size: 13px;
 }
 
+.admin-access {
+    align-items: center;
+    color: rgba(255, 255, 255, .82);
+    display: inline-flex;
+    font-size: 13px;
+    gap: 8px;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.admin-access:hover,
+.admin-access:focus-visible {
+    color: #ffd700;
+}
+
 
 /* =====================================================
    LIGHTBOX

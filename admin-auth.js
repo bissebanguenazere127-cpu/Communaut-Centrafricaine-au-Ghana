@@ -1,40 +1,39 @@
 (() => {
-  'use strict';
+  "use strict";
 
-  const config = window.supabaseConfig;
-  if (!config?.isConfigured || !window.supabase?.createClient) {
-    window.location.replace('login.html?error=config');
-    return;
-  }
+  const goToLogin = () => window.location.replace("login.html");
 
-  const client = window.supabase.createClient(config.url, config.anonKey, {
-    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
-  });
-  window.ccgSupabase = client;
+  window.ccgAdminReady = (async () => {
+    try {
+      const response = await fetch("/api/auth/session", { credentials: "same-origin" });
+      if (!response.ok) {
+        goToLogin();
+        return false;
+      }
 
-  const protectDashboard = async () => {
-    const { data: { session } } = await client.auth.getSession();
-    if (!session) {
-      window.location.replace('login.html');
-      return;
+      const session = await response.json();
+      const email = document.getElementById("admin-email");
+      if (email) email.textContent = session.email || "Administrateur";
+      document.body.classList.remove("admin-pending");
+      document.body.classList.add("admin-authenticated");
+      return true;
+    } catch (_) {
+      goToLogin();
+      return false;
     }
+  })();
 
-    const { data: isAdmin, error } = await client.rpc('is_ccg_admin');
-    if (error || isAdmin !== true) {
-      await client.auth.signOut();
-      window.location.replace('login.html?error=unauthorized');
-    }
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const logout = document.querySelector('.logout-link');
-    logout?.addEventListener('click', async event => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const logout = document.querySelector(".logout-link");
+    if (!logout) return;
+    logout.addEventListener("click", async (event) => {
       event.preventDefault();
-      if (!window.confirm('Voulez-vous vraiment vous déconnecter ?')) return;
-      await client.auth.signOut();
-      window.location.replace('login.html');
+      if (!window.confirm("Voulez-vous vraiment vous déconnecter ?")) return;
+      try {
+        await fetch("/api/auth/logout", { method: "POST", credentials: "same-origin" });
+      } finally {
+        goToLogin();
+      }
     });
   });
-
-  protectDashboard();
 })();

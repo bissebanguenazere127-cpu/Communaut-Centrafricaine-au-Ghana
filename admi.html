@@ -1,765 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CCG Admin Dashboard</title>
-
-<link rel="stylesheet" href="admi.css">
-
-
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter&display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet" 
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration CCG</title>
+  <link rel="stylesheet" href="admi.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
-
-<body class="admin-body">
-
-
-
-<!-- SIDEBAR -->
-
-<aside class="sidebar">
-
-
-<div class="admin-logo">
-
-<img src="image/CCG L.jpeg">
-
-<h2>CCG ADMIN</h2>
-
-</div>
-
-
-
-<ul>
-
-
-<li>
-<a href="#">
-<i class="fas fa-chart-line"></i>
-Dashboard
-</a>
-</li>
-
-
-<li>
-<a href="#">
-<i class="fas fa-users"></i>
-Membres
-</a>
-</li>
-
-
-<li>
-<a href="#">
-<i class="fas fa-newspaper"></i>
-Actualités
-</a>
-</li>
-
-
-<li>
-<a href="events.html">
-<i class="fas fa-calendar"></i>
-Événements
-</a>
-</li>
-
-
-<li>
-
-<a href="gallery.html">
-<i class="fas fa-images"></i>
-Galerie
-</a>
-</li>
-
-
-
-<li>
-<a href="#">
-<i class="fas fa-envelope"></i>
-Messages
-</a>
-</li>
-
-
-
-<li>
-<a href="#">
-<i class="fas fa-cog"></i>
-Paramètres
-</a>
-</li>
-
-
-
-<li>
-
-<a href="login.html" class="logout-link">
-
-<i class="fas fa-sign-out-alt"></i>
-
-Déconnexion
-
-</a>
-
-</li>
-
-
-</ul>
-
-
-</aside>
-
-
-
-
-
-
-
-
-<!-- MAIN CONTENT -->
-
-
-<main class="admin-main">
-
-
-
-<header class="admin-header">
-
-
-<div>
-
-<h1>
-Tableau de bord CCG
-</h1>
-
-<p>
-Bienvenue dans l'espace administration
-</p>
-
-</div>
-
-
-
-<div class="admin-profile">
-
-<img src="image/President.jpeg">
-
-<span>
-Président CCG
-</span>
-
-
-</div>
-
-
-
-</header>
-
-
-
-
-
-
-
-
-<!-- STATISTICS -->
-
-
-<section class="stats">
-
-
-<div class="stat-card">
-
-<i class="fas fa-users"></i>
-
-<div>
-
-<h2>
-2000
-</h2>
-
-<p>
-Membres 
-</p>
-<h2>
-500
-</h2>
-
-<p>
-Membres actifs
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-<div class="stat-card">
-
-<i class="fas fa-calendar-check"></i>
-
-<div>
-
-<h2>
-25
-</h2>
-
-<p>
-Événements
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-<div class="stat-card">
-
-
-<i class="fas fa-newspaper"></i>
-
-
-<div>
-
-<h2>
-48
-</h2>
-
-<p>
-Actualités publiées
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<div class="stat-card">
-
-
-<i class="fas fa-handshake"></i>
-
-
-<div>
-
-<h2>
-15
-</h2>
-
-<p>
-Partenaires
-</p>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- GESTION RAPIDE -->
-
-
-<section class="admin-actions">
-
-
-<h2>
-Gestion rapide
-</h2>
-
-
-
-<div class="action-grid">
-
-
-
-<div class="action-card">
-
-
-<i class="fas fa-user-plus"></i>
-
-
-<h3>
-Ajouter membre
-</h3>
-
-
-<button>
-Ajouter
-</button>
-
-
-</div>
-
-
-
-
-
-<div class="action-card">
-
-
-<i class="fas fa-pen"></i>
-
-
-<h3>
-Créer actualité
-</h3>
-
-
-<button>
-Publier
-</button>
-
-
-</div>
-
-
-
-
-
-<div class="action-card">
-
-
-<i class="fas fa-calendar-plus"></i>
-
-
-<h3>
-Nouvel événement
-</h3>
-
-
-<button>
-Créer
-</button>
-
-
-</div>
-
-
-
-
-
-<div class="action-card">
-
-
-<i class="fas fa-camera"></i>
-
-
-<h3>
-Ajouter photo
-</h3>
-
-
-<button>
-Télécharger
-</button>
-
-
-</div>
-
-
-
-
-</div>
-
-
-</section>
-
-
-<!-- TABLE MEMBRES -->
-
-<section class="admin-table">
-
-
-<h2>
-Derniers membres inscrits
-</h2>
-
-
-
-<table>
-
-
-<thead>
-
-<tr>
-
-<th>
-Photo
-</th>
-
-
-<th>
-Nom
-</th>
-
-
-<th>
-Ville
-</th>
-
-
-<th>
-Statut
-</th>
-
-
-<th>
-Action
-</th>
-
-
-</tr>
-
-
-</thead>
-
-
-
-<tbody>
-
-
-
-<tr>
-
-<td>
-<img src="image/image.png">
-</td>
-
-
-<td>
-Jean Dupont
-</td>
-
-
-<td>
-Accra
-</td>
-
-
-<td>
-Actif
-</td>
-
-
-<td>
-
-
-<button class="edit">
-Modifier
-</button>
-
-
-<button class="delete">
-Supprimer
-</button>
-
-
-</td>
-
-
-</tr>
-<tr>
-
-<td>
-<img src="image/image.png">
-</td>
-
-
-<td>
-Jean Dupont
-</td>
-
-
-<td>
-Accra
-</td>
-
-
-<td>
-Actif
-</td>
-
-
-<td>
-
-
-<button class="edit">
-Modifier
-</button>
-
-
-<button class="delete">
-Supprimer
-</button>
-
-
-</td>
-
-
-</tr>
-<tr>
-
-<td>
-<img src="image/image.png">
-</td>
-
-
-<td>
-Jean Dupont
-</td>
-
-
-<td>
-Accra
-</td>
-
-
-<td>
-Actif
-</td>
-
-
-<td>
-
-
-<button class="edit">
-Modifier
-</button>
-
-
-<button class="delete">
-Supprimer
-</button>
-
-
-</td>
-
-
-</tr>
-<tr>
-
-<td>
-<img src="image/image.png">
-</td>
-
-
-<td>
-Jean Dupont
-</td>
-
-
-<td>
-Accra
-</td>
-
-
-<td>
-Actif
-</td>
-
-
-<td>
-
-
-<button class="edit">
-Modifier
-</button>
-
-
-<button class="delete">
-Supprimer
-</button>
-
-
-</td>
-
-
-</tr>
-
-
-
-
-
-<tr>
-
-<td>
-<img src="images/members/user2.jpg">
-</td>
-
-
-<td>
-Marie K.
-</td>
-
-
-<td>
-Kumasi
-</td>
-
-
-<td>
-Actif
-</td>
-
-
-<td>
-
-
-<button class="edit">
-Modifier
-</button>
-
-
-<button class="delete">
-Supprimer
-</button>
-
-
-</td>
-
-
-</tr>
-
-
-
-</tbody>
-
-
-</table>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- RECENTS NEWS -->
-
-
-<section class="news-admin">
-
-
-<h2>
-Dernières actualités
-</h2>
-
-
-
-<div class="news-list">
-
-
-<div class="news-item">
-
-<img src="images/gallery/news1.jpg">
-
-
-<div>
-
-<h3>
-Grande réunion CCG Ghana
-</h3>
-
-<p>
-Publié le 30 Juillet 2026
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="news-item">
-
-<img src="images/gallery/news2.jpg">
-
-
-<div>
-
-<h3>
-Activité culturelle
-</h3>
-
-<p>
-Publié le 15 Août 2026
-</p>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<footer>
-
-<p>
-© 2026 Communauté de Centrafrique du Ghana (CCG)
-</p>
-
-
-</footer>
-
-
-
-<script src="supabsae-config.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/admin-auth.js"></script>
-<script src="js/admin.js"></script>
-
-
+<body class="admin-body admin-pending">
+  <aside class="sidebar" aria-label="Navigation administration">
+    <div class="admin-logo">
+      <img src="CCG L.jpeg" alt="Logo CCG">
+      <h2>CCG ADMIN</h2>
+    </div>
+    <ul>
+      <li><a href="#dashboard"><i class="fas fa-chart-line" aria-hidden="true"></i>Tableau de bord</a></li>
+      <li><a href="#messages"><i class="fas fa-envelope" aria-hidden="true"></i>Messages</a></li>
+      <li><a href="#requests"><i class="fas fa-user-check" aria-hidden="true"></i>Demandes</a></li>
+      <li><a href="index.html"><i class="fas fa-house" aria-hidden="true"></i>Site public</a></li>
+      <li><a href="members.html"><i class="fas fa-address-card" aria-hidden="true"></i>Portail membres</a></li>
+      <li><a href="login.html" class="logout-link"><i class="fas fa-sign-out-alt" aria-hidden="true"></i>Déconnexion</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-main" id="dashboard">
+    <header class="admin-header">
+      <div>
+        <p class="eyebrow">ADMINISTRATION CCG</p>
+        <h1>Accès administrateur</h1>
+        <p>La nouvelle base d’administration est active et indépendante.</p>
+      </div>
+      <div class="admin-profile">
+        <img src="CCG L.jpeg" alt="">
+        <span id="admin-email">Administrateur</span>
+      </div>
+    </header>
+
+    <section class="admin-actions" aria-labelledby="welcome-title">
+      <h2 id="welcome-title">Bienvenue</h2>
+      <p class="dashboard-status">Votre session est protégée par le serveur. Les anciens modules de gestion, dépendants de l’ancien service, ont été retirés pour repartir sur une base propre.</p>
+      <div class="action-grid">
+        <article class="action-card">
+          <i class="fas fa-user-shield" aria-hidden="true"></i>
+          <h3>Compte unique</h3>
+          <p>Seul l’e-mail défini dans les variables du serveur peut ouvrir cet espace.</p>
+        </article>
+        <article class="action-card">
+          <i class="fas fa-key" aria-hidden="true"></i>
+          <h3>Mot de passe privé</h3>
+          <p>Le mot de passe est conservé côté serveur, jamais dans le navigateur.</p>
+        </article>
+        <article class="action-card">
+          <i class="fas fa-clock" aria-hidden="true"></i>
+          <h3>Session limitée</h3>
+          <p>La connexion expire automatiquement après huit heures.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="admin-actions admin-workspace" id="messages" aria-labelledby="messages-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">BOITE DE RECEPTION</p>
+          <h2 id="messages-title">Messages recus</h2>
+        </div>
+        <button class="action-button" id="refresh-messages" type="button">Actualiser</button>
+      </div>
+      <p class="dashboard-status" id="admin-dashboard-status" role="status" aria-live="polite">Chargement des donnees...</p>
+      <div class="admin-filters">
+        <label for="message-status-filter">Afficher</label>
+        <select id="message-status-filter">
+          <option value="new">Nouveaux messages</option>
+          <option value="read">Messages lus</option>
+          <option value="archived">Archives</option>
+          <option value="">Tous les messages</option>
+        </select>
+      </div>
+      <div class="admin-table-wrap">
+        <table>
+          <thead><tr><th>Expediteur</th><th>Message</th><th>Recu le</th><th>Statut</th><th>Action</th></tr></thead>
+          <tbody id="messages-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="admin-actions admin-workspace" id="requests" aria-labelledby="requests-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ADHESIONS</p>
+          <h2 id="requests-title">Demandes de nouveaux membres</h2>
+        </div>
+        <button class="action-button" id="refresh-requests" type="button">Actualiser</button>
+      </div>
+      <div class="admin-filters">
+        <label for="request-status-filter">Afficher</label>
+        <select id="request-status-filter">
+          <option value="pending">Demandes en attente</option>
+          <option value="approved">Demandes approuvees</option>
+          <option value="rejected">Demandes refusees</option>
+          <option value="archived">Archives</option>
+          <option value="">Toutes les demandes</option>
+        </select>
+      </div>
+      <div class="admin-table-wrap">
+        <table>
+          <thead><tr><th>Demandeur</th><th>Coordonnees</th><th>Ville</th><th>Recu le</th><th>Statut</th><th>Validation</th></tr></thead>
+          <tbody id="requests-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="admin-actions" aria-labelledby="next-title">
+      <h2 id="next-title">Prochaine étape</h2>
+      <p>Le socle de connexion est prêt. Les fonctions de membres, messages et actualités seront ajoutées ici avec le nouveau stockage choisi, sans réutiliser l’ancien backend.</p>
+      <div class="admin-links">
+        <a class="action-button" href="index.html">Voir le site public</a>
+        <a class="action-button secondary-button" href="members.html">Voir le portail membres</a>
+      </div>
+    </section>
+
+    <footer><p>&copy; 2026 Communauté Centrafricaine au Ghana (CCG)</p></footer>
+  </main>
+
+  <script src="js/admin-auth.js"></script>
+  <script src="js/admin-dashboard.js"></script>
 </body>
-
 </html>

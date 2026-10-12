@@ -1324,3 +1324,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+/* Legacy Supabase test code intentionally disabled: this page does not load Supabase. */
+/* const { data: { user }, error } = await supabase.auth.getUser();
+
+if (error) {
+    console.error("Erreur récupération utilisateur :", error);
+    return;
+}
+
+if (!user) {
+    console.log("Aucun utilisateur connecté");
+    return;
+}
+
+console.log("USER ID :", user.id);
+console.log("EMAIL :", user.email); */
