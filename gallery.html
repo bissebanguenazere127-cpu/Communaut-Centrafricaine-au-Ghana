@@ -1,260 +1,1371 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern photography gallery and creative portfolio.">
+  <title>Galerie de la </title>
 
-<section class="community-gallery" id="galerie">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <div class="gallery-header">
-        <span class="gallery-badge"> COMMUNAUTÉ CENTRAFRICAINE AU GHANA</span>
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --text: #171717;
+      --muted: #777;
+      --card: #ffffff;
+      --accent: #a78360;
+      --line: #e8e5df;
+    }
 
-        <h2>Galerie de la Communauté</h2>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        <p>
-            Retrouvez les moments forts de notre communauté :
-            événements, sport, culture, rencontres et cérémonies.
-        </p>
-    </div>
+    html {
+      scroll-behavior: smooth;
+    }
 
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
 
-    <!-- =========================
-         FILTRES
-    ========================== -->
+    body.no-scroll {
+      overflow: hidden;
+    }
 
-    <div class="gallery-filters">
-    </div>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
+    button {
+      font: inherit;
+    }
 
-    <!-- ==================================================
-         1. ÉVÉNEMENTS — 40 ESPACES PHOTO
-    =================================================== -->
-    <div class="gallery-category active" id="evenements">
+    .container {
+      width: min(1440px, 92%);
+      margin: auto;
+    }
 
-        <div class="gallery-grid">
- <div class="gallery-item">
-    
-                <img src="WhatsApp Image 2026-07-09 at 2.14.53 PM.jpeg"
-                     alt="Événement communautaire">
-            </div>
+    /* NAVIGATION */
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-31 at 10.21.44 AM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+    }
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-31 at 10.21.44 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
+    nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-31 at 10.21.45 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-31 at 11.02.56 AM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
+    .logo span {
+      color: var(--accent);
+    }
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-31 at 11.02.56 AM (2).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-07 at 12.28.39 PM.jpeg"
-                     alt="Événement communautaire">
-            </div>
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 500;
+    }
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-31 at 11.02.58 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-09 at 1.46.42 PM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-08 at 11.12.05 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
+    .contact-link {
+      border: 1px solid var(--text);
+      padding: 11px 18px;
+      border-radius: 30px;
+    }
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-08 at 11.12.09 AM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
+    /* HERO */
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-08 at 11.12.09 AM (2).jpeg"
-                     alt="Événement communautaire">
-            </div>
+    .hero {
+      padding: 100px 0 55px;
+      text-align: center;
+    }
 
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-08 at 11.12.10 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-08 at 11.12.14 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-08 at 11.12.16 AM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-08 at 11.12.16 AM (3).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-09 at 1.46.42 PM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-07-09 at 2.14.53 PM.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="ERWAN.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="chrysler.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="batiment.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="giscard.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="HARDY.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="NAZERE (2).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="JEFF.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="kim.png"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="magnifique.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="nani.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.37.16 AM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.37.16 AM (2).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.37.16 AM (3).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.37.16 AM (4).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.37.16 AM (5).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.37.16 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.37.17 AM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.37.17 AM (2).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="yaya.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.37.17 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="HARDY.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.25 AM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.25 AM (2).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.25 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.26 AM (1).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.26 AM (2).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.26 AM (2).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.26 AM (3).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.26 AM (4).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="nani.jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.26 AM (5).jpeg"
-                     alt="Événement communautaire">
-            </div>
-            <div class="gallery-item">
-                <img src="WhatsApp Image 2026-08-25 at 11.58.26 AM.jpeg"
-                     alt="Événement communautaire">
-            </div>
+    .eyebrow {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 22px auto;
+      max-width: 900px;
+      font-size: clamp(42px, 7vw, 88px);
+      line-height: 1.03;
+      letter-spacing: -5px;
+      font-weight: 600;
+    }
+
+    .hero h1 em {
+      font-family: Georgia, serif;
+      font-weight: 400;
+    }
+
+    .hero p {
+      max-width: 500px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 24px;
+      background: var(--text);
+      color: white;
+      border-radius: 30px;
+      font-size: 13px;
+      transition: .3s;
+    }
+
+    .hero-button:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* FILTERS */
+
+    .gallery-section {
+      padding: 35px 0 100px;
+    }
+
+    .gallery-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery-top h2 {
+      font-size: 22px;
+      letter-spacing: -1px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      padding: 9px 17px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: .25s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--text);
+      border-color: var(--text);
+      color: white;
+    }
+
+    /* MASONRY GALLERY */
+
+    .gallery {
+      columns: 3 280px;
+      column-gap: 20px;
+    }
+
+    .photo {
+      position: relative;
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      break-inside: avoid;
+      border: none;
+      background: #eee;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: zoom-in;
+      text-align: left;
+      animation: appear .6s both;
+    }
+
+    .photo[hidden] {
+      display: none;
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .7s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .photo:hover img {
+      transform: scale(1.045);
+    }
+
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: 35% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.65));
+      opacity: 0;
+      transition: .3s;
+      pointer-events: none;
+    }
+
+    .photo:hover::after,
+    .photo:focus-visible::after {
+      opacity: 1;
+    }
+
+    .photo-info {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 22px;
+      color: white;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: .3s;
+      pointer-events: none;
+    }
+
+    .photo:hover .photo-info,
+    .photo:focus-visible .photo-info {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo-info h3 {
+      font-size: 15px;
+    }
+
+    .photo-info p {
+      font-size: 11px;
+      color: #eee;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background: rgba(10,10,10,.96);
+      padding: 25px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
+    .lightbox-caption {
+      color: white;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .lightbox button {
+      position: absolute;
+      border: 1px solid #555;
+      background: rgba(30,30,30,.8);
+      color: white;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 24px;
+      display: grid;
+      place-items: center;
+    }
+
+    .lightbox button:hover {
+      background: var(--accent);
+    }
+
+    .close-lightbox {
+      top: 20px;
+      right: 20px;
+    }
+
+    .prev-photo {
+      left: 20px;
+    }
+
+    .next-photo {
+      right: 20px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      padding: 85px 0;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      letter-spacing: -2px;
+      margin: 15px 0;
+    }
+
+    .about p {
+      max-width: 550px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer a {
+      color: var(--text);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        min-height: 72px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        gap: 13px;
+        font-size: 11px;
+      }
+
+      .nav-links .optional {
+        display: none;
+      }
+
+      .contact-link {
+        padding: 8px 12px;
+      }
+
+      .hero {
+        padding: 75px 0 40px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .gallery {
+        columns: 2 140px;
+        column-gap: 10px;
+      }
+
+      .photo {
+        margin-bottom: 10px;
+      }
+
+      .gallery-top {
+        align-items: flex-start;
+      }
+
+      .filters {
+        gap: 6px;
+      }
+
+      .filter-btn {
+        padding: 8px 12px;
+      }
+
+      .photo-info {
+        padding: 10px;
+      }
+
+      .photo-info h3 {
+        font-size: 12px;
+      }
+
+      .lightbox {
+        padding: 10px;
+      }
+
+      .lightbox img {
+        max-width: 96%;
+      }
+
+      .prev-photo {
+        left: 8px;
+      }
+
+      .next-photo {
+        right: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="#" class="logo">CCG<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+       
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="eyebrow"></div>
+
+      <h1>COMMUNAUTÉ CENTRAFRICAINE AU GHANA<br><em></em></h1>
+
+      <p>
+        Retrouvez les moments forts de notre communauté :
+            événements, sport, culture, rencontres et cérémonies
+      </p>
+
+      <a href="#gallery" class="hero-button">Explore the gallery ↓</a>
+    </section>
+
+    <section class="gallery-section container" id="gallery">
+      <div class="gallery-top">
+        <h2>Selected Works <span id="photo-count"></span></h2>
+
+        <div class="filters" aria-label="Filter gallery">
+          <button class="filter-btn active" data-filter="all">All works</button>
+          <button class="filter-btn" data-filter="portrait">Football</button>
           
-
-            <!-- Continue jusqu'à photo40 -->
-
         </div>
+      </div>
 
+      <div class="gallery" id="gallery-grid">
+
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.29 PMm (2).jpeg"
+            alt="Woman portrait in natural light" loading="lazy">
+       
+        </button>
+
+        <button class="photo" data-category="travel"
+          data-title="Mountain Escape" data-description="Travel Photography">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.30 PM (1).jpeg"
+            alt="Majestic mountain landscape" loading="lazy">
+          <div class="photo-info"><p>Travel Photography</p></div>
+        </button>
+
+        <button class="photo" data-category="travel"
+          data-title="Mountain Escape" data-description="Travel Photography">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.30 PM (2).jpeg"
+            alt="Majestic mountain landscape" loading="lazy">
+          <div class="photo-info"><p>Travel Photography</p></div>
+        </button>
+
+        <button class="photo" data-category="fashion"
+          data-title="Street Elegance" data-description="Fashion Photography">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.57 AM (3).jpeg"
+            alt="Contemporary fashion editorial" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+
+        <button class="photo" data-category="nature"
+          data-title="Into the Wild" data-description="Nature Photography">
+          <img src="President.jpeg"
+            alt="Wildlife in a natural landscape" loading="lazy">
+          <div class="photo-info"><h3>President</h3><p></p></div>
+        </button>
+
+        <button class="photo" data-category="portrait"
+          data-title="Quiet Confidence" data-description="Portrait Photography">
+          <img src="WhatsApp Image 2026-07-31 at 10.21.45 AM (1).jpeg"
+            alt="Man portrait" loading="lazy">
+          <div class="photo-info"><h3>Quiet Confidence</h3><p>Portrait Photography</p></div>
+        </button>
+
+        <button class="photo" data-category="travel"
+          data-title="Ocean Blues" data-description="Travel Photography">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.56 AM (3).jpeg"
+            alt="Ocean waves and blue water" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+
+        <button class="photo" data-category="fashion"
+          data-title="Modern Muse" data-description="Fashion Photography">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.55 AM (1).jpeg"
+            alt="Fashion portrait in an elegant outfit" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+
+        <button class="photo" data-category="nature"
+          data-title="Forest Dreams" data-description="Nature Photography">
+          <img src="WhatsApp Image 2026-08-07 at 12.28.39 PM.jpeg"
+            alt="Sunlight in a peaceful forest" loading="lazy">
+          <div class="photo-info"><h3>Football Team</h3><p></p></div>
+        </button>
+
+        <button class="photo" data-category="portrait"
+          data-title="Natural Beauty" data-description="Portrait Photography">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.37 PM (1).jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+
+        <button class="photo" data-category="travel"
+          data-title="City Stories" data-description="Travel Photography">
+          <img src="WhatsApp Image 2026-08-25 at 11.58.27 AM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+
+        <button class="photo" data-category="travel"
+          data-title="City Stories" data-description="Travel Photography">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.56 AMm.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="City Stories" data-description="Travel Photography">
+          <img src="WhatsApp Image 2026-08-07 at 12.39.55 PM (4).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="City Stories" data-description="Travel Photography">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.57 AM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.57 AM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 12.39.55 PM (6).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="Travel Photography">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.57 AM (3).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="Travel Photography">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.57 AM (4).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.57 AM (5).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 12.39.57 PM (4).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.57 AM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.29 PMend (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 12.39.57 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.25 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.30 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.30 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.30 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.26 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.27 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.27 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.27 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.28 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.28 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.28 PM (4).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.28 PM (5).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.30 PM (3).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.30 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.31 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.31 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.31 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.32 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.31 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.31 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="p.png"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="CC.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-01 at 8.14.29 PM (5).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.31 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.16 PM (3).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.16 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.17 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.16 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.18 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.18 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.19 PM (3).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.23 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.23 PM (3).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.24 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.36 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.37 PM (3).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 12.59.31 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 12.59.29 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.41 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 12.59.31 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 12.59.31 PM (4).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.29.02 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.36 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.41 PM (4).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.38 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.52 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.54 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.42 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.45 PM (3).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.48 PM (3).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.48 PM (2).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="IMG_8001.JPG"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="IMG_7915.JPG"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-01-12 at 1.02.14 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-01-12 at 1.02.16 PM (3).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.48 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-01-12 at 1.02.10 PM (1).jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       <button class="photo" data-category="travel"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-01-12 at 1.02.11 PM.jpeg"
+            alt="City skyline at dusk" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+       
+        <button class="photo" data-category="fashion"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.07.33 PM (2).jpeg"
+            alt="Fashion and shopping street style" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+
+        <button class="photo" data-category="nature"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.56 AM (1).jpeg"
+            alt="Beautiful open landscape" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+
+        <button class="photo" data-category="nature"
+          data-title="" data-description="">
+          <img src=""
+            alt="Beautiful open landscape" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+ <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-07-08 at 11.12.05 AM.jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-07-31 at 11.02.56 AM (5).jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.42 PM.jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="kim.png"
+            alt="" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.40 PM (1).jpeg"
+            alt="" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.49 PM.jpeg"
+            alt="" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.51 PM.jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="nani.jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="NEGO.jpeg"
+            alt="" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.58 PM.jpeg"
+            alt="" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="chrysler.jpeg"
+            alt="" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="giscard.jpeg"
+            alt="" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="JEFF.jpeg"
+            alt="" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="batiment.jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description=" ">
+          <img src="ulrich.jpeg"
+            alt="" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description=" ">
+          <img src="WhatsApp Image 2026-07-08 at 11.12.09 AM (2).jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-07-08 at 11.12.10 AM.jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 12.59.33 PM (2).jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.35 PM.jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.39 PM (1).jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.28.59 PM.jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-07 at 1.10.48 PM.jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+        <button class="photo" data-category="portrait"
+          data-title="" data-description="">
+          <img src="WhatsApp Image 2026-08-19 at 12.29.02 PM (1).jpeg"
+            alt="Natural beauty portrait" loading="lazy">
+          <div class="photo-info"></div>
+        </button>
+
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="eyebrow">Behind the Lens</div>
+        <h2>Every picture tells a story.</h2>
+        <p>
+          
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span></p>
+      <p></p>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN LIGHTBOX -->
+
+  <div class="lightbox" id="lightbox"
+    role="dialog" aria-modal="true" aria-label="Photo viewer">
+
+    <button class="close-lightbox" id="close-lightbox"
+      aria-label="Close photo viewer">×</button>
+
+    <button class="prev-photo" id="prev-photo"
+      aria-label="Previous photo">‹</button>
+
+    <div class="lightbox-content">
+      <img id="lightbox-image" src="" alt="">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
+    <button class="next-photo" id="next-photo"
+      aria-label="Next photo">›</button>
+  </div>
 
-  
-        </div>
+  <script>
+    const photos = [...document.querySelectorAll('.photo')];
+    const filters = [...document.querySelectorAll('.filter-btn')];
 
-    </div>
-    <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="gallery.css">
-<link rel="stylesheet" href="galerie.cul.html">
-<link rel="stylesheet" href="galerie.sport.html">
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
 
+    let visiblePhotos = [...photos];
+    let currentIndex = 0;
+    let lastFocusedElement = null;
 
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+    function updateCount() {
+      document.getElementById('photo-count').textContent =
+        `(${visiblePhotos.length})`;
+    }
+
+    // CATEGORY FILTERS
+
+    filters.forEach(button => {
+      button.addEventListener('click', () => {
+        filters.forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+
+        const category = button.dataset.filter;
+
+        photos.forEach(photo => {
+          photo.hidden =
+            category !== 'all' &&
+            photo.dataset.category !== category;
+        });
+
+        visiblePhotos = photos.filter(photo => !photo.hidden);
+        updateCount();
+      });
+    });
+
+    // OPEN LIGHTBOX
+
+    function openLightbox(photo) {
+      lastFocusedElement = document.activeElement;
+      visiblePhotos = photos.filter(photo => !photo.hidden);
+      currentIndex = visiblePhotos.indexOf(photo);
+
+      showPhoto(currentIndex);
+
+      lightbox.classList.add('open');
+      document.body.classList.add('no-scroll');
+      document.getElementById('close-lightbox').focus();
+    }
+
+    function showPhoto(index) {
+      if (!visiblePhotos.length) return;
+
+      currentIndex =
+        (index + visiblePhotos.length) % visiblePhotos.length;
+
+      const photo = visiblePhotos[currentIndex];
+      const image = photo.querySelector('img');
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+
+      lightboxCaption.textContent =
+        `${photo.dataset.title} — ${photo.dataset.description}`;
+    }
+
+    photos.forEach(photo => {
+      photo.addEventListener('click', () => openLightbox(photo));
+    });
+
+    // CLOSE LIGHTBOX
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+      lightboxImage.src = '';
+
+      if (lastFocusedElement) lastFocusedElement.focus();
+    }
+
+    document.getElementById('close-lightbox')
+      .addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    // PREVIOUS AND NEXT
+
+    document.getElementById('prev-photo')
+      .addEventListener('click', () => showPhoto(currentIndex - 1));
+
+    document.getElementById('next-photo')
+      .addEventListener('click', () => showPhoto(currentIndex + 1));
+
+    // KEYBOARD SUPPORT
+
+    document.addEventListener('keydown', event => {
+      if (!lightbox.classList.contains('open')) return;
+
+      if (event.key === 'Escape') closeLightbox();
+      if (event.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+      if (event.key === 'ArrowRight') showPhoto(currentIndex + 1);
+    });
+
+    // BASIC TOUCH SWIPE SUPPORT
+
+    let touchStartX = 0;
+
+    lightbox.addEventListener('touchstart', event => {
+      touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', event => {
+      const difference =
+        event.changedTouches[0].screenX - touchStartX;
+
+      if (Math.abs(difference) < 60) return;
+
+      showPhoto(currentIndex + (difference < 0 ? 1 : -1));
+    }, { passive: true });
+
+    updateCount();
+  </script>
+
+</body>
+</html>
