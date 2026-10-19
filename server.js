@@ -99,7 +99,7 @@ function sessionFromRequest(request) {
   const computed = Buffer.from(expected);
   if (received.length !== computed.length || !crypto.timingSafeEqual(received, computed)) return null;
   if (Number(expiresAt) <= Date.now()) return null;
-  return { email: ADMIN_EMAIL, expiresAt: Number(expiresAt) };
+  return { email: REQUIRED_ADMIN_EMAIL, expiresAt: Number(expiresAt) };
 }
 
 function isSecureRequest(request) {
@@ -121,6 +121,10 @@ function equalSecrets(received, expected) {
   const left = Buffer.from(received, "utf8");
   const right = Buffer.from(expected, "utf8");
   return left.length === right.length && crypto.timingSafeEqual(left, right);
+}
+
+function isAllowedAdminEmail(email) {
+  return String(email || "").trim().toLowerCase() === REQUIRED_ADMIN_EMAIL;
 }
 
 function clientAddress(request) {
@@ -233,6 +237,9 @@ async function supabaseRest(resource, options = {}) {
   }
   if (!response.ok) {
     console.error("Supabase REST error", response.status, typeof data === "object" ? data?.message || data?.code : data);
+    if (response.status === 401 || response.status === 403) {
+      throw createHttpError(503, "La clé Supabase du serveur est refusée. Remplacez SUPABASE_SECRET_KEY par la clé Secret active de ce projet.");
+    }
     throw createHttpError(502, "Impossible d'enregistrer ou de charger les données d'administration.");
   }
   return { data, count: parseSupabaseCount(response.headers.get("content-range")) };
@@ -566,7 +573,7 @@ async function handleApi(request, response, pathname, url) {
       const body = await readJson(request);
       const email = String(body.email || "").trim().toLowerCase();
       const password = String(body.password || "");
-      if (!equalSecrets(email, ADMIN_EMAIL) || !equalSecrets(password, ADMIN_PASSWORD)) {
+      if (!isAllowedAdminEmail(email) || !equalSecrets(password, ADMIN_PASSWORD)) {
         rememberFailedLogin(request);
         return sendJson(response, 401, { error: "Adresse e-mail ou mot de passe incorrect." });
       }
@@ -578,7 +585,7 @@ async function handleApi(request, response, pathname, url) {
         "Cache-Control": "no-store",
         "Set-Cookie": sessionCookie(request)
       });
-      response.end(JSON.stringify({ authenticated: true, email: ADMIN_EMAIL }));
+      response.end(JSON.stringify({ authenticated: true, email: REQUIRED_ADMIN_EMAIL }));
     } catch (_) {
       sendJson(response, 400, { error: "Requête de connexion invalide." });
     }

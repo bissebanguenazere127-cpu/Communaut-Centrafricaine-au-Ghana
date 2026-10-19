@@ -26,6 +26,8 @@ create table public.profiles (
     check (membership_status in ('pending', 'approved', 'rejected', 'disabled')),
   role text not null default 'member'
     check (role in ('member', 'admin')),
+  constraint profiles_admin_email_check
+    check (role <> 'admin' or lower(trim(email)) = 'ccdughana@gmail.com'),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -104,6 +106,31 @@ for each row execute function public.set_updated_at();
 create trigger profiles_protect_sensitive_columns
 before update on public.profiles
 for each row execute function public.protect_profile_sensitive_columns();
+
+-- Only the designated CCG account can ever receive browser-level
+-- administration privileges.  The e-mail claim comes from the signed
+-- Supabase Auth JWT; the profile role and approval state remain server-managed.
+create or replace function public.is_ccg_admin()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select
+    lower(coalesce(auth.jwt() ->> 'email', '')) = 'ccdughana@gmail.com'
+    and exists (
+      select 1
+      from public.profiles
+      where id = auth.uid()
+        and role = 'admin'
+        and membership_status = 'approved'
+        and lower(trim(email)) = 'ccdughana@gmail.com'
+    );
+$$;
+
+revoke all on function public.is_ccg_admin() from public;
+grant execute on function public.is_ccg_admin() to authenticated;
 
 -- This view deliberately exposes only approved members and only the fields
 -- needed by the public directory.

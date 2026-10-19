@@ -652,42 +652,57 @@
 
         <input
             type="text"
+            name="nom"
             placeholder="Nom"
             required>
 
 
         <input
             type="text"
+            name="prenom"
             placeholder="Prénom"
             required>
 
 
         <input
             type="email"
+            name="email"
             placeholder="Email"
+            autocomplete="email"
             required>
 
 
         <input
             type="tel"
+            name="whatsapp"
             placeholder="WhatsApp"
+            autocomplete="tel"
             required>
 
 
         <input
             type="text"
+            name="ville"
             placeholder="Ville au Ghana"
+            autocomplete="address-level2"
             required>
 
 
         <button
             type="submit"
-            class="btn primary">
+            class="btn primary"
+            id="membershipSubmit">
 
             S'inscrire
             <i class="fas fa-user-plus"></i>
 
         </button>
+
+        <p
+            id="membershipStatus"
+            class="form-status"
+            aria-live="polite">
+        </p>
 
     </form>
 
@@ -768,27 +783,39 @@
 
             <input
                 type="text"
+                name="from_name"
                 placeholder="Votre nom"
+                autocomplete="name"
                 required>
 
             <input
                 type="email"
+                name="from_email"
                 placeholder="Votre email"
+                autocomplete="email"
                 required>
 
             <textarea
+                name="message"
                 placeholder="Votre message"
                 rows="6"
                 required></textarea>
 
             <button
                 type="submit"
-                class="btn primary">
+                class="btn primary"
+                id="contactSubmit">
 
                 Envoyer le message
                 <i class="fas fa-paper-plane"></i>
 
             </button>
+
+            <p
+                id="contactStatus"
+                class="form-status"
+                aria-live="polite">
+            </p>
 
         </form>
 
@@ -875,6 +902,9 @@
 ===================================================== -->
 
 <script src="script.js"></script>
+<script src="supabsae-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/public-backend.js"></script>
 
 </body>
 </html>
