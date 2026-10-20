@@ -53,6 +53,24 @@ secrets. N'ajoutez jamais `.env` au depot. Ne placez jamais
 `SUPABASE_SECRET_KEY` dans `supabsae-config.js` ou dans un autre fichier
 public : cette cle contourne les politiques RLS.
 
+### Deploiement Vercel
+
+Le dossier `api/` fournit une fonction serverless qui alimente les routes
+`/api/auth/*` et `/api/admin/*`. Dans **Vercel > Project > Settings >
+Environment Variables**, ajoutez les valeurs de votre fichier local `.env` :
+
+- `ADMIN_EMAIL` (exactement `ccdughana@gmail.com`)
+- `ADMIN_PASSWORD`
+- `SESSION_SECRET`
+- `SUPABASE_URL`
+- `SUPABASE_SECRET_KEY`
+
+Ajoutez-les au minimum a l'environnement **Production**, puis effectuez un
+nouveau deploiement. Les trois premieres variables sont requises pour se
+connecter ; les deux variables Supabase permettent d'afficher et gerer les
+messages et demandes. Ne copiez pas le fichier `.env` dans Vercel et ne
+mettez aucune cle Secret dans `supabsae-config.js`.
+
 Si le tableau d'administration indique que la clé Supabase est refusée, copiez
 une clé **Secret** active (`sb_secret_...`) depuis **Supabase > Project Settings
 > API** dans `SUPABASE_SECRET_KEY`. Une clé Publishable ou Anon ne peut pas
