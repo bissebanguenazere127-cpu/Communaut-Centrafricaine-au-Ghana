@@ -52,10 +52,6 @@ function configurationError() {
 }
 
 const startupError = configurationError();
-if (startupError) {
-  console.error(startupError);
-  process.exit(1);
-}
 
 function setSecurityHeaders(response) {
   response.setHeader("X-Content-Type-Options", "nosniff");
@@ -149,6 +145,23 @@ function rememberFailedLogin(request) {
 }
 
 function readJson(request, maxBytes = 4096) {
+  // Vercel's Node runtime can provide an already parsed request.body, while
+  // the local http server exposes the usual incoming stream. Support both so
+  // login and admin updates behave identically after deployment.
+  if (request.body !== undefined) {
+    try {
+      let body = request.body;
+      if (Buffer.isBuffer(body)) body = body.toString("utf8");
+      const serialized = typeof body === "string" ? body : JSON.stringify(body);
+      if (Buffer.byteLength(serialized || "", "utf8") > maxBytes) {
+        return Promise.reject(new Error("Payload trop volumineux."));
+      }
+      return Promise.resolve(typeof body === "string" ? JSON.parse(body || "{}") : body || {});
+    } catch (_) {
+      return Promise.reject(new Error("JSON invalide."));
+    }
+  }
+
   return new Promise((resolve, reject) => {
     let body = "";
     request.on("data", (chunk) => {
@@ -555,6 +568,13 @@ async function handleAdminApi(request, response, pathname, url) {
 }
 
 async function handleApi(request, response, pathname, url) {
+  // On a Node host this is caught before the server starts. On serverless
+  // hosts, this turns a missing deployment variable into a useful response
+  // rather than making every valid login look like a wrong password.
+  if (startupError) {
+    return sendJson(response, 503, { error: startupError });
+  }
+
   if (pathname === "/api/auth/session" && request.method === "GET") {
     const session = sessionFromRequest(request);
     if (!session) return sendJson(response, 401, { authenticated: false });
@@ -638,7 +658,18 @@ const server = http.createServer(async (request, response) => {
   serveStatic(request, response, url.pathname);
 });
 
-const port = Number(process.env.PORT || 3000);
-server.listen(port, () => {
-  console.log(`CCG disponible sur http://localhost:${port}`);
-});
+// A normal Node host runs this file directly. Vercel imports handleApi from
+// api/[...route].js, so it must not open a long-running listener there.
+if (require.main === module) {
+  if (startupError) {
+    console.error(startupError);
+    process.exitCode = 1;
+  } else {
+    const port = Number(process.env.PORT || 3000);
+    server.listen(port, () => {
+      console.log(`CCG disponible sur http://localhost:${port}`);
+    });
+  }
+}
+
+module.exports = { handleApi, sendJson };
