@@ -37,6 +37,7 @@ const ADMIN_EMAIL = String(process.env.ADMIN_EMAIL || "").trim().toLowerCase();
 const ADMIN_PASSWORD = String(process.env.ADMIN_PASSWORD || "");
 const SESSION_SECRET = String(process.env.SESSION_SECRET || "");
 const SUPABASE_URL = String(process.env.SUPABASE_URL || "").trim().replace(/\/$/, "");
+const SUPABASE_ANON_KEY = String(process.env.SUPABASE_ANON_KEY || process.env.SUPABASE_PUBLIC_KEY || "").trim();
 const ADMIN_NOTIFICATION_EMAIL = String(process.env.ADMIN_NOTIFICATION_EMAIL || REQUIRED_ADMIN_EMAIL).trim();
 const EMAILJS_SERVICE_ID = String(process.env.EMAILJS_SERVICE_ID || "").trim();
 const EMAILJS_TEMPLATE_ID = String(process.env.EMAILJS_TEMPLATE_ID || "").trim();
@@ -47,11 +48,15 @@ const SUPABASE_SERVER_KEY = String(
   process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || ""
 ).trim();
 
+function hasSupabaseAuthLogin() {
+  return Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
+}
+
 function configurationError() {
   const missing = [];
   if (ADMIN_EMAIL !== REQUIRED_ADMIN_EMAIL) missing.push(`ADMIN_EMAIL (${REQUIRED_ADMIN_EMAIL} uniquement)`);
-  if (ADMIN_PASSWORD.length < 15) missing.push("ADMIN_PASSWORD (15 caractères minimum)");
   if (SESSION_SECRET.length < 32) missing.push("SESSION_SECRET (32 caractères minimum)");
+  if (!hasSupabaseAuthLogin() && ADMIN_PASSWORD.length < 15) missing.push("ADMIN_PASSWORD (15 caractères minimum)");
   return missing.length ? `Configuration manquante ou invalide : ${missing.join(", ")}. Copiez .env.example vers .env puis renseignez vos secrets.` : "";
 }
 
@@ -181,6 +186,49 @@ function readJson(request, maxBytes = 4096) {
     });
     request.on("error", reject);
   });
+}
+
+async function signInWithSupabaseAuth(email, password) {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    throw createHttpError(503, "Supabase Auth n'est pas configuré pour le login administrateur.");
+  }
+
+  const authUrl = new URL("/auth/v1/token", SUPABASE_URL);
+  authUrl.searchParams.set("grant_type", "password");
+
+  const response = await fetch(authUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_ANON_KEY,
+      Authorization: `Bearer ${SUPABASE_ANON_KEY}`
+    },
+    body: JSON.stringify({ email, password })
+  });
+
+  let payload = {};
+  try {
+    payload = await response.json();
+  } catch (_) {
+    payload = {};
+  }
+
+  if (!response.ok) {
+    const message = payload?.error_description || payload?.message || "Identifiants Supabase invalides.";
+    throw createHttpError(401, message);
+  }
+
+  const userEmail = String(payload?.user?.email || "").trim().toLowerCase();
+  if (!userEmail || userEmail !== REQUIRED_ADMIN_EMAIL) {
+    throw createHttpError(401, "Ce compte Supabase n'est pas autorisé à accéder à l'administration.");
+  }
+
+  return {
+    email: userEmail,
+    accessToken: payload.access_token,
+    refreshToken: payload.refresh_token,
+    expiresAt: Date.now() + (Number(payload.expires_in) || 3600) * 1000
+  };
 }
 
 async function sendAdminRegistrationEmail(member) {
@@ -653,9 +701,21 @@ async function handleApi(request, response, pathname, url) {
       const body = await readJson(request);
       const email = String(body.email || "").trim().toLowerCase();
       const password = String(body.password || "");
-      if (!isAllowedAdminEmail(email) || !equalSecrets(password, ADMIN_PASSWORD)) {
+
+      if (!isAllowedAdminEmail(email)) {
         rememberFailedLogin(request);
-        return sendJson(response, 401, { error: "Adresse e-mail ou mot de passe incorrect." });
+        return sendJson(response, 401, { error: "Adresse e-mail non autorisée." });
+      }
+
+      let loginResult;
+      if (hasSupabaseAuthLogin()) {
+        loginResult = await signInWithSupabaseAuth(email, password);
+      } else {
+        if (!equalSecrets(password, ADMIN_PASSWORD)) {
+          rememberFailedLogin(request);
+          return sendJson(response, 401, { error: "Adresse e-mail ou mot de passe incorrect." });
+        }
+        loginResult = { email, expiresAt: Date.now() + SESSION_TTL_SECONDS * 1000 };
       }
 
       loginAttempts.delete(clientAddress(request));
@@ -665,9 +725,10 @@ async function handleApi(request, response, pathname, url) {
         "Cache-Control": "no-store",
         "Set-Cookie": sessionCookie(request)
       });
-      response.end(JSON.stringify({ authenticated: true, email: REQUIRED_ADMIN_EMAIL }));
-    } catch (_) {
-      sendJson(response, 400, { error: "Requête de connexion invalide." });
+      response.end(JSON.stringify({ authenticated: true, email: REQUIRED_ADMIN_EMAIL, provider: hasSupabaseAuthLogin() ? "supabase" : "local" }));
+    } catch (error) {
+      rememberFailedLogin(request);
+      sendJson(response, error.status || 401, { error: error.message || "Requête de connexion invalide." });
     }
     return;
   }
