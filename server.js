@@ -37,7 +37,11 @@ const ADMIN_EMAIL = String(process.env.ADMIN_EMAIL || "").trim().toLowerCase();
 const ADMIN_PASSWORD = String(process.env.ADMIN_PASSWORD || "");
 const SESSION_SECRET = String(process.env.SESSION_SECRET || "");
 const SUPABASE_URL = String(process.env.SUPABASE_URL || "").trim().replace(/\/$/, "");
-// SUPABASE_SECRET_KEY is the current Supabase server key.  Keep the legacy
+const ADMIN_NOTIFICATION_EMAIL = String(process.env.ADMIN_NOTIFICATION_EMAIL || REQUIRED_ADMIN_EMAIL).trim();
+const EMAILJS_SERVICE_ID = String(process.env.EMAILJS_SERVICE_ID || "").trim();
+const EMAILJS_TEMPLATE_ID = String(process.env.EMAILJS_TEMPLATE_ID || "").trim();
+const EMAILJS_PRIVATE_KEY = String(process.env.EMAILJS_PRIVATE_KEY || "").trim();
+// SUPABASE_SECRET_KEY is the current Supabase server key. Keep the legacy
 // variable as a fallback for projects that have not migrated their API keys.
 const SUPABASE_SERVER_KEY = String(
   process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || ""
@@ -145,9 +149,6 @@ function rememberFailedLogin(request) {
 }
 
 function readJson(request, maxBytes = 4096) {
-  // Vercel's Node runtime can provide an already parsed request.body, while
-  // the local http server exposes the usual incoming stream. Support both so
-  // login and admin updates behave identically after deployment.
   if (request.body !== undefined) {
     try {
       let body = request.body;
@@ -180,6 +181,42 @@ function readJson(request, maxBytes = 4096) {
     });
     request.on("error", reject);
   });
+}
+
+async function sendAdminRegistrationEmail(member) {
+  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PRIVATE_KEY) {
+    return { ok: false, reason: "emailjs_not_configured" };
+  }
+
+  const data = {
+    service_id: EMAILJS_SERVICE_ID,
+    template_id: EMAILJS_TEMPLATE_ID,
+    user_id: EMAILJS_PRIVATE_KEY,
+    template_params: {
+      admin_email: ADMIN_NOTIFICATION_EMAIL,
+      admin_name: "Administrateur CCG",
+      member_name: `${member.first_name || ""} ${member.last_name || ""}`.trim(),
+      member_email: member.email || "",
+      member_phone: member.phone || "",
+      member_city: member.city || "",
+      member_district: member.district || "",
+      member_profession: member.profession || "",
+      message: `Nouvelle demande d'adhésion de ${member.first_name || ""} ${member.last_name || ""}`.trim()
+    }
+  };
+
+  const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(text || response.statusText || "EmailJS refusé");
+  }
+
+  return { ok: true };
 }
 
 function getSupabaseConfiguration() {
@@ -223,8 +260,6 @@ async function supabaseRest(resource, options = {}) {
     Accept: "application/json",
     ...options.headers
   };
-  // Current sb_secret keys are API keys, not JWTs, and must not be sent as a
-  // bearer token. Legacy service_role JWTs still require this header.
   if (!configuration.isCurrentSecretKey) headers.Authorization = `Bearer ${configuration.serverKey}`;
   if (options.body !== undefined) headers["Content-Type"] = "application/json";
 
@@ -568,11 +603,36 @@ async function handleAdminApi(request, response, pathname, url) {
 }
 
 async function handleApi(request, response, pathname, url) {
-  // On a Node host this is caught before the server starts. On serverless
-  // hosts, this turns a missing deployment variable into a useful response
-  // rather than making every valid login look like a wrong password.
   if (startupError) {
     return sendJson(response, 503, { error: startupError });
+  }
+
+  if (pathname === "/api/member/register-notification" && request.method === "POST") {
+    try {
+      const body = await readJson(request, 8192);
+      const member = {
+        first_name: String(body.first_name || "").trim(),
+        last_name: String(body.last_name || "").trim(),
+        email: String(body.email || "").trim(),
+        phone: String(body.phone || "").trim(),
+        city: String(body.city || "").trim(),
+        district: String(body.district || "").trim(),
+        profession: String(body.profession || "").trim()
+      };
+
+      if (!member.first_name || !member.last_name || !member.email) {
+        return sendJson(response, 400, { error: "Données d'adhésion incomplètes." });
+      }
+
+      try {
+        const result = await sendAdminRegistrationEmail(member);
+        return sendJson(response, 200, { ok: true, notification: result.ok ? "emailjs_sent" : "emailjs_disabled", reason: result.reason || null });
+      } catch (error) {
+        return sendJson(response, 200, { ok: true, notification: "emailjs_failed", message: error.message });
+      }
+    } catch (_) {
+      return sendJson(response, 400, { error: "Requête d'alerte invalide." });
+    }
   }
 
   if (pathname === "/api/auth/session" && request.method === "GET") {
@@ -658,8 +718,6 @@ const server = http.createServer(async (request, response) => {
   serveStatic(request, response, url.pathname);
 });
 
-// A normal Node host runs this file directly. Vercel imports handleApi from
-// api/[...route].js, so it must not open a long-running listener there.
 if (require.main === module) {
   if (startupError) {
     console.error(startupError);
